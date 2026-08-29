@@ -1,0 +1,264 @@
+{
+  "_comment": "IdeAgent batch enrichment list. UUIDs that match db/seed.sql are fixed — they update existing seed rows. All others get new UUIDs from the pipeline.",
+
+  "movies": [
+    {
+      "id": "11111111-1111-1111-1111-111111111111",
+      "_note": "Existing seed row — pipeline will update its embedding",
+      "title": "The Dark Knight"
+    },
+    {
+      "title": "Interstellar"
+    },
+    {
+      "title": "La La Land"
+    },
+    {
+      "title": "Everything Everywhere All at Once"
+    },
+    {
+      "title": "Parasite"
+    },
+    {
+      "title": "Coco"
+    }
+  ],
+
+  "characters": [
+    {
+      "id": "22222222-2222-2222-2222-222222222222",
+      "_note": "Existing seed row",
+      "name": "Bruce Wayne / Batman",
+      "movie_id": "11111111-1111-1111-1111-111111111111",
+      "movie_title": "The Dark Knight",
+      "fandom_wiki": "dccomics",
+      "fandom_slug": "Batman"
+    },
+    {
+      "id": "33333333-3333-3333-3333-333333333333",
+      "_note": "Existing seed row",
+      "name": "The Joker",
+      "movie_id": "11111111-1111-1111-1111-111111111111",
+      "movie_title": "The Dark Knight",
+      "fandom_wiki": "dccomics",
+      "fandom_slug": "Joker"
+    },
+    {
+      "name": "Alfred Pennyworth",
+      "movie_id": "11111111-1111-1111-1111-111111111111",
+      "movie_title": "The Dark Knight",
+      "fandom_wiki": "dccomics",
+      "fandom_slug": "Alfred_Pennyworth"
+    },
+    {
+      "name": "Cooper",
+      "movie_id": "_NEEDS_MOVIE_ID_interstellar",
+      "movie_title": "Interstellar",
+      "_note": "The pipeline assigns the Interstellar movie_id after enriching that movie. For manual runs, replace _NEEDS_MOVIE_ID with the actual UUID from the DB after running movies step."
+    },
+    {
+      "name": "Murph",
+      "movie_id": "_NEEDS_MOVIE_ID_interstellar",
+      "movie_title": "Interstellar"
+    },
+    {
+      "name": "Dr. Amelia Brand",
+      "movie_id": "_NEEDS_MOVIE_ID_interstellar",
+      "movie_title": "Interstellar"
+    },
+    {
+      "name": "Mia Dolan",
+      "movie_id": "_NEEDS_MOVIE_ID_lalaland",
+      "movie_title": "La La Land"
+    },
+    {
+      "name": "Sebastian Wilder",
+      "movie_id": "_NEEDS_MOVIE_ID_lalaland",
+      "movie_title": "La La Land"
+    },
+    {
+      "name": "Evelyn Wang",
+      "movie_id": "_NEEDS_MOVIE_ID_eeaao",
+      "movie_title": "Everything Everywhere All at Once"
+    },
+    {
+      "name": "Joy Wang",
+      "movie_id": "_NEEDS_MOVIE_ID_eeaao",
+      "movie_title": "Everything Everywhere All at Once"
+    },
+    {
+      "name": "Waymond Wang",
+      "movie_id": "_NEEDS_MOVIE_ID_eeaao",
+      "movie_title": "Everything Everywhere All at Once"
+    },
+    {
+      "name": "Ki-woo Kim",
+      "movie_id": "_NEEDS_MOVIE_ID_parasite",
+      "movie_title": "Parasite"
+    },
+    {
+      "name": "Park Dong-ik",
+      "movie_id": "_NEEDS_MOVIE_ID_parasite",
+      "movie_title": "Parasite"
+    },
+    {
+      "name": "Miguel Rivera",
+      "movie_id": "_NEEDS_MOVIE_ID_coco",
+      "movie_title": "Coco"
+    },
+    {
+      "name": "Hector Rivera",
+      "movie_id": "_NEEDS_MOVIE_ID_coco",
+      "movie_title": "Coco"
+    }
+  ],
+
+  "relationships": [
+    {
+      "id": "44444444-4444-4444-4444-444444444444",
+      "_note": "Existing seed row",
+      "label": "Batman & Joker",
+      "movie_id": "11111111-1111-1111-1111-111111111111",
+      "character_id_a": "22222222-2222-2222-2222-222222222222",
+      "character_id_b": "33333333-3333-3333-3333-333333333333",
+      "search_query": "Batman Joker dynamic The Dark Knight"
+    },
+    {
+      "label": "Batman & Alfred",
+      "movie_id": "11111111-1111-1111-1111-111111111111",
+      "character_id_a": "22222222-2222-2222-2222-222222222222",
+      "character_id_b": "_NEEDS_ID_alfred",
+      "search_query": "Batman Alfred Pennyworth relationship mentor"
+    },
+    {
+      "label": "Cooper & Murph",
+      "movie_id": "_NEEDS_MOVIE_ID_interstellar",
+      "character_id_a": "_NEEDS_ID_cooper",
+      "character_id_b": "_NEEDS_ID_murph",
+      "search_query": "Interstellar Cooper Murph father daughter relationship"
+    },
+    {
+      "label": "Mia & Sebastian",
+      "movie_id": "_NEEDS_MOVIE_ID_lalaland",
+      "character_id_a": "_NEEDS_ID_mia",
+      "character_id_b": "_NEEDS_ID_sebastian",
+      "search_query": "La La Land Mia Sebastian relationship love story"
+    },
+    {
+      "label": "Evelyn & Joy",
+      "movie_id": "_NEEDS_MOVIE_ID_eeaao",
+      "character_id_a": "_NEEDS_ID_evelyn",
+      "character_id_b": "_NEEDS_ID_joy",
+      "search_query": "Everything Everywhere All at Once Evelyn Joy mother daughter"
+    },
+    {
+      "label": "Ki-woo & Park Dong-ik",
+      "movie_id": "_NEEDS_MOVIE_ID_parasite",
+      "character_id_a": "_NEEDS_ID_kiwoo",
+      "character_id_b": "_NEEDS_ID_park",
+      "search_query": "Parasite Ki-woo Park Dong-ik class tension"
+    },
+    {
+      "label": "Miguel & Hector",
+      "movie_id": "_NEEDS_MOVIE_ID_coco",
+      "character_id_a": "_NEEDS_ID_miguel",
+      "character_id_b": "_NEEDS_ID_hector",
+      "search_query": "Coco Miguel Hector relationship ancestor music"
+    }
+  ],
+
+  "songs": [
+    {
+      "id": "55555555-5555-5555-5555-555555555555",
+      "_note": "Existing seed row",
+      "title": "Believer",
+      "artist": "Imagine Dragons"
+    },
+    {
+      "id": "66666666-6666-6666-6666-666666666666",
+      "_note": "Existing seed row",
+      "title": "Blinding Lights",
+      "artist": "The Weeknd"
+    },
+    {
+      "title": "Heat Waves",
+      "artist": "Glass Animals"
+    },
+    {
+      "title": "Levitating",
+      "artist": "Dua Lipa"
+    },
+    {
+      "title": "MONTERO (Call Me By Your Name)",
+      "artist": "Lil Nas X"
+    },
+    {
+      "title": "drivers license",
+      "artist": "Olivia Rodrigo"
+    },
+    {
+      "title": "good 4 u",
+      "artist": "Olivia Rodrigo"
+    },
+    {
+      "title": "Stay",
+      "artist": "The Kid LAROI"
+    },
+    {
+      "title": "bad guy",
+      "artist": "Billie Eilish"
+    },
+    {
+      "title": "ocean eyes",
+      "artist": "Billie Eilish"
+    },
+    {
+      "title": "Watermelon Sugar",
+      "artist": "Harry Styles"
+    },
+    {
+      "title": "As It Was",
+      "artist": "Harry Styles"
+    },
+    {
+      "title": "Counting Stars",
+      "artist": "OneRepublic"
+    },
+    {
+      "title": "Radioactive",
+      "artist": "Imagine Dragons"
+    },
+    {
+      "title": "Shape of You",
+      "artist": "Ed Sheeran"
+    },
+    {
+      "title": "Perfect",
+      "artist": "Ed Sheeran"
+    },
+    {
+      "title": "Bohemian Rhapsody",
+      "artist": "Queen"
+    },
+    {
+      "title": "Mr. Brightside",
+      "artist": "The Killers"
+    },
+    {
+      "title": "Lose Yourself",
+      "artist": "Eminem"
+    },
+    {
+      "title": "Fix You",
+      "artist": "Coldplay"
+    },
+    {
+      "title": "The Scientist",
+      "artist": "Coldplay"
+    },
+    {
+      "title": "Someone Like You",
+      "artist": "Adele"
+    }
+  ]
+}
