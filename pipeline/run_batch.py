@@ -236,7 +236,8 @@ def run(batch_path: Path, dry_run: bool = False) -> None:
                 song_id=entity_id,
             )
             done += 1
-            time.sleep(4.2)
+            # Respect rate limits for Groq Qwen TPM
+            time.sleep(22.0)
         except Exception as e:
             conn.rollback()
             tqdm.write(f"  ❌  FAILED: {entry['title']} — {e}")

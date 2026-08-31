@@ -1,7 +1,7 @@
 """
 pipeline/llm_synthesize.py
 ==========================
-Calls Gemini Flash to synthesize enriched descriptions from raw scraped facts.
+Calls Groq LLM to synthesize enriched descriptions from raw scraped facts.
 
 The LLM is the synthesis and reasoning layer — never the source of truth.
 Every prompt explicitly instructs the model to use ONLY the provided facts
@@ -11,28 +11,28 @@ Output is always JSON: {"description": "...", "core_emotional_logic": "..."}
 """
 from __future__ import annotations
 
+import os
 import json
 
-from google import genai
-from google.genai import types
+from groq import Groq
 
 from pipeline import config
 
 # ------------------------------------------------------------------
-# Gemini client (lazy-initialised)
+# Groq client (lazy-initialised)
 # ------------------------------------------------------------------
-_client: genai.Client | None = None
+_client: Groq | None = None
 
 
-def _get_client() -> genai.Client:
+def _get_client() -> Groq:
     global _client
     if _client is None:
         api_key = config.require(
-            "GEMINI_API_KEY",
-            config.GEMINI_API_KEY,
-            hint="Free API key (no credit card): https://aistudio.google.com/app/apikey",
+            "GROQ_API_KEY",
+            os.environ.get("GROQ_API_KEY"),
+            hint="Free API key: https://console.groq.com/keys",
         )
-        _client = genai.Client(api_key=api_key)
+        _client = Groq(api_key=api_key)
     return _client
 
 
@@ -107,7 +107,7 @@ Return ONLY valid JSON with exactly these two fields:
 # ------------------------------------------------------------------
 def synthesize(entity_type: str, raw_facts: dict) -> dict:
     """
-    Call Gemini Flash to synthesize a description from raw scraped facts.
+    Call Groq to synthesize a description from raw scraped facts.
 
     Args:
         entity_type: One of "movie", "character", "relationship", "song"
@@ -118,7 +118,7 @@ def synthesize(entity_type: str, raw_facts: dict) -> dict:
 
     Raises:
         KeyError:          if entity_type is not one of the four valid types
-        EnvironmentError:  if GEMINI_API_KEY is not set
+        EnvironmentError:  if GROQ_API_KEY is not set
         ValueError:        if the LLM response cannot be parsed as valid JSON
     """
     if entity_type not in _PROMPTS:
@@ -127,20 +127,30 @@ def synthesize(entity_type: str, raw_facts: dict) -> dict:
     client = _get_client()
     prompt = _PROMPTS[entity_type].format(facts_json=json.dumps(raw_facts, indent=2))
 
-    response = client.models.generate_content(
+    response = client.chat.completions.create(
         model=config.LLM_MODEL,
-        contents=prompt,
-        config=types.GenerateContentConfig(
-            response_mime_type="application/json",
-            temperature=0.2,
-        ),
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.2,
     )
+    
+    response_text = response.choices[0].message.content
+    
+    import re
+    
+    # Extract json block using regex to ignore any chain of thought before it
+    json_match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", response_text, re.DOTALL)
+    if json_match:
+        cleaned_text = json_match.group(1)
+    else:
+        # Fallback to finding the first { ... } 
+        json_match = re.search(r"(\{.*?\})", response_text, re.DOTALL)
+        cleaned_text = json_match.group(1) if json_match else response_text.strip()
 
     try:
-        result = json.loads(response.text)
+        result = json.loads(cleaned_text)
     except json.JSONDecodeError as e:
         raise ValueError(
-            f"LLM returned non-JSON response for {entity_type}:\n{response.text}"
+            f"LLM returned non-JSON response for {entity_type}:\n{response_text}"
         ) from e
 
     if "description" not in result or "core_emotional_logic" not in result:

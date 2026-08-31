@@ -28,7 +28,7 @@ GEMINI_API_KEY: Optional[str] = os.environ.get("GEMINI_API_KEY")
 # ------------------------------------------------------------------
 EMBED_MODEL: str = "nomic-ai/nomic-embed-text-v1.5"   # runs locally, no API key
 EMBED_DIM: int = 768                                    # must match schema vector(768)
-LLM_MODEL: str = "gemini-3.6-flash"                    # Gemini Flash for synthesis
+LLM_MODEL: str = "qwen/qwen3.6-27b"                    # Groq model for synthesis
 
 # ------------------------------------------------------------------
 # Helpers
