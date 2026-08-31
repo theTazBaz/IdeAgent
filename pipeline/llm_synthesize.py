@@ -135,16 +135,24 @@ def synthesize(entity_type: str, raw_facts: dict) -> dict:
     
     response_text = response.choices[0].message.content
     
-    import re
-    
-    # Extract json block using regex to ignore any chain of thought before it
-    json_match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", response_text, re.DOTALL)
-    if json_match:
-        cleaned_text = json_match.group(1)
-    else:
-        # Fallback to finding the first { ... } 
-        json_match = re.search(r"(\{.*?\})", response_text, re.DOTALL)
-        cleaned_text = json_match.group(1) if json_match else response_text.strip()
+    # Robustly extract the LAST complete JSON object from the response.
+    # Qwen emits a long chain-of-thought before the final JSON block, so we
+    # scan backwards from the last '}' to find its matching '{'.
+    cleaned_text = None
+    last_close = response_text.rfind("}")
+    if last_close != -1:
+        depth = 0
+        for i in range(last_close, -1, -1):
+            if response_text[i] == "}":
+                depth += 1
+            elif response_text[i] == "{":
+                depth -= 1
+                if depth == 0:
+                    cleaned_text = response_text[i : last_close + 1]
+                    break
+
+    if not cleaned_text:
+        cleaned_text = response_text.strip()
 
     try:
         result = json.loads(cleaned_text)
