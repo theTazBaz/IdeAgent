@@ -8,12 +8,11 @@ Usage:
     python -m pipeline.rag "What movies feel like Bohemian Rhapsody?"
     python -m pipeline.rag "Find characters with a moral conflict like The Joker"
 
-Pipeline (5 steps):
+Pipeline (4 steps):
     A. Intent Extraction  (LLM)  — parse which entity + what to find
     B. Context Retrieval  (DB)   — fetch the reference entity's emotional logic
-    C. Query Generation   (LLM)  — turn that emotional logic into a dense search string
-    D. Vector Search      (DB)   — embed the search string, find top matches
-    E. Final Answer       (LLM)  — synthesise a human-readable recommendation
+    C. Vector Search      (DB)   — embed the entity's emotional logic, find top matches
+    D. Final Answer       (LLM)  — synthesise a human-readable recommendation
 """
 from __future__ import annotations
 
@@ -109,44 +108,12 @@ def step_b_get_context(conn, reference_entity: str | None) -> dict | None:
     return entity
 
 
-# ------------------------------------------------------------------
-# Step C: Search string generation (LLM)
-# ------------------------------------------------------------------
-_SEARCH_STRING_PROMPT = """\
-You are building a semantic search query for a vector database.
-
-A user wants to find {target_type} that match the {matching_concept} of the following entity:
-
-Entity name: {entity_name}
-Description: {description}
-Core emotional logic: {core_emotional_logic}
-
-Write a single dense paragraph (3-5 sentences) that captures the essence of what we are searching for.
-This paragraph will be embedded and used for cosine similarity search, so it must be rich in emotional,
-thematic, and tonal vocabulary — NOT a question or instruction.
-
-Return ONLY the paragraph. No JSON, no preamble, no explanation.
-"""
-
-def step_c_generate_search_string(client: Groq, entity: dict, target_type: str, matching_concept: str) -> str:
-    print("  [C] Generating semantic search string …")
-    prompt = _SEARCH_STRING_PROMPT.format(
-        target_type=target_type or "content",
-        matching_concept=matching_concept or "emotional themes",
-        entity_name=entity["name"],
-        description=entity["description"] or "",
-        core_emotional_logic=entity["core_emotional_logic"] or "",
-    )
-    search_string = _call_llm(client, prompt).strip()
-    print(f"       Search string: \"{search_string[:120]}…\"")
-    return search_string
-
 
 # ------------------------------------------------------------------
-# Step D: Vector search (DB)
+# Step C: Vector search (DB)
 # ------------------------------------------------------------------
-def step_d_vector_search(conn, search_string: str, target_type: str | None) -> list[dict]:
-    print("  [D] Searching vector database …")
+def step_c_vector_search(conn, search_string: str, target_type: str | None) -> list[dict]:
+    print("  [C] Searching vector database …")
     # Map singular to table name
     type_map = {"movie": "movies", "character": "characters", "relationship": "relationships", "song": "songs"}
     filter_type = type_map.get(target_type or "", target_type)
@@ -157,7 +124,7 @@ def step_d_vector_search(conn, search_string: str, target_type: str | None) -> l
 
 
 # ------------------------------------------------------------------
-# Step E: Final answer (LLM)
+# Step D: Final answer (LLM)
 # ------------------------------------------------------------------
 _ANSWER_PROMPT = """\
 You are a creative media recommendation assistant.
@@ -176,8 +143,8 @@ Using ONLY the information above, write a helpful, conversational recommendation
 Be specific and insightful. Do NOT invent information not present above.
 """
 
-def step_e_generate_answer(client: Groq, query: str, results: list[dict]) -> str:
-    print("  [E] Generating final answer …\n")
+def step_d_generate_answer(client: Groq, query: str, results: list[dict]) -> str:
+    print("  [D] Generating final answer …\n")
     context_parts = []
     for i, r in enumerate(results, 1):
         context_parts.append(
@@ -209,23 +176,22 @@ def run_rag(query: str) -> None:
         # B: Fetch reference entity from DB (if named)
         entity = step_b_get_context(conn, reference_entity)
 
-        # C: Generate a dense search string
+        # C: Vector search
         if entity:
-            search_string = step_c_generate_search_string(client, entity, target_type, matching_concept)
+            search_string = f"{entity['description']}\n{entity['core_emotional_logic']}"
         else:
             # No specific entity found — fall back to embedding the raw query
             print("  [C] No reference entity — using query directly as search string.")
             search_string = query
 
-        # D: Vector search
-        results = step_d_vector_search(conn, search_string, target_type)
+        results = step_c_vector_search(conn, search_string, target_type)
 
         if not results:
             print("❌  No results found in the database.")
             return
 
-        # E: Generate final answer
-        answer = step_e_generate_answer(client, query, results)
+        # D: Generate final answer
+        answer = step_d_generate_answer(client, query, results)
 
         # Print results
         print("=" * 60)

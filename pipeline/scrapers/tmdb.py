@@ -30,7 +30,7 @@ def _api_key() -> str:
 
 
 def _get(client: httpx.Client, url: str, extra_params: dict | None = None) -> httpx.Response:
-    """GET with api_key injected and simple retry on connection errors."""
+    """GET with api_key injected and retry on connection/transport errors."""
     params = {"api_key": _api_key(), **(extra_params or {})}
     last_exc: Exception | None = None
     for attempt in range(_MAX_RETRIES):
@@ -38,10 +38,10 @@ def _get(client: httpx.Client, url: str, extra_params: dict | None = None) -> ht
             r = client.get(url, params=params)
             r.raise_for_status()
             return r
-        except httpx.ConnectError as e:
+        except (httpx.RequestError, httpx.HTTPStatusError) as e:
             last_exc = e
             if attempt < _MAX_RETRIES - 1:
-                time.sleep(_RETRY_DELAY)
+                time.sleep(_RETRY_DELAY * (attempt + 1))
     raise last_exc  # type: ignore[misc]
 
 

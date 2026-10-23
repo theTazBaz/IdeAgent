@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import os
 import json
+import time
 
 from groq import Groq
 
@@ -127,12 +128,26 @@ def synthesize(entity_type: str, raw_facts: dict) -> dict:
     client = _get_client()
     prompt = _PROMPTS[entity_type].format(facts_json=json.dumps(raw_facts, indent=2))
 
-    response = client.chat.completions.create(
-        model=config.LLM_MODEL,
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.2,
-    )
-    
+    response = None
+    for attempt in range(5):
+        try:
+            response = client.chat.completions.create(
+                model=config.LLM_MODEL,
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.2,
+            )
+            break
+        except Exception as e:
+            if "rate_limit" in str(e).lower() or "429" in str(e):
+                wait_time = 12 * (attempt + 1)
+                print(f"    ⏳ Rate limit encountered. Waiting {wait_time}s (attempt {attempt+1}/5) …")
+                time.sleep(wait_time)
+            else:
+                raise
+
+    if response is None:
+        raise RuntimeError(f"Failed to get response from Groq after retries for {entity_type}")
+
     response_text = response.choices[0].message.content
     
     # Robustly extract the LAST complete JSON object from the response.

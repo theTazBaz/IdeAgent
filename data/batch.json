@@ -1,9 +1,9 @@
 {
-  "_comment": "IdeAgent batch enrichment list. UUIDs that match db/seed.sql are fixed \u2014 they update existing seed rows. All others get new UUIDs from the pipeline.",
+  "_comment": "IdeAgent batch enrichment list. UUIDs that match db/seed.sql are fixed — they update existing seed rows. All others get new UUIDs from the pipeline.",
   "movies": [
     {
       "id": "11111111-1111-1111-1111-111111111111",
-      "_note": "Existing seed row \u2014 pipeline will update its embedding",
+      "_note": "Existing seed row — pipeline will update its embedding",
       "title": "The Dark Knight"
     },
     {
@@ -25,6 +25,63 @@
     {
       "id": "6b282723-d69c-4f27-9394-8d9625702971",
       "title": "Coco"
+    },
+    {
+      "title": "Whiplash",
+      "placeholder": "_NEEDS_MOVIE_ID_whiplash",
+      "id": "a522ea59-209f-46e8-9a94-563378d330a8"
+    },
+    {
+      "title": "Fight Club",
+      "placeholder": "_NEEDS_MOVIE_ID_fightclub"
+    },
+    {
+      "title": "Inception",
+      "placeholder": "_NEEDS_MOVIE_ID_inception"
+    },
+    {
+      "title": "The Matrix",
+      "placeholder": "_NEEDS_MOVIE_ID_thematrix"
+    },
+    {
+      "title": "Oppenheimer",
+      "placeholder": "_NEEDS_MOVIE_ID_oppenheimer"
+    },
+    {
+      "title": "Blade Runner 2049",
+      "placeholder": "_NEEDS_MOVIE_ID_bladerunner2049"
+    },
+    {
+      "title": "Her",
+      "placeholder": "_NEEDS_MOVIE_ID_her"
+    },
+    {
+      "title": "Spider-Man: Into the Spider-Verse",
+      "placeholder": "_NEEDS_MOVIE_ID_spidermanintothespiderverse"
+    },
+    {
+      "title": "The Godfather",
+      "placeholder": "_NEEDS_MOVIE_ID_thegodfather"
+    },
+    {
+      "title": "Eternal Sunshine of the Spotless Mind",
+      "placeholder": "_NEEDS_MOVIE_ID_eternalsunshineofthespotlessmind"
+    },
+    {
+      "title": "Pulp Fiction",
+      "placeholder": "_NEEDS_MOVIE_ID_pulpfiction"
+    },
+    {
+      "title": "Good Will Hunting",
+      "placeholder": "_NEEDS_MOVIE_ID_goodwillhunting"
+    },
+    {
+      "title": "The Social Network",
+      "placeholder": "_NEEDS_MOVIE_ID_thesocialnetwork"
+    },
+    {
+      "title": "Black Swan",
+      "placeholder": "_NEEDS_MOVIE_ID_blackswan"
     }
   ],
   "characters": [
@@ -113,6 +170,268 @@
       "name": "Hector Rivera",
       "movie_id": "_NEEDS_MOVIE_ID_coco",
       "movie_title": "Coco"
+    },
+    {
+      "name": "Andrew Neiman",
+      "movie_id": "_NEEDS_MOVIE_ID_whiplash",
+      "movie_title": "Whiplash",
+      "placeholder": "_NEEDS_ID_andrew",
+      "fandom_wiki": "whiplash",
+      "fandom_slug": "Andrew_Neiman",
+      "id": "ea1e4763-89c9-47f2-bc22-6146402063af"
+    },
+    {
+      "name": "Terence Fletcher",
+      "movie_id": "_NEEDS_MOVIE_ID_whiplash",
+      "movie_title": "Whiplash",
+      "placeholder": "_NEEDS_ID_fletcher",
+      "fandom_wiki": "whiplash",
+      "fandom_slug": "Terence_Fletcher",
+      "id": "0bfb0817-c073-4277-bd87-c9b97dc6ec51"
+    },
+    {
+      "name": "The Narrator",
+      "movie_id": "_NEEDS_MOVIE_ID_fightclub",
+      "movie_title": "Fight Club",
+      "placeholder": "_NEEDS_ID_narrator",
+      "fandom_wiki": "fightclub",
+      "fandom_slug": "The_Narrator"
+    },
+    {
+      "name": "Tyler Durden",
+      "movie_id": "_NEEDS_MOVIE_ID_fightclub",
+      "movie_title": "Fight Club",
+      "placeholder": "_NEEDS_ID_tyler",
+      "fandom_wiki": "fightclub",
+      "fandom_slug": "Tyler_Durden"
+    },
+    {
+      "name": "Marla Singer",
+      "movie_id": "_NEEDS_MOVIE_ID_fightclub",
+      "movie_title": "Fight Club",
+      "placeholder": "_NEEDS_ID_marla",
+      "fandom_wiki": "fightclub",
+      "fandom_slug": "Marla_Singer"
+    },
+    {
+      "name": "Dom Cobb",
+      "movie_id": "_NEEDS_MOVIE_ID_inception",
+      "movie_title": "Inception",
+      "placeholder": "_NEEDS_ID_dom",
+      "fandom_wiki": "inception",
+      "fandom_slug": "Dominick_Cobb"
+    },
+    {
+      "name": "Mal Cobb",
+      "movie_id": "_NEEDS_MOVIE_ID_inception",
+      "movie_title": "Inception",
+      "placeholder": "_NEEDS_ID_mal",
+      "fandom_wiki": "inception",
+      "fandom_slug": "Mallorie_Cobb"
+    },
+    {
+      "name": "Arthur",
+      "movie_id": "_NEEDS_MOVIE_ID_inception",
+      "movie_title": "Inception",
+      "placeholder": "_NEEDS_ID_arthur",
+      "fandom_wiki": "inception",
+      "fandom_slug": "Arthur"
+    },
+    {
+      "name": "Neo / Thomas Anderson",
+      "movie_id": "_NEEDS_MOVIE_ID_thematrix",
+      "movie_title": "The Matrix",
+      "placeholder": "_NEEDS_ID_neo",
+      "fandom_wiki": "matrix",
+      "fandom_slug": "Neo"
+    },
+    {
+      "name": "Morpheus",
+      "movie_id": "_NEEDS_MOVIE_ID_thematrix",
+      "movie_title": "The Matrix",
+      "placeholder": "_NEEDS_ID_morpheus",
+      "fandom_wiki": "matrix",
+      "fandom_slug": "Morpheus"
+    },
+    {
+      "name": "Agent Smith",
+      "movie_id": "_NEEDS_MOVIE_ID_thematrix",
+      "movie_title": "The Matrix",
+      "placeholder": "_NEEDS_ID_smith",
+      "fandom_wiki": "matrix",
+      "fandom_slug": "Agent_Smith"
+    },
+    {
+      "name": "J. Robert Oppenheimer",
+      "movie_id": "_NEEDS_MOVIE_ID_oppenheimer",
+      "movie_title": "Oppenheimer",
+      "placeholder": "_NEEDS_ID_oppenheimer",
+      "fandom_wiki": "oppenheimer",
+      "fandom_slug": "J._Robert_Oppenheimer"
+    },
+    {
+      "name": "Lewis Strauss",
+      "movie_id": "_NEEDS_MOVIE_ID_oppenheimer",
+      "movie_title": "Oppenheimer",
+      "placeholder": "_NEEDS_ID_strauss",
+      "fandom_wiki": "oppenheimer",
+      "fandom_slug": "Lewis_Strauss"
+    },
+    {
+      "name": "Katherine 'Kitty' Oppenheimer",
+      "movie_id": "_NEEDS_MOVIE_ID_oppenheimer",
+      "movie_title": "Oppenheimer",
+      "placeholder": "_NEEDS_ID_kitty",
+      "fandom_wiki": "oppenheimer",
+      "fandom_slug": "Katherine_Oppenheimer"
+    },
+    {
+      "name": "K / Joe",
+      "movie_id": "_NEEDS_MOVIE_ID_bladerunner2049",
+      "movie_title": "Blade Runner 2049",
+      "placeholder": "_NEEDS_ID_k",
+      "fandom_wiki": "bladerunner",
+      "fandom_slug": "K"
+    },
+    {
+      "name": "Joi",
+      "movie_id": "_NEEDS_MOVIE_ID_bladerunner2049",
+      "movie_title": "Blade Runner 2049",
+      "placeholder": "_NEEDS_ID_joi",
+      "fandom_wiki": "bladerunner",
+      "fandom_slug": "Joi"
+    },
+    {
+      "name": "Rick Deckard",
+      "movie_id": "_NEEDS_MOVIE_ID_bladerunner2049",
+      "movie_title": "Blade Runner 2049",
+      "placeholder": "_NEEDS_ID_deckard",
+      "fandom_wiki": "bladerunner",
+      "fandom_slug": "Rick_Deckard"
+    },
+    {
+      "name": "Theodore Twombly",
+      "movie_id": "_NEEDS_MOVIE_ID_her",
+      "movie_title": "Her",
+      "placeholder": "_NEEDS_ID_theodore"
+    },
+    {
+      "name": "Samantha",
+      "movie_id": "_NEEDS_MOVIE_ID_her",
+      "movie_title": "Her",
+      "placeholder": "_NEEDS_ID_samantha"
+    },
+    {
+      "name": "Miles Morales",
+      "movie_id": "_NEEDS_MOVIE_ID_spidermanintothespiderverse",
+      "movie_title": "Spider-Man: Into the Spider-Verse",
+      "placeholder": "_NEEDS_ID_miles",
+      "fandom_wiki": "marveldatabase",
+      "fandom_slug": "Miles_Morales_(Earth-1610)"
+    },
+    {
+      "name": "Peter B. Parker",
+      "movie_id": "_NEEDS_MOVIE_ID_spidermanintothespiderverse",
+      "movie_title": "Spider-Man: Into the Spider-Verse",
+      "placeholder": "_NEEDS_ID_peter",
+      "fandom_wiki": "marveldatabase",
+      "fandom_slug": "Peter_Parker_(Earth-616B)"
+    },
+    {
+      "name": "Gwen Stacy",
+      "movie_id": "_NEEDS_MOVIE_ID_spidermanintothespiderverse",
+      "movie_title": "Spider-Man: Into the Spider-Verse",
+      "placeholder": "_NEEDS_ID_gwen",
+      "fandom_wiki": "marveldatabase",
+      "fandom_slug": "Gwendolyne_Stacy_(Earth-65)"
+    },
+    {
+      "name": "Michael Corleone",
+      "movie_id": "_NEEDS_MOVIE_ID_thegodfather",
+      "movie_title": "The Godfather",
+      "placeholder": "_NEEDS_ID_michael",
+      "fandom_wiki": "godfather",
+      "fandom_slug": "Michael_Corleone"
+    },
+    {
+      "name": "Vito Corleone",
+      "movie_id": "_NEEDS_MOVIE_ID_thegodfather",
+      "movie_title": "The Godfather",
+      "placeholder": "_NEEDS_ID_vito",
+      "fandom_wiki": "godfather",
+      "fandom_slug": "Vito_Corleone"
+    },
+    {
+      "name": "Joel Barish",
+      "movie_id": "_NEEDS_MOVIE_ID_eternalsunshineofthespotlessmind",
+      "movie_title": "Eternal Sunshine of the Spotless Mind",
+      "placeholder": "_NEEDS_ID_joel"
+    },
+    {
+      "name": "Clementine Kruczynski",
+      "movie_id": "_NEEDS_MOVIE_ID_eternalsunshineofthespotlessmind",
+      "movie_title": "Eternal Sunshine of the Spotless Mind",
+      "placeholder": "_NEEDS_ID_clementine"
+    },
+    {
+      "name": "Vincent Vega",
+      "movie_id": "_NEEDS_MOVIE_ID_pulpfiction",
+      "movie_title": "Pulp Fiction",
+      "placeholder": "_NEEDS_ID_vincent",
+      "fandom_wiki": "tarantino",
+      "fandom_slug": "Vincent_Vega"
+    },
+    {
+      "name": "Jules Winnfield",
+      "movie_id": "_NEEDS_MOVIE_ID_pulpfiction",
+      "movie_title": "Pulp Fiction",
+      "placeholder": "_NEEDS_ID_jules",
+      "fandom_wiki": "tarantino",
+      "fandom_slug": "Jules_Winnfield"
+    },
+    {
+      "name": "Mia Wallace",
+      "movie_id": "_NEEDS_MOVIE_ID_pulpfiction",
+      "movie_title": "Pulp Fiction",
+      "placeholder": "_NEEDS_ID_miawallace",
+      "fandom_wiki": "tarantino",
+      "fandom_slug": "Mia_Wallace"
+    },
+    {
+      "name": "Will Hunting",
+      "movie_id": "_NEEDS_MOVIE_ID_goodwillhunting",
+      "movie_title": "Good Will Hunting",
+      "placeholder": "_NEEDS_ID_will"
+    },
+    {
+      "name": "Sean Maguire",
+      "movie_id": "_NEEDS_MOVIE_ID_goodwillhunting",
+      "movie_title": "Good Will Hunting",
+      "placeholder": "_NEEDS_ID_sean"
+    },
+    {
+      "name": "Mark Zuckerberg",
+      "movie_id": "_NEEDS_MOVIE_ID_thesocialnetwork",
+      "movie_title": "The Social Network",
+      "placeholder": "_NEEDS_ID_mark"
+    },
+    {
+      "name": "Eduardo Saverin",
+      "movie_id": "_NEEDS_MOVIE_ID_thesocialnetwork",
+      "movie_title": "The Social Network",
+      "placeholder": "_NEEDS_ID_eduardo"
+    },
+    {
+      "name": "Nina Sayers",
+      "movie_id": "_NEEDS_MOVIE_ID_blackswan",
+      "movie_title": "Black Swan",
+      "placeholder": "_NEEDS_ID_nina"
+    },
+    {
+      "name": "Lily",
+      "movie_id": "_NEEDS_MOVIE_ID_blackswan",
+      "movie_title": "Black Swan",
+      "placeholder": "_NEEDS_ID_lily"
     }
   ],
   "relationships": [
@@ -166,6 +485,126 @@
       "character_id_a": "_NEEDS_ID_miguel",
       "character_id_b": "_NEEDS_ID_hector",
       "search_query": "Coco Miguel Hector relationship ancestor music"
+    },
+    {
+      "label": "Andrew & Fletcher",
+      "movie_id": "_NEEDS_MOVIE_ID_whiplash",
+      "character_id_a": "_NEEDS_ID_andrew",
+      "character_id_b": "_NEEDS_ID_fletcher",
+      "search_query": "Whiplash Andrew Neiman Terence Fletcher abusive mentorship dynamic",
+      "id": "29cfc1c4-8880-42f6-a539-8a491edef435"
+    },
+    {
+      "label": "Narrator & Tyler Durden",
+      "movie_id": "_NEEDS_MOVIE_ID_fightclub",
+      "character_id_a": "_NEEDS_ID_narrator",
+      "character_id_b": "_NEEDS_ID_tyler",
+      "search_query": "Fight Club Narrator Tyler Durden dual identity split personality"
+    },
+    {
+      "label": "Narrator & Marla",
+      "movie_id": "_NEEDS_MOVIE_ID_fightclub",
+      "character_id_a": "_NEEDS_ID_narrator",
+      "character_id_b": "_NEEDS_ID_marla",
+      "search_query": "Fight Club Narrator Marla Singer toxic codependency nihilism"
+    },
+    {
+      "label": "Dom & Mal",
+      "movie_id": "_NEEDS_MOVIE_ID_inception",
+      "character_id_a": "_NEEDS_ID_dom",
+      "character_id_b": "_NEEDS_ID_mal",
+      "search_query": "Inception Dom Cobb Mal Cobb guilt grief subconscious projection"
+    },
+    {
+      "label": "Neo & Morpheus",
+      "movie_id": "_NEEDS_MOVIE_ID_thematrix",
+      "character_id_a": "_NEEDS_ID_neo",
+      "character_id_b": "_NEEDS_ID_morpheus",
+      "search_query": "The Matrix Neo Morpheus mentorship faith prophecy"
+    },
+    {
+      "label": "Neo & Agent Smith",
+      "movie_id": "_NEEDS_MOVIE_ID_thematrix",
+      "character_id_a": "_NEEDS_ID_neo",
+      "character_id_b": "_NEEDS_ID_smith",
+      "search_query": "The Matrix Neo Agent Smith anomaly systemic opposition"
+    },
+    {
+      "label": "Oppenheimer & Strauss",
+      "movie_id": "_NEEDS_MOVIE_ID_oppenheimer",
+      "character_id_a": "_NEEDS_ID_oppenheimer",
+      "character_id_b": "_NEEDS_ID_strauss",
+      "search_query": "Oppenheimer Robert Oppenheimer Lewis Strauss political rivalry vindictiveness"
+    },
+    {
+      "label": "K & Joi",
+      "movie_id": "_NEEDS_MOVIE_ID_bladerunner2049",
+      "character_id_a": "_NEEDS_ID_k",
+      "character_id_b": "_NEEDS_ID_joi",
+      "search_query": "Blade Runner 2049 K and Joi artificial love intimacy hologram"
+    },
+    {
+      "label": "K & Deckard",
+      "movie_id": "_NEEDS_MOVIE_ID_bladerunner2049",
+      "character_id_a": "_NEEDS_ID_k",
+      "character_id_b": "_NEEDS_ID_deckard",
+      "search_query": "Blade Runner 2049 K and Rick Deckard purpose sacrifice"
+    },
+    {
+      "label": "Theodore & Samantha",
+      "movie_id": "_NEEDS_MOVIE_ID_her",
+      "character_id_a": "_NEEDS_ID_theodore",
+      "character_id_b": "_NEEDS_ID_samantha",
+      "search_query": "Her Theodore Samantha human AI intimacy loneliness heartbreak"
+    },
+    {
+      "label": "Miles & Peter B. Parker",
+      "movie_id": "_NEEDS_MOVIE_ID_spidermanintothespiderverse",
+      "character_id_a": "_NEEDS_ID_miles",
+      "character_id_b": "_NEEDS_ID_peter",
+      "search_query": "Spider-Verse Miles Morales Peter B Parker mentorship leap of faith"
+    },
+    {
+      "label": "Michael & Vito",
+      "movie_id": "_NEEDS_MOVIE_ID_thegodfather",
+      "character_id_a": "_NEEDS_ID_michael",
+      "character_id_b": "_NEEDS_ID_vito",
+      "search_query": "The Godfather Michael Corleone Vito Corleone father son legacy burden"
+    },
+    {
+      "label": "Joel & Clementine",
+      "movie_id": "_NEEDS_MOVIE_ID_eternalsunshineofthespotlessmind",
+      "character_id_a": "_NEEDS_ID_joel",
+      "character_id_b": "_NEEDS_ID_clementine",
+      "search_query": "Eternal Sunshine of the Spotless Mind Joel Clementine memory erasure heartbreak"
+    },
+    {
+      "label": "Vincent & Jules",
+      "movie_id": "_NEEDS_MOVIE_ID_pulpfiction",
+      "character_id_a": "_NEEDS_ID_vincent",
+      "character_id_b": "_NEEDS_ID_jules",
+      "search_query": "Pulp Fiction Vincent Vega Jules Winnfield partner dynamic divine intervention"
+    },
+    {
+      "label": "Will & Sean",
+      "movie_id": "_NEEDS_MOVIE_ID_goodwillhunting",
+      "character_id_a": "_NEEDS_ID_will",
+      "character_id_b": "_NEEDS_ID_sean",
+      "search_query": "Good Will Hunting Will Hunting Sean Maguire therapy breakthrough defense mechanism"
+    },
+    {
+      "label": "Mark & Eduardo",
+      "movie_id": "_NEEDS_MOVIE_ID_thesocialnetwork",
+      "character_id_a": "_NEEDS_ID_mark",
+      "character_id_b": "_NEEDS_ID_eduardo",
+      "search_query": "The Social Network Mark Zuckerberg Eduardo Saverin friendship betrayal dilution"
+    },
+    {
+      "label": "Nina & Lily",
+      "movie_id": "_NEEDS_MOVIE_ID_blackswan",
+      "character_id_a": "_NEEDS_ID_nina",
+      "character_id_b": "_NEEDS_ID_lily",
+      "search_query": "Black Swan Nina Sayers Lily rivalry obsession white swan black swan duality"
     }
   ],
   "songs": [
@@ -383,7 +822,7 @@
     },
     {
       "title": "BACK TO ME",
-      "artist": "\u00a5$, Kanye West, Ty Dolla $ign"
+      "artist": "¥$, Kanye West, Ty Dolla $ign"
     },
     {
       "title": "On BS",
@@ -794,7 +1233,7 @@
       "artist": "Pritam, Ash King, Clinton Cerejo"
     },
     {
-      "title": "Feel It (From \u201cInvincible\u201d)",
+      "title": "Feel It (From “Invincible”)",
       "artist": "d4vd"
     },
     {
@@ -867,7 +1306,7 @@
     },
     {
       "title": "FIELD TRIP",
-      "artist": "\u00a5$, Playboi Carti, Don Toliver, Kodak Black"
+      "artist": "¥$, Playboi Carti, Don Toliver, Kodak Black"
     },
     {
       "title": "FRANCHISE (feat. Young Thug & M.I.A.)",
@@ -1034,19 +1473,19 @@
       "artist": "DIVINE, Karan Aujla"
     },
     {
-      "title": "Lose My Mind (feat. Doja Cat) [From F1\u00ae The Movie]",
+      "title": "Lose My Mind (feat. Doja Cat) [From F1® The Movie]",
       "artist": "Don Toliver, Doja Cat, F1 The Album"
     },
     {
-      "title": "Bad As I Used To Be (From F1\u00ae The Movie)",
+      "title": "Bad As I Used To Be (From F1® The Movie)",
       "artist": "Chris Stapleton, F1 The Album"
     },
     {
-      "title": "Underdog (From F1\u00ae The Movie)",
+      "title": "Underdog (From F1® The Movie)",
       "artist": "Roddy Ricch, F1 The Album"
     },
     {
-      "title": "DOUBLE C - From F1\u00ae The Movie",
+      "title": "DOUBLE C - From F1® The Movie",
       "artist": "PAWSA, F1 The Album"
     },
     {
@@ -1107,7 +1546,7 @@
     },
     {
       "title": "Aadat Se Majboor",
-      "artist": "Salim\u2013Sulaiman, Benny Dayal, Ranveer Singh, Amitabh Bhattacharya"
+      "artist": "Salim–Sulaiman, Benny Dayal, Ranveer Singh, Amitabh Bhattacharya"
     },
     {
       "title": "Mauja Hi Mauja",
@@ -1163,7 +1602,7 @@
     },
     {
       "title": "Peaches (feat. Daniel Caesar & Giveon)",
-      "artist": "Justin Bieber, Daniel Caesar, GIV\u0112ON"
+      "artist": "Justin Bieber, Daniel Caesar, GIVĒON"
     },
     {
       "title": "So Be It",
@@ -1719,7 +2158,7 @@
     },
     {
       "title": "Destined For Greatness",
-      "artist": "Tobi & Manny, Janell\u00e9"
+      "artist": "Tobi & Manny, Janellé"
     },
     {
       "title": "pack up ya bags",
@@ -1827,11 +2266,2212 @@
     },
     {
       "title": "For Tonight",
-      "artist": "GIV\u0112ON"
+      "artist": "GIVĒON"
     },
     {
       "title": "Some of Your Love",
       "artist": "PARTYNEXTDOOR"
+    },
+    {
+      "title": "Time",
+      "artist": "Hans Zimmer"
+    },
+    {
+      "title": "Cornfield Chase",
+      "artist": "Hans Zimmer"
+    },
+    {
+      "title": "Experience",
+      "artist": "Ludovico Einaudi"
+    },
+    {
+      "title": "Nuvole Bianche",
+      "artist": "Ludovico Einaudi"
+    },
+    {
+      "title": "On the Nature of Daylight",
+      "artist": "Max Richter"
+    },
+    {
+      "title": "Mia & Sebastian's Theme",
+      "artist": "Justin Hurwitz"
+    },
+    {
+      "title": "Resonance",
+      "artist": "HOME"
+    },
+    {
+      "title": "Midnight City",
+      "artist": "M83"
+    },
+    {
+      "title": "Outro",
+      "artist": "M83"
+    },
+    {
+      "title": "Wait",
+      "artist": "M83"
+    },
+    {
+      "title": "Space Song",
+      "artist": "Beach House",
+      "id": "08b7a760-9a44-4aab-8ea8-dfa18f344739"
+    },
+    {
+      "title": "Myth",
+      "artist": "Beach House"
+    },
+    {
+      "title": "Silver Soul",
+      "artist": "Beach House"
+    },
+    {
+      "title": "Chamber of Reflection",
+      "artist": "Mac DeMarco"
+    },
+    {
+      "title": "My Kind of Woman",
+      "artist": "Mac DeMarco"
+    },
+    {
+      "title": "Apocalypse",
+      "artist": "Cigarettes After Sex"
+    },
+    {
+      "title": "K.",
+      "artist": "Cigarettes After Sex"
+    },
+    {
+      "title": "Cry",
+      "artist": "Cigarettes After Sex"
+    },
+    {
+      "title": "Sweet",
+      "artist": "Cigarettes After Sex"
+    },
+    {
+      "title": "Sunsetz",
+      "artist": "Cigarettes After Sex"
+    },
+    {
+      "title": "Glimpse of Us",
+      "artist": "Joji"
+    },
+    {
+      "title": "Slow Dancing in the Dark",
+      "artist": "Joji"
+    },
+    {
+      "title": "Die For You",
+      "artist": "Joji"
+    },
+    {
+      "title": "Sanctuary",
+      "artist": "Joji"
+    },
+    {
+      "title": "Video Games",
+      "artist": "Lana Del Rey"
+    },
+    {
+      "title": "Summertime Sadness",
+      "artist": "Lana Del Rey"
+    },
+    {
+      "title": "Young and Beautiful",
+      "artist": "Lana Del Rey"
+    },
+    {
+      "title": "Norman Fucking Rockwell",
+      "artist": "Lana Del Rey"
+    },
+    {
+      "title": "West Coast",
+      "artist": "Lana Del Rey"
+    },
+    {
+      "title": "Say Yes To Heaven",
+      "artist": "Lana Del Rey"
+    },
+    {
+      "title": "Born to Die",
+      "artist": "Lana Del Rey"
+    },
+    {
+      "title": "Ultraviolence",
+      "artist": "Lana Del Rey"
+    },
+    {
+      "title": "Sweater Weather",
+      "artist": "The Neighbourhood"
+    },
+    {
+      "title": "Daddy Issues",
+      "artist": "The Neighbourhood"
+    },
+    {
+      "title": "Softcore",
+      "artist": "The Neighbourhood"
+    },
+    {
+      "title": "Reflections",
+      "artist": "The Neighbourhood"
+    },
+    {
+      "title": "Lovers Rock",
+      "artist": "TV Girl"
+    },
+    {
+      "title": "Not Allowed",
+      "artist": "TV Girl"
+    },
+    {
+      "title": "Cigarettes out the Window",
+      "artist": "TV Girl"
+    },
+    {
+      "title": "My Love Mine All Mine",
+      "artist": "Mitski"
+    },
+    {
+      "title": "Washing Machine Heart",
+      "artist": "Mitski"
+    },
+    {
+      "title": "Francis Forever",
+      "artist": "Mitski"
+    },
+    {
+      "title": "First Love / Late Spring",
+      "artist": "Mitski"
+    },
+    {
+      "title": "Motion Sickness",
+      "artist": "Phoebe Bridgers"
+    },
+    {
+      "title": "Kyoto",
+      "artist": "Phoebe Bridgers"
+    },
+    {
+      "title": "I Know the End",
+      "artist": "Phoebe Bridgers"
+    },
+    {
+      "title": "Me and the Birds",
+      "artist": "Duster"
+    },
+    {
+      "title": "Inside Out",
+      "artist": "Duster"
+    },
+    {
+      "title": "Gilded Lily",
+      "artist": "Cults"
+    },
+    {
+      "title": "Romantic Homicide",
+      "artist": "d4vd"
+    },
+    {
+      "title": "Here With Me",
+      "artist": "d4vd"
+    },
+    {
+      "title": "Sofia",
+      "artist": "Clairo"
+    },
+    {
+      "title": "Bags",
+      "artist": "Clairo"
+    },
+    {
+      "title": "Ribs",
+      "artist": "Lorde"
+    },
+    {
+      "title": "Liability",
+      "artist": "Lorde"
+    },
+    {
+      "title": "Where Is My Mind?",
+      "artist": "Pixies"
+    },
+    {
+      "title": "Creep",
+      "artist": "Radiohead"
+    },
+    {
+      "title": "Karma Police",
+      "artist": "Radiohead"
+    },
+    {
+      "title": "No Surprises",
+      "artist": "Radiohead"
+    },
+    {
+      "title": "Exit Music (For a Film)",
+      "artist": "Radiohead"
+    },
+    {
+      "title": "Fake Plastic Trees",
+      "artist": "Radiohead"
+    },
+    {
+      "title": "There Is a Light That Never Goes Out",
+      "artist": "The Smiths"
+    },
+    {
+      "title": "This Charming Man",
+      "artist": "The Smiths"
+    },
+    {
+      "title": "505",
+      "artist": "Arctic Monkeys"
+    },
+    {
+      "title": "Do I Wanna Know?",
+      "artist": "Arctic Monkeys"
+    },
+    {
+      "title": "I Wanna Be Yours",
+      "artist": "Arctic Monkeys"
+    },
+    {
+      "title": "R U Mine?",
+      "artist": "Arctic Monkeys"
+    },
+    {
+      "title": "The Adults Are Talking",
+      "artist": "The Strokes"
+    },
+    {
+      "title": "Someday",
+      "artist": "The Strokes"
+    },
+    {
+      "title": "Heart-Shaped Box",
+      "artist": "Nirvana"
+    },
+    {
+      "title": "Come As You Are",
+      "artist": "Nirvana"
+    },
+    {
+      "title": "Something In The Way",
+      "artist": "Nirvana"
+    },
+    {
+      "title": "Cherry Waves",
+      "artist": "Deftones"
+    },
+    {
+      "title": "Change (In the House of Flies)",
+      "artist": "Deftones"
+    },
+    {
+      "title": "Be Quiet and Drive (Far Away)",
+      "artist": "Deftones"
+    },
+    {
+      "title": "Dreams",
+      "artist": "Fleetwood Mac"
+    },
+    {
+      "title": "The Chain",
+      "artist": "Fleetwood Mac"
+    },
+    {
+      "title": "Heroes",
+      "artist": "David Bowie"
+    },
+    {
+      "title": "Starman",
+      "artist": "David Bowie"
+    },
+    {
+      "title": "Space Oddity",
+      "artist": "David Bowie"
+    },
+    {
+      "title": "Under Pressure",
+      "artist": "Queen, David Bowie"
+    },
+    {
+      "title": "Don't Look Back In Anger",
+      "artist": "Oasis"
+    },
+    {
+      "title": "Champagne Supernova",
+      "artist": "Oasis"
+    },
+    {
+      "title": "Feel Good Inc.",
+      "artist": "Gorillaz"
+    },
+    {
+      "title": "On Melancholy Hill",
+      "artist": "Gorillaz"
+    },
+    {
+      "title": "Everlong",
+      "artist": "Foo Fighters"
+    },
+    {
+      "title": "Black Hole Sun",
+      "artist": "Soundgarden"
+    },
+    {
+      "title": "Iris",
+      "artist": "The Goo Goo Dolls"
+    },
+    {
+      "title": "In the End",
+      "artist": "Linkin Park"
+    },
+    {
+      "title": "Numb",
+      "artist": "Linkin Park"
+    },
+    {
+      "title": "Yellow",
+      "artist": "Coldplay"
+    },
+    {
+      "title": "Viva La Vida",
+      "artist": "Coldplay"
+    },
+    {
+      "title": "Somewhere Only We Know",
+      "artist": "Keane"
+    },
+    {
+      "title": "Another Love",
+      "artist": "Tom Odell"
+    },
+    {
+      "title": "Daylight",
+      "artist": "David Kushner"
+    },
+    {
+      "title": "Take Me to Church",
+      "artist": "Hozier"
+    },
+    {
+      "title": "Too Sweet",
+      "artist": "Hozier"
+    },
+    {
+      "title": "Nightcall",
+      "artist": "Kavinsky"
+    },
+    {
+      "title": "A Real Hero",
+      "artist": "College, Electric Youth"
+    },
+    {
+      "title": "Get Lucky",
+      "artist": "Daft Punk, Pharrell Williams, Nile Rodgers"
+    },
+    {
+      "title": "Instant Crush",
+      "artist": "Daft Punk, Julian Casablancas"
+    },
+    {
+      "title": "One More Time",
+      "artist": "Daft Punk"
+    },
+    {
+      "title": "Starboy",
+      "artist": "The Weeknd, Daft Punk"
+    },
+    {
+      "title": "The Hills",
+      "artist": "The Weeknd"
+    },
+    {
+      "title": "Call Out My Name",
+      "artist": "The Weeknd"
+    },
+    {
+      "title": "Wicked Games",
+      "artist": "The Weeknd"
+    },
+    {
+      "title": "I Was Never There",
+      "artist": "The Weeknd, Gesaffelstein"
+    },
+    {
+      "title": "Close Eyes",
+      "artist": "DVRST"
+    },
+    {
+      "title": "Murder In My Mind",
+      "artist": "KORDHELL"
+    },
+    {
+      "title": "METAMORPHOSIS",
+      "artist": "INTERWORLD"
+    },
+    {
+      "title": "Dark Beach",
+      "artist": "Pastel Ghost"
+    },
+    {
+      "title": "The Perfect Girl",
+      "artist": "Mareux"
+    },
+    {
+      "title": "Jealous",
+      "artist": "Eyedress"
+    },
+    {
+      "title": "Transgender",
+      "artist": "Crystal Castles"
+    },
+    {
+      "title": "Little Dark Age",
+      "artist": "MGMT"
+    },
+    {
+      "title": "Borderline",
+      "artist": "Tame Impala"
+    },
+    {
+      "title": "The Less I Know The Better",
+      "artist": "Tame Impala"
+    },
+    {
+      "title": "Let It Happen",
+      "artist": "Tame Impala"
+    },
+    {
+      "title": "New Person, Same Old Mistakes",
+      "artist": "Tame Impala"
+    },
+    {
+      "title": "What Was I Made For?",
+      "artist": "Billie Eilish"
+    },
+    {
+      "title": "BIRDS OF A FEATHER",
+      "artist": "Billie Eilish"
+    },
+    {
+      "title": "CHIHIRO",
+      "artist": "Billie Eilish"
+    },
+    {
+      "title": "WILDFLOWER",
+      "artist": "Billie Eilish"
+    },
+    {
+      "title": "Happier Than Ever",
+      "artist": "Billie Eilish"
+    },
+    {
+      "title": "LUNCH",
+      "artist": "Billie Eilish"
+    },
+    {
+      "title": "Espresso",
+      "artist": "Sabrina Carpenter"
+    },
+    {
+      "title": "Please Please Please",
+      "artist": "Sabrina Carpenter"
+    },
+    {
+      "title": "Taste",
+      "artist": "Sabrina Carpenter"
+    },
+    {
+      "title": "Good Luck, Babe!",
+      "artist": "Chappell Roan"
+    },
+    {
+      "title": "Pink Pony Club",
+      "artist": "Chappell Roan"
+    },
+    {
+      "title": "360",
+      "artist": "Charli xcx"
+    },
+    {
+      "title": "Apple",
+      "artist": "Charli xcx"
+    },
+    {
+      "title": "Kill Bill",
+      "artist": "SZA"
+    },
+    {
+      "title": "Snooze",
+      "artist": "SZA"
+    },
+    {
+      "title": "Good Days",
+      "artist": "SZA"
+    },
+    {
+      "title": "Nobody Gets Me",
+      "artist": "SZA"
+    },
+    {
+      "title": "Nights",
+      "artist": "Frank Ocean"
+    },
+    {
+      "title": "Ivy",
+      "artist": "Frank Ocean"
+    },
+    {
+      "title": "Self Control",
+      "artist": "Frank Ocean"
+    },
+    {
+      "title": "Best Part",
+      "artist": "Daniel Caesar, H.E.R."
+    },
+    {
+      "title": "Get You",
+      "artist": "Daniel Caesar, Kali Uchis"
+    },
+    {
+      "title": "Redbone",
+      "artist": "Childish Gambino"
+    },
+    {
+      "title": "Bad Habit",
+      "artist": "Steve Lacy"
+    },
+    {
+      "title": "Dark Red",
+      "artist": "Steve Lacy"
+    },
+    {
+      "title": "Static",
+      "artist": "Steve Lacy"
+    },
+    {
+      "title": "See You Again",
+      "artist": "Tyler, The Creator, Kali Uchis"
+    },
+    {
+      "title": "EARFQUAKE",
+      "artist": "Tyler, The Creator"
+    },
+    {
+      "title": "NEW MAGIC WAND",
+      "artist": "Tyler, The Creator"
+    },
+    {
+      "title": "ARE WE STILL FRIENDS?",
+      "artist": "Tyler, The Creator"
+    },
+    {
+      "title": "Not Like Us",
+      "artist": "Kendrick Lamar"
+    },
+    {
+      "title": "Euphoria",
+      "artist": "Kendrick Lamar"
+    },
+    {
+      "title": "Money Trees",
+      "artist": "Kendrick Lamar, Jay Rock"
+    },
+    {
+      "title": "PRIDE.",
+      "artist": "Kendrick Lamar"
+    },
+    {
+      "title": "All The Stars",
+      "artist": "Kendrick Lamar, SZA"
+    },
+    {
+      "title": "Runaway",
+      "artist": "Kanye West, Pusha T"
+    },
+    {
+      "title": "Ghost Town",
+      "artist": "Kanye West, PARTYNEXTDOOR"
+    },
+    {
+      "title": "MY EYES",
+      "artist": "Travis Scott"
+    },
+    {
+      "title": "TELEKINESIS",
+      "artist": "Travis Scott, SZA, Future"
+    },
+    {
+      "title": "FE!N",
+      "artist": "Travis Scott, Playboi Carti"
+    },
+    {
+      "title": "deja vu",
+      "artist": "Olivia Rodrigo"
+    },
+    {
+      "title": "vampire",
+      "artist": "Olivia Rodrigo"
+    },
+    {
+      "title": "traitor",
+      "artist": "Olivia Rodrigo"
+    },
+    {
+      "title": "Cruel Summer",
+      "artist": "Taylor Swift"
+    },
+    {
+      "title": "Anti-Hero",
+      "artist": "Taylor Swift"
+    },
+    {
+      "title": "Cardigan",
+      "artist": "Taylor Swift"
+    },
+    {
+      "title": "August",
+      "artist": "Taylor Swift"
+    },
+    {
+      "title": "Skyfall",
+      "artist": "Adele"
+    },
+    {
+      "title": "When the Sun Hits",
+      "artist": "Slowdive"
+    },
+    {
+      "title": "Alison",
+      "artist": "Slowdive"
+    },
+    {
+      "title": "Sugar for the Pill",
+      "artist": "Slowdive"
+    },
+    {
+      "title": "Sometimes",
+      "artist": "My Bloody Valentine"
+    },
+    {
+      "title": "Only Shallow",
+      "artist": "My Bloody Valentine"
+    },
+    {
+      "title": "Fade into You",
+      "artist": "Mazzy Star"
+    },
+    {
+      "title": "Look on Down from the Bridge",
+      "artist": "Mazzy Star"
+    },
+    {
+      "title": "Cherry-coloured Funk",
+      "artist": "Cocteau Twins"
+    },
+    {
+      "title": "Heaven or Las Vegas",
+      "artist": "Cocteau Twins"
+    },
+    {
+      "title": "Sea, Swallow Me",
+      "artist": "Cocteau Twins, Harold Budd"
+    },
+    {
+      "title": "Mary",
+      "artist": "Alex G"
+    },
+    {
+      "title": "Treehouse",
+      "artist": "Alex G"
+    },
+    {
+      "title": "Sarah",
+      "artist": "Alex G"
+    },
+    {
+      "title": "Stars Will Fall",
+      "artist": "Duster"
+    },
+    {
+      "title": "Stratosphere",
+      "artist": "Duster"
+    },
+    {
+      "title": "Master of None",
+      "artist": "Beach House"
+    },
+    {
+      "title": "Now We Are Free",
+      "artist": "Hans Zimmer, Lisa Gerrard"
+    },
+    {
+      "title": "Epilogue",
+      "artist": "Justin Hurwitz"
+    },
+    {
+      "title": "Planetarium",
+      "artist": "Justin Hurwitz"
+    },
+    {
+      "title": "City of Stars",
+      "artist": "Ryan Gosling, Emma Stone"
+    },
+    {
+      "title": "Merry-Go-Round of Life",
+      "artist": "Joe Hisaishi"
+    },
+    {
+      "title": "One Summer's Day",
+      "artist": "Joe Hisaishi"
+    },
+    {
+      "title": "Theme From Schindler's List",
+      "artist": "John Williams, Itzhak Perlman"
+    },
+    {
+      "title": "Love Theme from The Godfather",
+      "artist": "Nino Rota"
+    },
+    {
+      "title": "Clair de Lune",
+      "artist": "Claude Debussy"
+    },
+    {
+      "title": "Gymnopédie No. 1",
+      "artist": "Erik Satie"
+    },
+    {
+      "title": "Avril 14th",
+      "artist": "Aphex Twin"
+    },
+    {
+      "title": "Alberto Balsalm",
+      "artist": "Aphex Twin"
+    },
+    {
+      "title": "Rhubarb",
+      "artist": "Aphex Twin"
+    },
+    {
+      "title": "Lux Aeterna",
+      "artist": "Clint Mansell"
+    },
+    {
+      "title": "In the House - In a Heartbeat",
+      "artist": "John Murphy"
+    },
+    {
+      "title": "Merry Christmas Mr. Lawrence",
+      "artist": "Ryuichi Sakamoto"
+    },
+    {
+      "title": "Spiegel im Spiegel",
+      "artist": "Arvo Pärt"
+    },
+    {
+      "title": "No Time for Caution",
+      "artist": "Hans Zimmer"
+    },
+    {
+      "title": "Day One",
+      "artist": "Hans Zimmer"
+    },
+    {
+      "title": "First Step",
+      "artist": "Hans Zimmer"
+    },
+    {
+      "title": "Harder, Better, Faster, Stronger",
+      "artist": "Daft Punk"
+    },
+    {
+      "title": "Around the World",
+      "artist": "Daft Punk"
+    },
+    {
+      "title": "Get Lucky",
+      "artist": "Daft Punk, Pharrell Williams"
+    },
+    {
+      "title": "Something About Us",
+      "artist": "Daft Punk"
+    },
+    {
+      "title": "D.A.N.C.E.",
+      "artist": "Justice"
+    },
+    {
+      "title": "Genesis",
+      "artist": "Justice"
+    },
+    {
+      "title": "Innerbloom",
+      "artist": "RÜFÜS DU SOL"
+    },
+    {
+      "title": "On My Knees",
+      "artist": "RÜFÜS DU SOL"
+    },
+    {
+      "title": "Underwater",
+      "artist": "RÜFÜS DU SOL"
+    },
+    {
+      "title": "A Moment Apart",
+      "artist": "ODESZA"
+    },
+    {
+      "title": "Line Of Sight",
+      "artist": "ODESZA, WYNNE, Mansionair"
+    },
+    {
+      "title": "The Last Goodbye",
+      "artist": "ODESZA, Bettye LaVette"
+    },
+    {
+      "title": "Strobe",
+      "artist": "deadmau5"
+    },
+    {
+      "title": "Ghosts 'n' Stuff",
+      "artist": "deadmau5, Rob Swire"
+    },
+    {
+      "title": "Teardrop",
+      "artist": "Massive Attack"
+    },
+    {
+      "title": "Angel",
+      "artist": "Massive Attack"
+    },
+    {
+      "title": "Glory Box",
+      "artist": "Portishead"
+    },
+    {
+      "title": "Roads",
+      "artist": "Portishead"
+    },
+    {
+      "title": "Archangel",
+      "artist": "Burial"
+    },
+    {
+      "title": "Open Eye Signal",
+      "artist": "Jon Hopkins"
+    },
+    {
+      "title": "Take Me Out",
+      "artist": "Franz Ferdinand"
+    },
+    {
+      "title": "Obstacle 1",
+      "artist": "Interpol"
+    },
+    {
+      "title": "Evil",
+      "artist": "Interpol"
+    },
+    {
+      "title": "PDA",
+      "artist": "Interpol"
+    },
+    {
+      "title": "Crying Lightning",
+      "artist": "Arctic Monkeys"
+    },
+    {
+      "title": "Fluorescent Adolescent",
+      "artist": "Arctic Monkeys"
+    },
+    {
+      "title": "Cornerstone",
+      "artist": "Arctic Monkeys"
+    },
+    {
+      "title": "Why'd You Only Call Me When You're High?",
+      "artist": "Arctic Monkeys"
+    },
+    {
+      "title": "Knee Socks",
+      "artist": "Arctic Monkeys"
+    },
+    {
+      "title": "Reptilia",
+      "artist": "The Strokes"
+    },
+    {
+      "title": "Hard to Explain",
+      "artist": "The Strokes"
+    },
+    {
+      "title": "Under Cover of Darkness",
+      "artist": "The Strokes"
+    },
+    {
+      "title": "Last Nite",
+      "artist": "The Strokes"
+    },
+    {
+      "title": "Maps",
+      "artist": "Yeah Yeah Yeahs"
+    },
+    {
+      "title": "Heads Will Roll",
+      "artist": "Yeah Yeah Yeahs"
+    },
+    {
+      "title": "Bitter Sweet Symphony",
+      "artist": "The Verve"
+    },
+    {
+      "title": "Seven Nation Army",
+      "artist": "The White Stripes"
+    },
+    {
+      "title": "Sex, Drugs, Etc.",
+      "artist": "Beach Weather"
+    },
+    {
+      "title": "Freaks",
+      "artist": "Surf Curse"
+    },
+    {
+      "title": "Disco",
+      "artist": "Surf Curse"
+    },
+    {
+      "title": "Notion",
+      "artist": "The Rare Occasions"
+    },
+    {
+      "title": "Line Without a Hook",
+      "artist": "Ricky Montgomery"
+    },
+    {
+      "title": "Mr Loverman",
+      "artist": "Ricky Montgomery"
+    },
+    {
+      "title": "Tongue Tied",
+      "artist": "Grouplove"
+    },
+    {
+      "title": "Young Folks",
+      "artist": "Peter Bjorn and John"
+    },
+    {
+      "title": "Kids",
+      "artist": "MGMT"
+    },
+    {
+      "title": "Electric Feel",
+      "artist": "MGMT"
+    },
+    {
+      "title": "Time to Pretend",
+      "artist": "MGMT"
+    },
+    {
+      "title": "Float On",
+      "artist": "Modest Mouse"
+    },
+    {
+      "title": "Pumped Up Kicks",
+      "artist": "Foster The People"
+    },
+    {
+      "title": "Sit Next to Me",
+      "artist": "Foster The People"
+    },
+    {
+      "title": "Walking On A Dream",
+      "artist": "Empire of the Sun"
+    },
+    {
+      "title": "Sudno (Boris Ryzhy)",
+      "artist": "Molchat Doma"
+    },
+    {
+      "title": "Toska",
+      "artist": "Molchat Doma"
+    },
+    {
+      "title": "Kletka",
+      "artist": "Molchat Doma"
+    },
+    {
+      "title": "After Dark",
+      "artist": "Mr.Kitty"
+    },
+    {
+      "title": "Genesis",
+      "artist": "Grimes"
+    },
+    {
+      "title": "Oblivion",
+      "artist": "Grimes"
+    },
+    {
+      "title": "Disorder",
+      "artist": "Joy Division"
+    },
+    {
+      "title": "Love Will Tear Us Apart",
+      "artist": "Joy Division"
+    },
+    {
+      "title": "Shadowplay",
+      "artist": "Joy Division"
+    },
+    {
+      "title": "Blue Monday",
+      "artist": "New Order"
+    },
+    {
+      "title": "Bizarre Love Triangle",
+      "artist": "New Order"
+    },
+    {
+      "title": "Age of Consent",
+      "artist": "New Order"
+    },
+    {
+      "title": "Ceremony",
+      "artist": "New Order"
+    },
+    {
+      "title": "Spellbound",
+      "artist": "Siouxsie and the Banshees"
+    },
+    {
+      "title": "Cities in Dust",
+      "artist": "Siouxsie and the Banshees"
+    },
+    {
+      "title": "Just Like Heaven",
+      "artist": "The Cure"
+    },
+    {
+      "title": "Pictures of You",
+      "artist": "The Cure"
+    },
+    {
+      "title": "Boys Don't Cry",
+      "artist": "The Cure"
+    },
+    {
+      "title": "Lovesong",
+      "artist": "The Cure"
+    },
+    {
+      "title": "A Forest",
+      "artist": "The Cure"
+    },
+    {
+      "title": "Lithium",
+      "artist": "Nirvana"
+    },
+    {
+      "title": "Fell on Black Days",
+      "artist": "Soundgarden"
+    },
+    {
+      "title": "Nutshell",
+      "artist": "Alice In Chains"
+    },
+    {
+      "title": "Rooster",
+      "artist": "Alice In Chains"
+    },
+    {
+      "title": "Man in the Box",
+      "artist": "Alice In Chains"
+    },
+    {
+      "title": "Down in a Hole",
+      "artist": "Alice In Chains"
+    },
+    {
+      "title": "Black",
+      "artist": "Pearl Jam"
+    },
+    {
+      "title": "Alive",
+      "artist": "Pearl Jam"
+    },
+    {
+      "title": "Even Flow",
+      "artist": "Pearl Jam"
+    },
+    {
+      "title": "Sextape",
+      "artist": "Deftones"
+    },
+    {
+      "title": "My Own Summer (Shove It)",
+      "artist": "Deftones"
+    },
+    {
+      "title": "Rosemary",
+      "artist": "Deftones"
+    },
+    {
+      "title": "Faint",
+      "artist": "Linkin Park"
+    },
+    {
+      "title": "Crawling",
+      "artist": "Linkin Park"
+    },
+    {
+      "title": "Somewhere I Belong",
+      "artist": "Linkin Park"
+    },
+    {
+      "title": "Breaking the Habit",
+      "artist": "Linkin Park"
+    },
+    {
+      "title": "Chop Suey!",
+      "artist": "System of a Down"
+    },
+    {
+      "title": "Toxicity",
+      "artist": "System of a Down"
+    },
+    {
+      "title": "Aerials",
+      "artist": "System of a Down"
+    },
+    {
+      "title": "The Pretender",
+      "artist": "Foo Fighters"
+    },
+    {
+      "title": "Best of You",
+      "artist": "Foo Fighters"
+    },
+    {
+      "title": "Bring Me To Life",
+      "artist": "Evanescence"
+    },
+    {
+      "title": "My Immortal",
+      "artist": "Evanescence"
+    },
+    {
+      "title": "Basket Case",
+      "artist": "Green Day"
+    },
+    {
+      "title": "Boulevard of Broken Dreams",
+      "artist": "Green Day"
+    },
+    {
+      "title": "Wake Me up When September Ends",
+      "artist": "Green Day"
+    },
+    {
+      "title": "All the Small Things",
+      "artist": "blink-182"
+    },
+    {
+      "title": "I Miss You",
+      "artist": "blink-182"
+    },
+    {
+      "title": "Paranoid Android",
+      "artist": "Radiohead"
+    },
+    {
+      "title": "High and Dry",
+      "artist": "Radiohead"
+    },
+    {
+      "title": "Jigsaw Falling Into Place",
+      "artist": "Radiohead"
+    },
+    {
+      "title": "Weird Fishes/ Arpeggi",
+      "artist": "Radiohead"
+    },
+    {
+      "title": "Don't Stop Me Now",
+      "artist": "Queen"
+    },
+    {
+      "title": "Comfortably Numb",
+      "artist": "Pink Floyd"
+    },
+    {
+      "title": "Wish You Were Here",
+      "artist": "Pink Floyd"
+    },
+    {
+      "title": "Time",
+      "artist": "Pink Floyd"
+    },
+    {
+      "title": "Money",
+      "artist": "Pink Floyd"
+    },
+    {
+      "title": "Stairway to Heaven",
+      "artist": "Led Zeppelin"
+    },
+    {
+      "title": "Kashmir",
+      "artist": "Led Zeppelin"
+    },
+    {
+      "title": "Whole Lotta Love",
+      "artist": "Led Zeppelin"
+    },
+    {
+      "title": "Go Your Own Way",
+      "artist": "Fleetwood Mac"
+    },
+    {
+      "title": "Landslide",
+      "artist": "Fleetwood Mac"
+    },
+    {
+      "title": "Life on Mars?",
+      "artist": "David Bowie"
+    },
+    {
+      "title": "Let's Dance",
+      "artist": "David Bowie"
+    },
+    {
+      "title": "Paint It, Black",
+      "artist": "The Rolling Stones"
+    },
+    {
+      "title": "Sympathy For The Devil",
+      "artist": "The Rolling Stones"
+    },
+    {
+      "title": "Wonderwall",
+      "artist": "Oasis"
+    },
+    {
+      "title": "With or Without You",
+      "artist": "U2"
+    },
+    {
+      "title": "Sunday Bloody Sunday",
+      "artist": "U2"
+    },
+    {
+      "title": "Losing My Religion",
+      "artist": "R.E.M."
+    },
+    {
+      "title": "Smooth Criminal",
+      "artist": "Michael Jackson"
+    },
+    {
+      "title": "Purple Rain",
+      "artist": "Prince"
+    },
+    {
+      "title": "When Doves Cry",
+      "artist": "Prince"
+    },
+    {
+      "title": "Careless Whisper",
+      "artist": "George Michael"
+    },
+    {
+      "title": "In the Air Tonight",
+      "artist": "Phil Collins"
+    },
+    {
+      "title": "Rocket Man",
+      "artist": "Elton John"
+    },
+    {
+      "title": "Tiny Dancer",
+      "artist": "Elton John"
+    },
+    {
+      "title": "everything i wanted",
+      "artist": "Billie Eilish"
+    },
+    {
+      "title": "when the party's over",
+      "artist": "Billie Eilish"
+    },
+    {
+      "title": "Royals",
+      "artist": "Lorde"
+    },
+    {
+      "title": "Green Light",
+      "artist": "Lorde"
+    },
+    {
+      "title": "Supercut",
+      "artist": "Lorde"
+    },
+    {
+      "title": "Solar Power",
+      "artist": "Lorde"
+    },
+    {
+      "title": "Doin' Time",
+      "artist": "Lana Del Rey"
+    },
+    {
+      "title": "A&W",
+      "artist": "Lana Del Rey"
+    },
+    {
+      "title": "Save Your Tears",
+      "artist": "The Weeknd"
+    },
+    {
+      "title": "Can't Feel My Face",
+      "artist": "The Weeknd"
+    },
+    {
+      "title": "Die For You",
+      "artist": "The Weeknd"
+    },
+    {
+      "title": "Don't Start Now",
+      "artist": "Dua Lipa"
+    },
+    {
+      "title": "Houdini",
+      "artist": "Dua Lipa"
+    },
+    {
+      "title": "Blank Space",
+      "artist": "Taylor Swift"
+    },
+    {
+      "title": "Sign of the Times",
+      "artist": "Harry Styles"
+    },
+    {
+      "title": "Broken Clocks",
+      "artist": "SZA"
+    },
+    {
+      "title": "YEAH RIGHT",
+      "artist": "Joji"
+    },
+    {
+      "title": "Nobody",
+      "artist": "Mitski"
+    },
+    {
+      "title": "Pretty Girl",
+      "artist": "Clairo"
+    },
+    {
+      "title": "Freaking Out the Neighborhood",
+      "artist": "Mac DeMarco"
+    },
+    {
+      "title": "Les",
+      "artist": "Childish Gambino"
+    },
+    {
+      "title": "Heartbeat",
+      "artist": "Childish Gambino"
+    },
+    {
+      "title": "Telepatía",
+      "artist": "Kali Uchis"
+    },
+    {
+      "title": "Melting",
+      "artist": "Kali Uchis"
+    },
+    {
+      "title": "Moonlight",
+      "artist": "Kali Uchis"
+    },
+    {
+      "title": "After the Storm",
+      "artist": "Kali Uchis, Tyler, The Creator, Bootsy Collins"
+    },
+    {
+      "title": "Get You The Moon",
+      "artist": "Kina, Snøw"
+    },
+    {
+      "title": "Jocelyn Flores",
+      "artist": "XXXTENTACION"
+    },
+    {
+      "title": "SAD!",
+      "artist": "XXXTENTACION"
+    },
+    {
+      "title": "Moonlight",
+      "artist": "XXXTENTACION"
+    },
+    {
+      "title": "Revenge",
+      "artist": "XXXTENTACION"
+    },
+    {
+      "title": "Robbery",
+      "artist": "Juice WRLD"
+    },
+    {
+      "title": "Wishing Well",
+      "artist": "Juice WRLD"
+    },
+    {
+      "title": "Lean Wit Me",
+      "artist": "Juice WRLD"
+    },
+    {
+      "title": "Righteous",
+      "artist": "Juice WRLD"
+    },
+    {
+      "title": "PRBLMS",
+      "artist": "6LACK"
+    },
+    {
+      "title": "Exchange",
+      "artist": "Bryson Tiller"
+    },
+    {
+      "title": "Don't",
+      "artist": "Bryson Tiller"
+    },
+    {
+      "title": "White Ferrari",
+      "artist": "Frank Ocean"
+    },
+    {
+      "title": "Godspeed",
+      "artist": "Frank Ocean"
+    },
+    {
+      "title": "Pyramids",
+      "artist": "Frank Ocean"
+    },
+    {
+      "title": "Super Rich Kids",
+      "artist": "Frank Ocean, Earl Sweatshirt"
+    },
+    {
+      "title": "Chanel",
+      "artist": "Frank Ocean"
+    },
+    {
+      "title": "m.A.A.d city",
+      "artist": "Kendrick Lamar, MC Eiht"
+    },
+    {
+      "title": "Bitch, Don't Kill My Vibe",
+      "artist": "Kendrick Lamar"
+    },
+    {
+      "title": "Swimming Pools (Drank)",
+      "artist": "Kendrick Lamar"
+    },
+    {
+      "title": "King Kunta",
+      "artist": "Kendrick Lamar"
+    },
+    {
+      "title": "FEEL.",
+      "artist": "Kendrick Lamar"
+    },
+    {
+      "title": "Father Time",
+      "artist": "Kendrick Lamar, Sampha"
+    },
+    {
+      "title": "United In Grief",
+      "artist": "Kendrick Lamar"
+    },
+    {
+      "title": "Alright",
+      "artist": "Kendrick Lamar"
+    },
+    {
+      "title": "90210",
+      "artist": "Travis Scott, Kacy Hill"
+    },
+    {
+      "title": "Antidote",
+      "artist": "Travis Scott"
+    },
+    {
+      "title": "Goosebumps",
+      "artist": "Travis Scott, Kendrick Lamar"
+    },
+    {
+      "title": "SICKO MODE",
+      "artist": "Travis Scott, Drake"
+    },
+    {
+      "title": "STARGAZING",
+      "artist": "Travis Scott"
+    },
+    {
+      "title": "HIGHEST IN THE ROOM",
+      "artist": "Travis Scott"
+    },
+    {
+      "title": "SKELETONS",
+      "artist": "Travis Scott"
+    },
+    {
+      "title": "ASTROTHUNDER",
+      "artist": "Travis Scott"
+    },
+    {
+      "title": "I KNOW ?",
+      "artist": "Travis Scott"
+    },
+    {
+      "title": "Wet Dreamz",
+      "artist": "J. Cole"
+    },
+    {
+      "title": "G.O.M.D.",
+      "artist": "J. Cole"
+    },
+    {
+      "title": "MIDDLE CHILD",
+      "artist": "J. Cole"
+    },
+    {
+      "title": "Love Yourz",
+      "artist": "J. Cole"
+    },
+    {
+      "title": "POWER",
+      "artist": "Kanye West"
+    },
+    {
+      "title": "All of the Lights",
+      "artist": "Kanye West"
+    },
+    {
+      "title": "Devil in a New Dress",
+      "artist": "Kanye West, Rick Ross"
+    },
+    {
+      "title": "Blood on the Leaves",
+      "artist": "Kanye West"
+    },
+    {
+      "title": "Ultralight Beam",
+      "artist": "Kanye West"
+    },
+    {
+      "title": "Violent Crimes",
+      "artist": "Kanye West"
+    },
+    {
+      "title": "Praise God",
+      "artist": "Kanye West"
+    },
+    {
+      "title": "Off The Grid",
+      "artist": "Kanye West"
+    },
+    {
+      "title": "God's Plan",
+      "artist": "Drake"
+    },
+    {
+      "title": "Marvins Room",
+      "artist": "Drake"
+    },
+    {
+      "title": "Nonstop",
+      "artist": "Drake"
+    },
+    {
+      "title": "Type Shit",
+      "artist": "Future, Metro Boomin, Travis Scott, Playboi Carti"
+    },
+    {
+      "title": "Creepin'",
+      "artist": "Metro Boomin, The Weeknd, 21 Savage"
+    },
+    {
+      "title": "Superhero (Heroes & Villains)",
+      "artist": "Metro Boomin, Future, Chris Brown"
+    },
+    {
+      "title": "Magnolia",
+      "artist": "Playboi Carti"
+    },
+    {
+      "title": "Sky",
+      "artist": "Playboi Carti"
+    },
+    {
+      "title": "Shoota",
+      "artist": "Playboi Carti, Lil Uzi Vert"
+    },
+    {
+      "title": "XO Tour Llif3",
+      "artist": "Lil Uzi Vert"
+    },
+    {
+      "title": "Rockstar",
+      "artist": "Post Malone, 21 Savage"
+    },
+    {
+      "title": "Congratulations",
+      "artist": "Post Malone, Quavo"
+    },
+    {
+      "title": "Sunflower",
+      "artist": "Post Malone, Swae Lee"
+    },
+    {
+      "title": "Praise The Lord (Da Shine)",
+      "artist": "A$AP Rocky, Skepta"
+    },
+    {
+      "title": "L$D",
+      "artist": "A$AP Rocky"
+    },
+    {
+      "title": "Sundress",
+      "artist": "A$AP Rocky"
+    },
+    {
+      "title": "Day 'N' Nite",
+      "artist": "Kid Cudi"
+    },
+    {
+      "title": "Pursuit Of Happiness",
+      "artist": "Kid Cudi, MGMT, Ratatat"
+    },
+    {
+      "title": "Self Care",
+      "artist": "Mac Miller"
+    },
+    {
+      "title": "Good News",
+      "artist": "Mac Miller"
+    },
+    {
+      "title": "Apsara",
+      "artist": "Seedhe Maut"
+    },
+    {
+      "title": "Nanchaku",
+      "artist": "Seedhe Maut, MC STAN"
+    },
+    {
+      "title": "Namastute",
+      "artist": "Seedhe Maut"
+    },
+    {
+      "title": "101",
+      "artist": "Seedhe Maut"
+    },
+    {
+      "title": "Khatta Sadha",
+      "artist": "Seedhe Maut"
+    },
+    {
+      "title": "Lukka Chippi",
+      "artist": "Seedhe Maut"
+    },
+    {
+      "title": "Batti",
+      "artist": "Seedhe Maut"
+    },
+    {
+      "title": "Maina",
+      "artist": "Seedhe Maut"
+    },
+    {
+      "title": "Kodak",
+      "artist": "Seedhe Maut"
+    },
+    {
+      "title": "Tour Shit",
+      "artist": "Seedhe Maut"
+    },
+    {
+      "title": "Lunch Break",
+      "artist": "Seedhe Maut"
+    },
+    {
+      "title": "Khatta Meetha",
+      "artist": "Seedhe Maut"
+    },
+    {
+      "title": "Hola Amigo",
+      "artist": "KR$NA, Seedhe Maut"
+    },
+    {
+      "title": "Prarthana",
+      "artist": "KR$NA"
+    },
+    {
+      "title": "Say My Name",
+      "artist": "KR$NA"
+    },
+    {
+      "title": "Still Here (Intro)",
+      "artist": "KR$NA"
+    },
+    {
+      "title": "Living Legend",
+      "artist": "KR$NA, Rashmeet Kaur"
+    },
+    {
+      "title": "OG",
+      "artist": "KR$NA"
+    },
+    {
+      "title": "No Cap",
+      "artist": "KR$NA"
+    },
+    {
+      "title": "I Guess",
+      "artist": "KR$NA"
+    },
+    {
+      "title": "Makasam",
+      "artist": "KR$NA"
+    },
+    {
+      "title": "Downers At Dusk",
+      "artist": "Talha Anjum, Umair"
+    },
+    {
+      "title": "Desperation",
+      "artist": "Talha Anjum, Umair"
+    },
+    {
+      "title": "Happy Hour",
+      "artist": "Talha Anjum"
+    },
+    {
+      "title": "Open Letter",
+      "artist": "Talha Anjum"
+    },
+    {
+      "title": "Glass Half Full",
+      "artist": "Talhah Yunus, Talha Anjum, JJ47"
+    },
+    {
+      "title": "Agency",
+      "artist": "Talha Anjum, Rap Demon"
+    },
+    {
+      "title": "Gumaan",
+      "artist": "Young Stunners"
+    },
+    {
+      "title": "Afsanay",
+      "artist": "Young Stunners"
+    },
+    {
+      "title": "Don't Mind",
+      "artist": "Young Stunners, Rap Demon"
+    },
+    {
+      "title": "Why",
+      "artist": "Young Stunners"
+    },
+    {
+      "title": "Two Tone",
+      "artist": "Young Stunners"
+    },
+    {
+      "title": "Balli Aur Mein",
+      "artist": "Talha Anjum"
+    },
+    {
+      "title": "295",
+      "artist": "Sidhu Moose Wala"
+    },
+    {
+      "title": "The Last Ride",
+      "artist": "Sidhu Moose Wala"
+    },
+    {
+      "title": "Never Fold",
+      "artist": "Sidhu Moose Wala, Sunny Malton"
+    },
+    {
+      "title": "Same Beef",
+      "artist": "Bohemia, Sidhu Moose Wala"
+    },
+    {
+      "title": "Levels",
+      "artist": "Sidhu Moose Wala, Sunny Malton"
+    },
+    {
+      "title": "Winning Speech",
+      "artist": "Karan Aujla"
+    },
+    {
+      "title": "White Brown Black",
+      "artist": "Karan Aujla, Avvy Sra"
+    },
+    {
+      "title": "Tauba Tauba",
+      "artist": "Karan Aujla"
+    },
+    {
+      "title": "52 Bars",
+      "artist": "Karan Aujla, Ikky"
+    },
+    {
+      "title": "Admirin' You",
+      "artist": "Karan Aujla, Preston Pablo, Ikky"
+    },
+    {
+      "title": "Jaadugar",
+      "artist": "Paradox"
+    },
+    {
+      "title": "Basti Ka Hasti",
+      "artist": "MC STAN"
+    },
+    {
+      "title": "Ek Din Pyaar",
+      "artist": "MC STAN"
+    },
+    {
+      "title": "Tadipaar",
+      "artist": "MC STAN"
+    },
+    {
+      "title": "Kaabil",
+      "artist": "Chaar Diwaari"
+    },
+    {
+      "title": "Barood",
+      "artist": "Chaar Diwaari"
+    },
+    {
+      "title": "Mera Saman Kahan Hai",
+      "artist": "Chaar Diwaari"
+    },
+    {
+      "title": "Roshni",
+      "artist": "Chaar Diwaari, Bhappa"
+    },
+    {
+      "title": "Hass Hass",
+      "artist": "Diljit Dosanjh, Sia"
+    },
+    {
+      "title": "Naina",
+      "artist": "Diljit Dosanjh, Badshah"
+    },
+    {
+      "title": "Lover",
+      "artist": "Diljit Dosanjh"
+    },
+    {
+      "title": "Kinni Kinni",
+      "artist": "Diljit Dosanjh"
+    },
+    {
+      "title": "Lemonade",
+      "artist": "Diljit Dosanjh"
+    },
+    {
+      "title": "Peaches",
+      "artist": "Diljit Dosanjh"
+    },
+    {
+      "title": "Clash",
+      "artist": "Diljit Dosanjh"
+    },
+    {
+      "title": "GOAT",
+      "artist": "Diljit Dosanjh"
+    },
+    {
+      "title": "Faasle",
+      "artist": "Aditya Rikhari"
+    },
+    {
+      "title": "Samjho Na",
+      "artist": "Aditya Rikhari"
+    },
+    {
+      "title": "Tu Hai Kahan",
+      "artist": "AUR"
+    },
+    {
+      "title": "Shikayat",
+      "artist": "AUR"
+    },
+    {
+      "title": "Khabar",
+      "artist": "AUR"
+    },
+    {
+      "title": "Gul",
+      "artist": "Anuv Jain"
+    },
+    {
+      "title": "Baarishein",
+      "artist": "Anuv Jain"
+    },
+    {
+      "title": "Alag Aasmaan",
+      "artist": "Anuv Jain"
+    },
+    {
+      "title": "Mishri",
+      "artist": "Anuv Jain"
+    },
+    {
+      "title": "Husn",
+      "artist": "Anuv Jain"
+    },
+    {
+      "title": "Choo Lo",
+      "artist": "The Local Train"
+    },
+    {
+      "title": "Aaoge Tum Kabhi",
+      "artist": "The Local Train"
+    },
+    {
+      "title": "Aaftaab",
+      "artist": "The Local Train"
+    },
+    {
+      "title": "Dil Mere",
+      "artist": "The Local Train"
+    },
+    {
+      "title": "Khudi",
+      "artist": "The Local Train"
+    },
+    {
+      "title": "Kasoor",
+      "artist": "Prateek Kuhad"
+    },
+    {
+      "title": "cold/mess",
+      "artist": "Prateek Kuhad"
+    },
+    {
+      "title": "Tum Jab Paas",
+      "artist": "Prateek Kuhad"
+    },
+    {
+      "title": "Kun Faya Kun",
+      "artist": "A.R. Rahman, Javed Ali, Mohit Chauhan"
+    },
+    {
+      "title": "Nadaan Parinde",
+      "artist": "A.R. Rahman, Mohit Chauhan"
+    },
+    {
+      "title": "Jo Bhi Main",
+      "artist": "Mohit Chauhan"
+    },
+    {
+      "title": "Phir Se Ud Chala",
+      "artist": "Mohit Chauhan"
+    },
+    {
+      "title": "Tum Ho",
+      "artist": "Mohit Chauhan, Suzanne D'Mello"
+    },
+    {
+      "title": "Hawaa Hawaa",
+      "artist": "Mohit Chauhan"
+    },
+    {
+      "title": "Dil Se Re",
+      "artist": "A.R. Rahman, Anuradha Sriram, Anupama"
+    },
+    {
+      "title": "Chaiyya Chaiyya",
+      "artist": "Sukhwinder Singh, Sapna Awasthi"
+    },
+    {
+      "title": "Khwaja Mere Khwaja",
+      "artist": "A.R. Rahman"
+    },
+    {
+      "title": "Tere Bina",
+      "artist": "A.R. Rahman, Chinmayi, Murtuza Khan, Qadir Khan"
+    },
+    {
+      "title": "Maa Tujhe Salaam",
+      "artist": "A.R. Rahman"
+    },
+    {
+      "title": "Lukka Chuppi",
+      "artist": "Lata Mangeshkar, A.R. Rahman"
+    },
+    {
+      "title": "Tum Hi Ho",
+      "artist": "Arijit Singh"
+    },
+    {
+      "title": "Channa Mereya",
+      "artist": "Arijit Singh"
+    },
+    {
+      "title": "Agar Tum Saath Ho",
+      "artist": "Alka Yagnik, Arijit Singh"
+    },
+    {
+      "title": "Ae Dil Hai Mushkil",
+      "artist": "Arijit Singh"
+    },
+    {
+      "title": "Kabira",
+      "artist": "Tochi Raina, Rekha Bhardwaj"
+    },
+    {
+      "title": "Illahi",
+      "artist": "Arijit Singh"
+    },
+    {
+      "title": "Balam Pichkari",
+      "artist": "Vishal Dadlani, Shalmali Kholgade"
+    },
+    {
+      "title": "Subhanallah",
+      "artist": "Sreerama Chandra, Shilpa Rao"
+    },
+    {
+      "title": "Iktara",
+      "artist": "Kavita Seth, Amitabh Bhattacharya"
+    },
+    {
+      "title": "Namo Namo",
+      "artist": "Amit Trivedi"
+    },
+    {
+      "title": "Pardesiya",
+      "artist": "Amit Trivedi, Tochi Raina"
+    },
+    {
+      "title": "Ek Pal Ka Jeena",
+      "artist": "Lucky Ali"
+    },
+    {
+      "title": "Na Tum Jano Na Hum",
+      "artist": "Lucky Ali"
+    },
+    {
+      "title": "Hairat",
+      "artist": "Lucky Ali"
+    },
+    {
+      "title": "Pehla Nasha",
+      "artist": "Udit Narayan, Sadhana Sargam"
+    },
+    {
+      "title": "Tujhe Dekha Toh",
+      "artist": "Kumar Sanu, Lata Mangeshkar"
+    },
+    {
+      "title": "Kal Ho Naa Ho",
+      "artist": "Sonu Nigam"
+    },
+    {
+      "title": "Abhi Mujh Mein Kahin",
+      "artist": "Sonu Nigam"
+    },
+    {
+      "title": "Mitwa",
+      "artist": "Shafqat Amanat Ali, Shankar Mahadevan, Caralisa Monteiro"
+    },
+    {
+      "title": "Tere Naina",
+      "artist": "Shafqat Amanat Ali"
+    },
+    {
+      "title": "Aankhon Mein Teri",
+      "artist": "KK"
+    },
+    {
+      "title": "Zara Sa",
+      "artist": "KK"
+    },
+    {
+      "title": "Kya Mujhe Pyaar Hai",
+      "artist": "KK"
+    },
+    {
+      "title": "Beete Lamhein",
+      "artist": "KK"
+    },
+    {
+      "title": "Alvida",
+      "artist": "KK"
+    },
+    {
+      "title": "Labon Ko",
+      "artist": "KK"
+    },
+    {
+      "title": "Yaaron",
+      "artist": "KK"
+    },
+    {
+      "title": "Pal",
+      "artist": "KK"
+    },
+    {
+      "title": "Afreen Afreen",
+      "artist": "Rahat Fateh Ali Khan, Momina Mustehsan"
+    },
+    {
+      "title": "Tajdar-e-Haram",
+      "artist": "Atif Aslam"
+    },
+    {
+      "title": "Aadat",
+      "artist": "Atif Aslam"
+    },
+    {
+      "title": "Woh Lamhe Woh Baatein",
+      "artist": "Atif Aslam"
+    },
+    {
+      "title": "Tere Bin",
+      "artist": "Atif Aslam"
+    },
+    {
+      "title": "Pehli Nazar Mein",
+      "artist": "Atif Aslam"
+    },
+    {
+      "title": "Jeena Jeena",
+      "artist": "Atif Aslam"
+    },
+    {
+      "title": "Tu Jaane Na",
+      "artist": "Atif Aslam"
+    },
+    {
+      "title": "Kuch Is Tarah",
+      "artist": "Atif Aslam"
     }
   ]
 }

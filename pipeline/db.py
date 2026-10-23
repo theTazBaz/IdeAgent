@@ -55,6 +55,50 @@ def is_enriched(conn: psycopg2.extensions.connection, table: str, entity_id: str
         return cur.fetchone() is not None
 
 
+def get_movie_by_title(conn: psycopg2.extensions.connection, title: str) -> Optional[str]:
+    """Return movie ID if movie exists and has embedding, else None."""
+    with conn.cursor() as cur:
+        cur.execute(
+            "SELECT id FROM movies WHERE LOWER(title) = LOWER(%s) AND text_embedding IS NOT NULL LIMIT 1",
+            (title,),
+        )
+        row = cur.fetchone()
+        return str(row[0]) if row else None
+
+
+def get_character_by_name(conn: psycopg2.extensions.connection, name: str, movie_id: str) -> Optional[str]:
+    """Return character ID if character exists and has embedding, else None."""
+    with conn.cursor() as cur:
+        cur.execute(
+            "SELECT id FROM characters WHERE LOWER(name) = LOWER(%s) AND movie_id = %s AND text_embedding IS NOT NULL LIMIT 1",
+            (name, movie_id),
+        )
+        row = cur.fetchone()
+        return str(row[0]) if row else None
+
+
+def get_relationship_by_chars(conn: psycopg2.extensions.connection, char_a: str, char_b: str) -> Optional[str]:
+    """Return relationship ID if relationship exists and has embedding, else None."""
+    with conn.cursor() as cur:
+        cur.execute(
+            "SELECT id FROM relationships WHERE ((character_id_a = %s AND character_id_b = %s) OR (character_id_a = %s AND character_id_b = %s)) AND text_embedding IS NOT NULL LIMIT 1",
+            (char_a, char_b, char_b, char_a),
+        )
+        row = cur.fetchone()
+        return str(row[0]) if row else None
+
+
+def get_song_by_title_artist(conn: psycopg2.extensions.connection, title: str, artist: str) -> Optional[str]:
+    """Return song ID if song exists and has embedding, else None."""
+    with conn.cursor() as cur:
+        cur.execute(
+            "SELECT id FROM songs WHERE LOWER(title) = LOWER(%s) AND LOWER(artist) = LOWER(%s) AND text_embedding IS NOT NULL LIMIT 1",
+            (title, artist),
+        )
+        row = cur.fetchone()
+        return str(row[0]) if row else None
+
+
 # ------------------------------------------------------------------
 # Upsert: Movie
 # ------------------------------------------------------------------

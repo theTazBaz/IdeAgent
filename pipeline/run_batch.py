@@ -28,9 +28,16 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import time
 import sys
 from pathlib import Path
+
+# Ensure UTF-8 output on Windows consoles
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 from tqdm import tqdm
 
@@ -70,13 +77,53 @@ _CHAR_PLACEHOLDER: dict[str, str] = {
 }
 
 
+def _register_movie(entry: dict, uuid_val: str) -> None:
+    """Register all possible placeholder variations for a movie."""
+    title = entry.get("title", "")
+    if "placeholder" in entry:
+        _id_registry[entry["placeholder"]] = uuid_val
+    if title in _MOVIE_PLACEHOLDER:
+        _id_registry[_MOVIE_PLACEHOLDER[title]] = uuid_val
+    _id_registry[title] = uuid_val
+    slug = re.sub(r"[^a-zA-Z0-9]", "", title).lower()
+    _id_registry[f"_NEEDS_MOVIE_ID_{slug}"] = uuid_val
+
+
+def _register_character(entry: dict, uuid_val: str) -> None:
+    """Register all possible placeholder variations for a character."""
+    name = entry.get("name", "")
+    movie_title = entry.get("movie_title", "")
+    if "placeholder" in entry:
+        _id_registry[entry["placeholder"]] = uuid_val
+    if name in _CHAR_PLACEHOLDER:
+        _id_registry[_CHAR_PLACEHOLDER[name]] = uuid_val
+    _id_registry[name] = uuid_val
+    if movie_title:
+        _id_registry[f"{name} ({movie_title})"] = uuid_val
+    slug = re.sub(r"[^a-zA-Z0-9]", "", name).lower()
+    _id_registry[f"_NEEDS_ID_{slug}"] = uuid_val
+    # Also register first & last name slugs if applicable
+    parts = name.split()
+    if parts:
+        first_slug = re.sub(r"[^a-zA-Z0-9]", "", parts[0]).lower()
+        _id_registry[f"_NEEDS_ID_{first_slug}"] = uuid_val
+        last_slug = re.sub(r"[^a-zA-Z0-9]", "", parts[-1]).lower()
+        _id_registry[f"_NEEDS_ID_{last_slug}"] = uuid_val
+
+
 def _resolve(value: str) -> str:
     """
     Resolve a _NEEDS_* placeholder to a real UUID from the registry.
     Returns the value unchanged if it's already a real UUID (no underscore prefix).
     """
-    if isinstance(value, str) and value.startswith("_NEEDS_"):
+    if isinstance(value, str) and (value.startswith("_NEEDS_") or value in _id_registry):
         resolved = _id_registry.get(value)
+        if resolved is None:
+            # Case-insensitive fallback
+            for k, v in _id_registry.items():
+                if k.lower() == value.lower():
+                    resolved = v
+                    break
         if resolved is None:
             raise ValueError(
                 f"Unresolved placeholder {value!r}. "
@@ -127,22 +174,19 @@ def run(batch_path: Path, dry_run: bool = False) -> None:
         print(f"🎬  Movies ({len(movies)} entries)")
     for entry in tqdm(movies, desc="  Movies", unit="movie"):
         entity_id = entry.get("id")
-        if entity_id and db.is_enriched(conn, "movies", entity_id):
+        existing_id = entity_id if (entity_id and db.is_enriched(conn, "movies", entity_id)) else db.get_movie_by_title(conn, entry["title"])
+        if existing_id:
             tqdm.write(f"  ⏭  Skip (already enriched): {entry['title']}")
             skipped += 1
             # Still register the ID so characters can reference it
-            placeholder = _MOVIE_PLACEHOLDER.get(entry["title"])
-            if placeholder:
-                _id_registry[placeholder] = entity_id
+            _register_movie(entry, existing_id)
             continue
         tqdm.write(f"\n→ Enriching movie: {entry['title']}")
         try:
             record = enrich_movie(conn, title=entry["title"], movie_id=entity_id)
             done += 1
             # Register the new UUID for downstream use
-            placeholder = _MOVIE_PLACEHOLDER.get(entry["title"])
-            if placeholder:
-                _id_registry[placeholder] = record["id"]
+            _register_movie(entry, record["id"])
             time.sleep(4.2)
         except Exception as e:
             conn.rollback()
@@ -156,17 +200,21 @@ def run(batch_path: Path, dry_run: bool = False) -> None:
         print(f"\n🧑  Characters ({len(characters)} entries)")
     for entry in tqdm(characters, desc="  Characters", unit="char"):
         entity_id = entry.get("id")
-        if entity_id and db.is_enriched(conn, "characters", entity_id):
+        try:
+            movie_id = _resolve(entry["movie_id"])
+        except ValueError as e:
+            tqdm.write(f"  ⏭  Skip (dependency not met): {entry['name']} — {e}")
+            skipped += 1
+            continue
+        existing_id = entity_id if (entity_id and db.is_enriched(conn, "characters", entity_id)) else db.get_character_by_name(conn, entry["name"], movie_id)
+        if existing_id:
             tqdm.write(f"  ⏭  Skip (already enriched): {entry['name']}")
             skipped += 1
             # Still register for downstream relationships
-            placeholder = _CHAR_PLACEHOLDER.get(entry["name"])
-            if placeholder:
-                _id_registry[placeholder] = entity_id
+            _register_character(entry, existing_id)
             continue
         tqdm.write(f"\n→ Enriching character: {entry['name']} ({entry['movie_title']})")
         try:
-            movie_id = _resolve(entry["movie_id"])
             record = enrich_character(
                 conn,
                 name=entry["name"],
@@ -178,9 +226,7 @@ def run(batch_path: Path, dry_run: bool = False) -> None:
             )
             done += 1
             # Register the new UUID for downstream relationships
-            placeholder = _CHAR_PLACEHOLDER.get(entry["name"])
-            if placeholder:
-                _id_registry[placeholder] = record["id"]
+            _register_character(entry, record["id"])
             time.sleep(4.2)
         except Exception as e:
             conn.rollback()
@@ -194,7 +240,16 @@ def run(batch_path: Path, dry_run: bool = False) -> None:
         print(f"\n🔗  Relationships ({len(relationships)} entries)")
     for entry in tqdm(relationships, desc="  Relationships", unit="rel"):
         entity_id = entry.get("id")
-        if entity_id and db.is_enriched(conn, "relationships", entity_id):
+        try:
+            char_a = _resolve(entry["character_id_a"])
+            char_b = _resolve(entry["character_id_b"])
+            movie_id = _resolve(entry["movie_id"])
+        except ValueError as e:
+            tqdm.write(f"  ⏭  Skip (dependencies not met): {entry['label']} — {e}")
+            skipped += 1
+            continue
+        existing_id = entity_id if (entity_id and db.is_enriched(conn, "relationships", entity_id)) else db.get_relationship_by_chars(conn, char_a, char_b)
+        if existing_id:
             tqdm.write(f"  ⏭  Skip (already enriched): {entry['label']}")
             skipped += 1
             continue
@@ -202,9 +257,9 @@ def run(batch_path: Path, dry_run: bool = False) -> None:
         try:
             enrich_relationship(
                 conn,
-                character_id_a=_resolve(entry["character_id_a"]),
-                character_id_b=_resolve(entry["character_id_b"]),
-                movie_id=_resolve(entry["movie_id"]),
+                character_id_a=char_a,
+                character_id_b=char_b,
+                movie_id=movie_id,
                 label=entry["label"],
                 relationship_id=entity_id,
                 search_query=entry.get("search_query"),
@@ -223,7 +278,8 @@ def run(batch_path: Path, dry_run: bool = False) -> None:
         print(f"\n🎵  Songs ({len(songs)} entries)")
     for entry in tqdm(songs, desc="  Songs", unit="song"):
         entity_id = entry.get("id")
-        if entity_id and db.is_enriched(conn, "songs", entity_id):
+        existing_id = entity_id if (entity_id and db.is_enriched(conn, "songs", entity_id)) else db.get_song_by_title_artist(conn, entry["title"], entry["artist"])
+        if existing_id:
             tqdm.write(f"  ⏭  Skip (already enriched): {entry['title']} — {entry['artist']}")
             skipped += 1
             continue
@@ -236,8 +292,8 @@ def run(batch_path: Path, dry_run: bool = False) -> None:
                 song_id=entity_id,
             )
             done += 1
-            # Respect rate limits for Groq Qwen TPM
-            time.sleep(22.0)
+            # Respect rate limits for Groq
+            time.sleep(2.5)
         except Exception as e:
             conn.rollback()
             tqdm.write(f"  ❌  FAILED: {entry['title']} — {e}")

@@ -11,6 +11,8 @@ the caller decides whether to continue without this source.
 """
 from __future__ import annotations
 
+import time
+
 import httpx
 from bs4 import BeautifulSoup
 
@@ -29,31 +31,44 @@ def get_wikipedia_summary(query: str) -> str:
     Returns empty string if nothing found.
     """
     slug = query.strip().replace(" ", "_")
-    with httpx.Client(follow_redirects=True, timeout=10.0) as client:
-        r = client.get(f"{WIKI_SUMMARY_URL}/{slug}", headers={"Accept": "application/json"})
+    headers = {
+        "Accept": "application/json",
+        "User-Agent": "IdeAgentBot/1.0 (educational research; bajajtejas@gmail.com)",
+    }
+    for attempt in range(3):
+        try:
+            with httpx.Client(follow_redirects=True, timeout=10.0) as client:
+                r = client.get(f"{WIKI_SUMMARY_URL}/{slug}", headers=headers)
 
-        if r.status_code == 404:
-            # Try the search API to find the right title
-            r2 = client.get(
-                WIKI_SEARCH_URL,
-                params={
-                    "action": "query",
-                    "list": "search",
-                    "srsearch": query,
-                    "format": "json",
-                    "srlimit": 1,
-                },
-            )
-            results = r2.json().get("query", {}).get("search", [])
-            if not results:
+                if r.status_code == 404:
+                    # Try the search API to find the right title
+                    r2 = client.get(
+                        WIKI_SEARCH_URL,
+                        headers=headers,
+                        params={
+                            "action": "query",
+                            "list": "search",
+                            "srsearch": query,
+                            "format": "json",
+                            "srlimit": 1,
+                        },
+                    )
+                    results = r2.json().get("query", {}).get("search", [])
+                    if not results:
+                        return ""
+                    slug = results[0]["title"].replace(" ", "_")
+                    r = client.get(f"{WIKI_SUMMARY_URL}/{slug}", headers=headers)
+
+                if r.status_code != 200:
+                    return ""
+
+                return r.json().get("extract", "")
+        except (httpx.RequestError, httpx.HTTPStatusError):
+            if attempt < 2:
+                time.sleep(1.5 * (attempt + 1))
+            else:
                 return ""
-            slug = results[0]["title"].replace(" ", "_")
-            r = client.get(f"{WIKI_SUMMARY_URL}/{slug}", headers={"Accept": "application/json"})
-
-        if r.status_code != 200:
-            return ""
-
-        return r.json().get("extract", "")
+    return ""
 
 
 # ------------------------------------------------------------------
