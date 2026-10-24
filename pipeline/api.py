@@ -20,6 +20,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from pipeline import embed
+from pipeline.llm import LLMError
 from pipeline.rag import run_rag_data
 
 DIST_DIR = Path(__file__).resolve().parent.parent / "frontend" / "dist"
@@ -42,8 +43,9 @@ class SearchRequest(BaseModel):
 async def search(req: SearchRequest) -> dict:
     try:
         return await run_in_threadpool(run_rag_data, req.query.strip())
-    except SystemExit:
-        raise HTTPException(500, "GROQ_API_KEY is not set on the server.")
+    except LLMError as exc:
+        headers = {"Retry-After": str(int(exc.retry_after) + 1)} if exc.retry_after else None
+        raise HTTPException(exc.status_code, exc.user_message, headers=headers)
     except Exception as exc:  # surface pipeline errors to the UI
         raise HTTPException(500, f"{type(exc).__name__}: {exc}")
 
