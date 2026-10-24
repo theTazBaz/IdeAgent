@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@keyframes dot {
+  0%, 60%, 100% { opacity: 0.2; }
+  30% { opacity: 1; }
+}
