@@ -12,3 +12,11 @@ venv/
 # OS
 .DS_Store
 Thumbs.db
+my_env/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Evaluation: cache is regenerable; pool.json (human labels) IS committed
+pipeline/eval/cache.json

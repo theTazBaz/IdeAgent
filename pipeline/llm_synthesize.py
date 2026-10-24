@@ -11,29 +11,17 @@ Output is always JSON: {"description": "...", "core_emotional_logic": "..."}
 """
 from __future__ import annotations
 
-import os
 import json
 
 from groq import Groq
 
-from pipeline import config
+from pipeline import config, llm
 
 # ------------------------------------------------------------------
-# Groq client (lazy-initialised)
+# Groq client (shared, with retries — see pipeline/llm.py)
 # ------------------------------------------------------------------
-_client: Groq | None = None
-
-
 def _get_client() -> Groq:
-    global _client
-    if _client is None:
-        api_key = config.require(
-            "GROQ_API_KEY",
-            os.environ.get("GROQ_API_KEY"),
-            hint="Free API key: https://console.groq.com/keys",
-        )
-        _client = Groq(api_key=api_key)
-    return _client
+    return llm.get_client()
 
 
 # ------------------------------------------------------------------
@@ -127,14 +115,8 @@ def synthesize(entity_type: str, raw_facts: dict) -> dict:
     client = _get_client()
     prompt = _PROMPTS[entity_type].format(facts_json=json.dumps(raw_facts, indent=2))
 
-    response = client.chat.completions.create(
-        model=config.LLM_MODEL,
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.2,
-    )
-    
-    response_text = response.choices[0].message.content
-    
+    response_text = llm.chat(prompt, temperature=0.2, client=client)
+
     # Robustly extract the LAST complete JSON object from the response.
     # Qwen emits a long chain-of-thought before the final JSON block, so we
     # scan backwards from the last '}' to find its matching '{'.

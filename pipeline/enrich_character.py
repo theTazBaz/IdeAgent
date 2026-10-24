@@ -3,7 +3,7 @@ pipeline/enrich_character.py
 =============================
 4-step enrichment for a Character entity:
   1. Scrape: TMDB movie context + Wikipedia character summary + optional Fandom page
-  2. Synthesize: Gemini Flash → {description, core_emotional_logic}
+  2. Synthesize: Groq LLM → {description, core_emotional_logic}
   3. Embed: nomic-embed-text-v1.5 → vector(768)
   4. Upsert: to Supabase (idempotent)
 

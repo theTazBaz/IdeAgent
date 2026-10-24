@@ -45,8 +45,13 @@ def _vec(embedding: list[float]) -> np.ndarray:
 # ------------------------------------------------------------------
 # Check helpers (used by run_batch to skip already-enriched entities)
 # ------------------------------------------------------------------
+_TABLES = {"movies", "characters", "relationships", "songs"}
+
+
 def is_enriched(conn: psycopg2.extensions.connection, table: str, entity_id: str) -> bool:
     """Return True if the entity has a non-NULL text_embedding in DB."""
+    if table not in _TABLES:
+        raise ValueError(f"Unknown table: {table!r}")
     with conn.cursor() as cur:
         cur.execute(
             f"SELECT 1 FROM {table} WHERE id = %s AND text_embedding IS NOT NULL",
@@ -122,7 +127,7 @@ def upsert_relationship(conn: psycopg2.extensions.connection, record: dict) -> N
     """
     Insert or update a relationship row.
     record keys: id, movie_id, character_id_a, character_id_b, label,
-                 raw_facts, description, core_emotional_logic, text_embedding
+                 description, core_emotional_logic, text_embedding
     """
     with conn.cursor() as cur:
         cur.execute(

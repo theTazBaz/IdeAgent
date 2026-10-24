@@ -4,7 +4,7 @@ pipeline/enrich_relationship.py
 4-step enrichment for a Relationship entity:
   1. Scrape: Pull both characters' already-enriched descriptions from DB
              + Wikipedia search for the character dynamic (optional)
-  2. Synthesize: Gemini Flash → {description, core_emotional_logic}
+  2. Synthesize: Groq LLM → {description, core_emotional_logic}
   3. Embed: nomic-embed-text-v1.5 → vector(768)
   4. Upsert: to Supabase (idempotent)
 

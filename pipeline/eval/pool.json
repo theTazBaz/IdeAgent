@@ -1,0 +1,295 @@
+{
+  "Find me a song that captures the emotional intensity of Interstellar": {
+    "intent": {
+      "reference_entity": "Interstellar",
+      "reference_type": "movie",
+      "reference_context": null,
+      "target_type": "songs",
+      "matching_concept": "emotional intensity"
+    },
+    "candidates": [
+      {
+        "name": "Cornfield Chase — Hans Zimmer",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Starman - 2012 Remaster — David Bowie",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "I Know The End — Phoebe Bridgers",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "AT THE PARTY (feat. Pharrell Williams & Travis Scott) — Kid Cudi",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Lose My Mind (feat. Doja Cat) [From F1® The Movie] — Don Toliver",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "In My Feelings — Drake",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Resonance — Home",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "I Wanna Be Yours — Arctic Monkeys",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Ignite The Love — Kid Cudi",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "I Wonder — Kanye West",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Novacane — Frank Ocean",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "True Love — Kanye West",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Experience — Ludovico Einaudi",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "BACK TO ME — ¥$",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Time — Hans Zimmer",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Run It Up — Hanumankind",
+        "type": "song",
+        "relevant": null
+      }
+    ]
+  },
+  "A song that fits the bittersweet ending of La La Land": {
+    "intent": {
+      "reference_entity": "La La Land",
+      "reference_type": "movie",
+      "reference_context": null,
+      "target_type": "songs",
+      "matching_concept": "bittersweet ending"
+    },
+    "candidates": [
+      {
+        "name": "Silver Soul — Beach House",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Exit Music (For A Film) — Radiohead",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Summertime Sadness — Lana Del Rey",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "I Will Survive — Demi Lovato",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "I'm Still Standing - From \"Sing\" Original Motion Picture Soundtrack — Taron Egerton",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "True Love — Kanye West",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "I Wonder — Kanye West",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Norman fucking Rockwell — Lana Del Rey",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Bheegi Bheegi Raaton Mein — Lata Mangeshkar",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Summer Of '69 — Bryan Adams",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Novacane — Frank Ocean",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "I Wanna Be Yours — Arctic Monkeys",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Aadat Se Majboor — Salim–Sulaiman",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "drivers license — Olivia Rodrigo",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "bad guy — Billie Eilish",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "790001 (Outro) — Sono Lem",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "good 4 u — Olivia Rodrigo",
+        "type": "song",
+        "relevant": null
+      }
+    ]
+  },
+  "A song for a reel about the Joker's descent into chaos": {
+    "intent": {
+      "reference_entity": "Joker",
+      "reference_type": "character",
+      "reference_context": "Joker",
+      "target_type": "songs",
+      "matching_concept": "descent into chaos"
+    },
+    "candidates": [
+      {
+        "name": "Sunflower - Spider-Man: Into the Spider-Verse — Post Malone",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Tujhko Jo Paaya — Pritam",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Exit Music (For A Film) — Radiohead",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "I Wonder — Kanye West",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "I Wanna Be Yours — Arctic Monkeys",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "drivers license — Olivia Rodrigo",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Bad As I Used To Be (From F1® The Movie) — Chris Stapleton",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Double Life - From \"Despicable Me 4\" — Pharrell Williams",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Thiago Silva — Dave",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "790001 (Outro) — Sono Lem",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Hit 'Em Up - Single Version — 2Pac",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Novacane — Frank Ocean",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Radioactive — Imagine Dragons",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Resonance — Home",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "RUN IT BACK! — Craig Xen",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Smooth Criminal - 2012 Remaster — Michael Jackson",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Heat Waves — Glass Animals",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "Count Me Out — Kendrick Lamar",
+        "type": "song",
+        "relevant": null
+      },
+      {
+        "name": "I Know The End — Phoebe Bridgers",
+        "type": "song",
+        "relevant": null
+      }
+    ]
+  }
+}

@@ -11,7 +11,7 @@ CREATE EXTENSION IF NOT EXISTS vector;
 -- =============================================================================
 -- 1. MOVIES  (top-level parent)
 -- =============================================================================
-CREATE TABLE movies (
+CREATE TABLE IF NOT EXISTS movies (
     id                   UUID        PRIMARY KEY DEFAULT gen_random_uuid(),
     title                TEXT        NOT NULL,
     raw_facts            JSONB,                          -- raw search results (TMDB, Wikipedia)
@@ -27,7 +27,7 @@ CREATE TABLE movies (
 -- 2. CHARACTERS  (child of Movie)
 -- Rule: description holds ONLY individual traits — never relational logic
 -- =============================================================================
-CREATE TABLE characters (
+CREATE TABLE IF NOT EXISTS characters (
     id                   UUID        PRIMARY KEY DEFAULT gen_random_uuid(),
     movie_id             UUID        NOT NULL REFERENCES movies(id) ON DELETE CASCADE,
     name                 TEXT        NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE characters (
 -- 3. RELATIONSHIPS  (child of Movie, references exactly two Characters)
 -- Holds all relational/narrative logic between two characters
 -- =============================================================================
-CREATE TABLE relationships (
+CREATE TABLE IF NOT EXISTS relationships (
     id                   UUID        PRIMARY KEY DEFAULT gen_random_uuid(),
     movie_id             UUID        NOT NULL REFERENCES movies(id) ON DELETE CASCADE,
     character_id_a       UUID        NOT NULL REFERENCES characters(id),
@@ -63,7 +63,7 @@ CREATE TABLE relationships (
 -- =============================================================================
 -- 4. SONGS  (standalone, top-level — not nested under any movie)
 -- =============================================================================
-CREATE TABLE songs (
+CREATE TABLE IF NOT EXISTS songs (
     id                   UUID        PRIMARY KEY DEFAULT gen_random_uuid(),
     title                TEXT        NOT NULL,
     artist               TEXT        NOT NULL,
@@ -88,19 +88,19 @@ CREATE TABLE songs (
 -- text_embedding: used from Week 2 onward (cosine baseline)
 -- gat_embedding: used from Week 4 onward (after HGAF fusion)
 
-CREATE INDEX idx_movies_text_emb       ON movies       USING hnsw (text_embedding vector_cosine_ops);
-CREATE INDEX idx_movies_gat_emb        ON movies       USING hnsw (gat_embedding  vector_cosine_ops);
+CREATE INDEX IF NOT EXISTS idx_movies_text_emb       ON movies       USING hnsw (text_embedding vector_cosine_ops);
+CREATE INDEX IF NOT EXISTS idx_movies_gat_emb        ON movies       USING hnsw (gat_embedding  vector_cosine_ops);
 
-CREATE INDEX idx_characters_text_emb   ON characters   USING hnsw (text_embedding vector_cosine_ops);
-CREATE INDEX idx_characters_gat_emb    ON characters   USING hnsw (gat_embedding  vector_cosine_ops);
+CREATE INDEX IF NOT EXISTS idx_characters_text_emb   ON characters   USING hnsw (text_embedding vector_cosine_ops);
+CREATE INDEX IF NOT EXISTS idx_characters_gat_emb    ON characters   USING hnsw (gat_embedding  vector_cosine_ops);
 
-CREATE INDEX idx_relationships_text_emb ON relationships USING hnsw (text_embedding vector_cosine_ops);
-CREATE INDEX idx_relationships_gat_emb  ON relationships USING hnsw (gat_embedding  vector_cosine_ops);
+CREATE INDEX IF NOT EXISTS idx_relationships_text_emb ON relationships USING hnsw (text_embedding vector_cosine_ops);
+CREATE INDEX IF NOT EXISTS idx_relationships_gat_emb  ON relationships USING hnsw (gat_embedding  vector_cosine_ops);
 
-CREATE INDEX idx_songs_text_emb        ON songs        USING hnsw (text_embedding vector_cosine_ops);
+CREATE INDEX IF NOT EXISTS idx_songs_text_emb        ON songs        USING hnsw (text_embedding vector_cosine_ops);
 
 -- B-tree indexes for FK joins
-CREATE INDEX idx_characters_movie_id       ON characters    (movie_id);
-CREATE INDEX idx_relationships_movie_id    ON relationships (movie_id);
-CREATE INDEX idx_relationships_char_a      ON relationships (character_id_a);
-CREATE INDEX idx_relationships_char_b      ON relationships (character_id_b);
+CREATE INDEX IF NOT EXISTS idx_characters_movie_id       ON characters    (movie_id);
+CREATE INDEX IF NOT EXISTS idx_relationships_movie_id    ON relationships (movie_id);
+CREATE INDEX IF NOT EXISTS idx_relationships_char_a      ON relationships (character_id_a);
+CREATE INDEX IF NOT EXISTS idx_relationships_char_b      ON relationships (character_id_b);
