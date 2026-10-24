@@ -3,7 +3,7 @@ pipeline/enrich_movie.py
 ========================
 4-step enrichment for a Movie entity:
   1. Scrape: TMDB metadata + Wikipedia summary
-  2. Synthesize: Gemini Flash → {description, core_emotional_logic}
+  2. Synthesize: Groq LLM → {description, core_emotional_logic}
   3. Embed: nomic-embed-text-v1.5 → vector(768)
   4. Upsert: to Supabase (idempotent)
 """

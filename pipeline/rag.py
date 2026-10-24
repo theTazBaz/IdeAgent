@@ -20,6 +20,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 
 from groq import Groq
@@ -45,7 +46,7 @@ def _call_llm(client: Groq, prompt: str) -> str:
         messages=[{"role": "user", "content": prompt}],
         temperature=0.1,
     )
-    return resp.choices[0].message.content
+    return re.sub(r"<think>.*?</think>", "", resp.choices[0].message.content or "", flags=re.S).strip()
 
 
 def _extract_json(text: str) -> dict:
@@ -145,12 +146,12 @@ def step_c_generate_search_string(client: Groq, entity: dict, target_type: str, 
 # ------------------------------------------------------------------
 # Step D: Vector search (DB)
 # ------------------------------------------------------------------
-def step_d_vector_search(conn, search_string: str, target_type: str | None) -> list[dict]:
+def step_d_vector_search(conn, search_string: str, target_type: str | None, exclude_id: str | None = None) -> list[dict]:
     print("  [D] Searching vector database …")
     # Map singular to table name
     type_map = {"movie": "movies", "character": "characters", "relationship": "relationships", "song": "songs"}
     filter_type = type_map.get(target_type or "", target_type)
-    results = vector_search(conn, search_string, filter_type=filter_type, top_k=5)
+    results = vector_search(conn, search_string, filter_type=filter_type, top_k=5, exclude_id=exclude_id)
     for r in results:
         print(f"       {r['similarity']:.3f}  [{r['type']}] {r['name']}")
     return results
@@ -160,23 +161,32 @@ def step_d_vector_search(conn, search_string: str, target_type: str | None) -> l
 # Step E: Final answer (LLM)
 # ------------------------------------------------------------------
 _ANSWER_PROMPT = """\
-You are a creative media recommendation assistant.
+You are a creative assistant for short-film and reel creators.
 
 The user asked: "{query}"
 
-Based on a semantic search of our media knowledge database, here are the most relevant entries found:
+A semantic search of our media knowledge database found these entries:
 
 {context_block}
 
-Using ONLY the information above, write a helpful, conversational recommendation that:
-1. Directly answers the user's question.
-2. Explains WHY each recommended item fits the request.
-3. References the emotional logic and themes from the database entries.
+Using ONLY the information above, pick the entries that genuinely fit the request and rank them best first.
+Skip entries that do not fit. Do NOT invent facts that are not above.
 
-Be specific and insightful. Do NOT invent information not present above.
+Return ONLY valid JSON in exactly this shape:
+{{
+  "summary": "1-2 sentences that directly answer the user's request",
+  "ideas": [
+    {{
+      "source": <entry number from the list above>,
+      "why": "1-2 sentences on why this entry fits, citing its emotional logic",
+      "idea": "one concrete sentence: how a creator could use it in a short film or reel"
+    }}
+  ]
+}}
 """
 
-def step_e_generate_answer(client: Groq, query: str, results: list[dict]) -> str:
+def step_e_generate_answer(client: Groq, query: str, results: list[dict]) -> dict:
+    """Return {"summary": str, "ideas": [{rank, why, idea, type, name, similarity, ...}]}."""
     print("  [E] Generating final answer …\n")
     context_parts = []
     for i, r in enumerate(results, 1):
@@ -186,57 +196,97 @@ def step_e_generate_answer(client: Groq, query: str, results: list[dict]) -> str
             f"    Core emotional logic: {r['core_emotional_logic']}"
         )
     context_block = "\n\n".join(context_parts)
-    return _call_llm(client, _ANSWER_PROMPT.format(query=query, context_block=context_block))
+    raw = _call_llm(client, _ANSWER_PROMPT.format(query=query, context_block=context_block))
+    parsed = _extract_json(raw)
+
+    ideas, seen = [], set()
+    for item in parsed.get("ideas") or []:
+        try:
+            src = int(item.get("source"))
+        except (TypeError, ValueError, AttributeError):
+            continue
+        if not 1 <= src <= len(results) or src in seen:
+            continue
+        seen.add(src)
+        r = results[src - 1]
+        ideas.append({
+            "rank": len(ideas) + 1,
+            "type": r["type"],
+            "name": r["name"],
+            "similarity": r["similarity"],
+            "why": str(item.get("why") or "").strip(),
+            "idea": str(item.get("idea") or "").strip(),
+        })
+
+    if ideas:
+        return {"summary": str(parsed.get("summary") or "").strip(), "ideas": ideas}
+
+    # LLM did not return usable JSON — fall back to the retrieval order.
+    return {
+        "summary": raw or "Here are the closest matches found in the database.",
+        "ideas": [
+            {"rank": i, "type": r["type"], "name": r["name"], "similarity": r["similarity"],
+             "why": r["core_emotional_logic"] or "", "idea": ""}
+            for i, r in enumerate(results, 1)
+        ],
+    }
 
 
 # ------------------------------------------------------------------
 # Main orchestrator
 # ------------------------------------------------------------------
-def run_rag(query: str) -> None:
-    print(f"\n🔍  Agentic RAG Search")
-    print(f"    Query: \"{query}\"\n")
-
-    client = _get_client()
+def run_rag_data(query: str, client: Groq | None = None) -> dict:
+    """Run the 5-step pipeline and return a structured result (used by the API)."""
+    client = client or _get_client()
     conn = db.get_conn()
-
     try:
-        # A: Parse intent
         intent = step_a_extract_intent(client, query)
         reference_entity = intent.get("reference_entity")
         target_type      = intent.get("target_type")
-        matching_concept = intent.get("matching_concept", "emotional themes")
+        matching_concept = intent.get("matching_concept") or "emotional themes"
 
-        # B: Fetch reference entity from DB (if named)
         entity = step_b_get_context(conn, reference_entity)
 
-        # C: Generate a dense search string
         if entity:
             search_string = step_c_generate_search_string(client, entity, target_type, matching_concept)
         else:
-            # No specific entity found — fall back to embedding the raw query
             print("  [C] No reference entity — using query directly as search string.")
             search_string = query
 
-        # D: Vector search
-        results = step_d_vector_search(conn, search_string, target_type)
+        results = step_d_vector_search(conn, search_string, target_type, exclude_id=entity["id"] if entity else None)
+        answer = step_e_generate_answer(client, query, results) if results else {"summary": "", "ideas": []}
 
-        if not results:
-            print("❌  No results found in the database.")
-            return
-
-        # E: Generate final answer
-        answer = step_e_generate_answer(client, query, results)
-
-        # Print results
-        print("=" * 60)
-        print(answer)
-        print("=" * 60)
-        print("\n📚  Sources retrieved from database:")
-        for r in results:
-            print(f"   • [{r['type']}] {r['name']}  (similarity: {r['similarity']:.3f})")
-
+        return {
+            "query": query,
+            "intent": intent,
+            "reference": entity,
+            "search_string": search_string,
+            "results": results,
+            "summary": answer["summary"],
+            "ideas": answer["ideas"],
+        }
     finally:
         conn.close()
+
+
+def run_rag(query: str) -> None:
+    print(f"\n🔍  Agentic RAG Search")
+    print(f"    Query: \"{query}\"\n")
+    out = run_rag_data(query)
+    if not out["results"]:
+        print("❌  No results found in the database.")
+        return
+    print("=" * 60)
+    print(out["summary"])
+    for idea in out["ideas"]:
+        print(f"\n{idea['rank']}. [{idea['type']}] {idea['name']}")
+        print(f"   Why:  {idea['why']}")
+        if idea["idea"]:
+            print(f"   Idea: {idea['idea']}")
+    print("=" * 60)
+    print("\n📚  Sources retrieved from database:")
+    for r in out["results"]:
+        print(f"   • [{r['type']}] {r['name']}  (similarity: {r['similarity']:.3f})")
 
 
 # ------------------------------------------------------------------

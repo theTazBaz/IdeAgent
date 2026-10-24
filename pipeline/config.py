@@ -21,14 +21,14 @@ DATABASE_URL: Optional[str] = os.environ.get("DATABASE_URL")
 TMDB_API_KEY: Optional[str] = os.environ.get("TMDB_API_KEY")
 SPOTIFY_CLIENT_ID: Optional[str] = os.environ.get("SPOTIFY_CLIENT_ID")
 SPOTIFY_CLIENT_SECRET: Optional[str] = os.environ.get("SPOTIFY_CLIENT_SECRET")
-GEMINI_API_KEY: Optional[str] = os.environ.get("GEMINI_API_KEY")
+GROQ_API_KEY: Optional[str] = os.environ.get("GROQ_API_KEY")
 
 # ------------------------------------------------------------------
 # Model settings
 # ------------------------------------------------------------------
 EMBED_MODEL: str = "nomic-ai/nomic-embed-text-v1.5"   # runs locally, no API key
 EMBED_DIM: int = 768                                    # must match schema vector(768)
-LLM_MODEL: str = "qwen/qwen3.6-27b"                    # Groq model for synthesis
+LLM_MODEL: str = "qwen/qwen3.8-27b"                    # Groq model for synthesis
 
 # ------------------------------------------------------------------
 # Helpers
