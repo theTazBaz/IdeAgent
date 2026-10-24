@@ -22,6 +22,7 @@ TMDB_API_KEY: Optional[str] = os.environ.get("TMDB_API_KEY")
 SPOTIFY_CLIENT_ID: Optional[str] = os.environ.get("SPOTIFY_CLIENT_ID")
 SPOTIFY_CLIENT_SECRET: Optional[str] = os.environ.get("SPOTIFY_CLIENT_SECRET")
 GROQ_API_KEY: Optional[str] = os.environ.get("GROQ_API_KEY")
+LASTFM_API_KEY: Optional[str] = os.environ.get("LASTFM_API_KEY")   # optional: enables the trend signal
 
 # ------------------------------------------------------------------
 # Model settings
