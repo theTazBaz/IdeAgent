@@ -9,6 +9,8 @@ Two entry points:
 """
 from __future__ import annotations
 
+import re
+
 import psycopg2
 import numpy as np
 
@@ -26,13 +28,40 @@ _LOOKUPS = [
 ]
 
 
-def _normalise(name: str) -> str:
-    """Lowercase, drop punctuation and a leading 'the' so 'The Joker' ~ 'joker'."""
-    n = "".join(ch if ch.isalnum() or ch.isspace() else " " for ch in name.lower())
+_MIN_FUZZY_CHARS = 3     # shorter queries only match exactly
+_MIN_COVERAGE = 0.5      # query words must make up at least half of the matched name
+
+
+def _words(text: str) -> list[str]:
+    """Lowercase words with punctuation and a leading 'the' removed."""
+    n = "".join(ch if ch.isalnum() or ch.isspace() else " " for ch in text.lower())
     words = n.split()
     if len(words) > 1 and words[0] == "the":
         words = words[1:]
-    return " ".join(words)
+    return words
+
+
+def _normalise(name: str) -> str:
+    return " ".join(_words(name))
+
+
+def _fuzzy_score(query: str, candidate: str) -> float | None:
+    """
+    Score how well `candidate` matches `query`, or None if it isn't a match.
+
+    Every query word must appear in the candidate as a WHOLE word (so "Up" does
+    not match "Superman"), and the query words must cover at least half of the
+    candidate's words (so "Up" does not match "Pump It Up"). Bracketed parts of
+    the candidate such as "(feat. X)" are ignored when counting.
+    """
+    q = _words(query)
+    if not q or len(" ".join(q)) < _MIN_FUZZY_CHARS:
+        return None
+    c = _words(re.sub(r"[\(\[].*?[\)\]]", " ", candidate))
+    if not c or not all(w in c for w in q):
+        return None
+    coverage = len(set(q)) / len(set(c))
+    return coverage if coverage >= _MIN_COVERAGE else None
 
 
 def get_entity_by_name(conn: psycopg2.extensions.connection, name: str) -> dict | None:
@@ -40,9 +69,8 @@ def get_entity_by_name(conn: psycopg2.extensions.connection, name: str) -> dict 
     Find one entity (movie, character, relationship or song) matching `name`.
 
     Tries a case-insensitive exact match across all tables first, then a
-    fuzzy match where every word of `name` appears in the stored name
-    ("Joker" ~ "The Joker", "Dr Brand" ~ "Dr. Amelia Brand"); the shortest
-    matching name wins.
+    whole-word fuzzy match ("Joker" ~ "The Joker", "Dr Brand" ~ "Dr. Amelia
+    Brand"; see _fuzzy_score). The best-covering, then shortest, name wins.
 
     Returns a dict with keys: id, type, name, description, core_emotional_logic
     or None if nothing is found.
@@ -59,11 +87,11 @@ def get_entity_by_name(conn: psycopg2.extensions.connection, name: str) -> dict 
             if row:
                 return _row_to_entity(entity_type, row)
 
-        # Pass 2: fuzzy — every word of the query must appear in the name
-        tokens = _normalise(name).split()
-        if not tokens:
+        # Pass 2: fuzzy — whole-word match, scored by how much of the name the query covers
+        tokens = _words(name)
+        if not tokens or len(" ".join(tokens)) < _MIN_FUZZY_CHARS:
             return None
-        best = None  # (len(name), entity)
+        best = None  # ((coverage, -len(name)), entity)
         for entity_type, table, col in _LOOKUPS:
             cond = " AND ".join([f"LOWER({col}) LIKE %s"] * len(tokens))
             cur.execute(
@@ -72,8 +100,12 @@ def get_entity_by_name(conn: psycopg2.extensions.connection, name: str) -> dict 
                 [f"%{t}%" for t in tokens],
             )
             for row in cur.fetchall():
-                if best is None or len(row[1]) < best[0]:
-                    best = (len(row[1]), _row_to_entity(entity_type, row))
+                score = _fuzzy_score(name, row[1])
+                if score is None:
+                    continue
+                key = (score, -len(row[1]))
+                if best is None or key > best[0]:
+                    best = (key, _row_to_entity(entity_type, row))
         return best[1] if best else None
 
 
