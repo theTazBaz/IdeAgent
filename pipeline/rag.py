@@ -26,6 +26,7 @@ import sys
 from groq import Groq
 
 from pipeline import config, db
+from pipeline.live_enrich import enrich_live
 from pipeline.search_db import get_entity_by_name, vector_search
 
 
@@ -78,6 +79,8 @@ The database contains four types of records: movies, characters, relationships, 
 Analyze the user's query and respond with ONLY a JSON object with these exact fields:
 {{
   "reference_entity": "<name of the specific movie, character, or song the user mentions, or null>",
+  "reference_type": "<what the reference entity is: movie | character | song | null>",
+  "reference_context": "<for a character: the movie it is from; for a song: the artist; otherwise null>",
   "target_type": "<what they want to find: movies | characters | relationships | songs | null>",
   "matching_concept": "<the attribute they want to match, e.g. 'emotional intensity', 'tone', 'character dynamic'>"
 }}
@@ -90,6 +93,7 @@ def step_a_extract_intent(client: Groq, query: str) -> dict:
     raw = _call_llm(client, _INTENT_PROMPT.format(query=query))
     intent = _extract_json(raw)
     print(f"       reference_entity = {intent.get('reference_entity')!r}")
+    print(f"       reference_type   = {intent.get('reference_type')!r}")
     print(f"       target_type      = {intent.get('target_type')!r}")
     print(f"       matching_concept = {intent.get('matching_concept')!r}")
     return intent
@@ -107,6 +111,20 @@ def step_b_get_context(conn, reference_entity: str | None) -> dict | None:
         print(f"       Found: [{entity['type']}] {entity['name']}")
     else:
         print(f"       ⚠️  '{reference_entity}' not found in DB — will fall back to query embedding.")
+    return entity
+
+
+# ------------------------------------------------------------------
+# Step B2: live lookup when the reference is not in the database
+# ------------------------------------------------------------------
+def step_b2_live_lookup(intent: dict) -> dict | None:
+    name = intent.get("reference_entity")
+    print(f"  [B2] '{name}' not in database — looking it up live …")
+    entity = enrich_live(name, intent.get("reference_type"), intent.get("reference_context"))
+    if entity:
+        print(f"       Grounded live from {entity['sources']}: [{entity['type']}] {entity['name']}")
+    else:
+        print("       Could not ground it live — falling back to the raw query.")
     return entity
 
 
@@ -158,6 +176,29 @@ def step_d_vector_search(conn, search_string: str, target_type: str | None, excl
 
 
 # ------------------------------------------------------------------
+# Confidence assessment
+# ------------------------------------------------------------------
+# Calibrated on the live data (nomic embeddings): found references score ~0.69-0.73,
+# missing references ~0.60, open questions ~0.66, nonsense ~0.52-0.56.
+LOW_SIMILARITY = 0.62
+
+
+def assess_confidence(intent: dict, entity: dict | None, results: list[dict]) -> tuple[str, str]:
+    """Return (level, reason) where level is "high", "medium" or "low"."""
+    ref = intent.get("reference_entity")
+    top = results[0]["similarity"] if results else 0.0
+    if ref and not entity:
+        return "low", f"\u201c{ref}\u201d isn\u2019t in the database, so these are only loose matches on your wording."
+    if top < LOW_SIMILARITY:
+        return "low", "Nothing in the database is a close match for this, so these are only the nearest entries."
+    if entity and entity.get("source") == "live":
+        return "medium", f"\u201c{entity['name']}\u201d isn\u2019t in our database, so its details were looked up live from {entity['sources']}."
+    if ref:
+        return "high", ""
+    return "medium", ""
+
+
+# ------------------------------------------------------------------
 # Step E: Final answer (LLM)
 # ------------------------------------------------------------------
 _ANSWER_PROMPT = """\
@@ -171,7 +212,7 @@ A semantic search of our media knowledge database found these entries:
 
 Using ONLY the information above, pick the entries that genuinely fit the request and rank them best first.
 Skip entries that do not fit. Do NOT invent facts that are not above.
-
+{caution}
 Return ONLY valid JSON in exactly this shape:
 {{
   "summary": "1-2 sentences that directly answer the user's request",
@@ -185,7 +226,17 @@ Return ONLY valid JSON in exactly this shape:
 }}
 """
 
-def step_e_generate_answer(client: Groq, query: str, results: list[dict]) -> dict:
+_LOW_CONFIDENCE_CAUTION = """
+IMPORTANT: {reason}
+You have NO information about anything the user mentions that is not listed above, so do not claim to know it.
+These entries are only loosely related, matched on the wording of the question.
+- The summary must start by saying plainly that these are loose matches and not a confident answer.
+- Keep "why" and "idea" tentative ("might", "could"), and base them only on the entries above.
+- If no entry plausibly fits, return an empty "ideas" list.
+"""
+
+
+def step_e_generate_answer(client: Groq, query: str, results: list[dict], confidence: str = "high", reason: str = "") -> dict:
     """Return {"summary": str, "ideas": [{rank, why, idea, type, name, similarity, ...}]}."""
     print("  [E] Generating final answer …\n")
     context_parts = []
@@ -196,7 +247,8 @@ def step_e_generate_answer(client: Groq, query: str, results: list[dict]) -> dic
             f"    Core emotional logic: {r['core_emotional_logic']}"
         )
     context_block = "\n\n".join(context_parts)
-    raw = _call_llm(client, _ANSWER_PROMPT.format(query=query, context_block=context_block))
+    caution = _LOW_CONFIDENCE_CAUTION.format(reason=reason) if confidence == "low" else ""
+    raw = _call_llm(client, _ANSWER_PROMPT.format(query=query, context_block=context_block, caution=caution))
     parsed = _extract_json(raw)
 
     ideas, seen = [], set()
@@ -218,12 +270,13 @@ def step_e_generate_answer(client: Groq, query: str, results: list[dict]) -> dic
             "idea": str(item.get("idea") or "").strip(),
         })
 
-    if ideas:
+    if ideas or (parsed and confidence == "low"):
+        # a low-confidence answer may legitimately contain no ideas
         return {"summary": str(parsed.get("summary") or "").strip(), "ideas": ideas}
 
     # LLM did not return usable JSON — fall back to the retrieval order.
     return {
-        "summary": raw or "Here are the closest matches found in the database.",
+        "summary": reason if confidence == "low" and reason else (raw or "Here are the closest matches found in the database."),
         "ideas": [
             {"rank": i, "type": r["type"], "name": r["name"], "similarity": r["similarity"],
              "why": r["core_emotional_logic"] or "", "idea": ""}
@@ -246,6 +299,8 @@ def run_rag_data(query: str, client: Groq | None = None) -> dict:
         matching_concept = intent.get("matching_concept") or "emotional themes"
 
         entity = step_b_get_context(conn, reference_entity)
+        if entity is None and reference_entity:
+            entity = step_b2_live_lookup(intent)
 
         if entity:
             search_string = step_c_generate_search_string(client, entity, target_type, matching_concept)
@@ -253,15 +308,22 @@ def run_rag_data(query: str, client: Groq | None = None) -> dict:
             print("  [C] No reference entity — using query directly as search string.")
             search_string = query
 
-        results = step_d_vector_search(conn, search_string, target_type, exclude_id=entity["id"] if entity else None)
-        answer = step_e_generate_answer(client, query, results) if results else {"summary": "", "ideas": []}
+        results = step_d_vector_search(conn, search_string, target_type, exclude_id=entity.get("id") if entity else None)
+        confidence, confidence_reason = assess_confidence(intent, entity, results)
+        answer = (
+            step_e_generate_answer(client, query, results, confidence, confidence_reason)
+            if results else {"summary": "", "ideas": []}
+        )
 
         return {
             "query": query,
             "intent": intent,
             "reference": entity,
+            "reference_source": ("live" if entity.get("source") == "live" else "database") if entity else None,
             "search_string": search_string,
             "results": results,
+            "confidence": confidence,
+            "confidence_reason": confidence_reason,
             "summary": answer["summary"],
             "ideas": answer["ideas"],
         }
@@ -277,6 +339,8 @@ def run_rag(query: str) -> None:
         print("❌  No results found in the database.")
         return
     print("=" * 60)
+    if out["confidence"] == "low":
+        print(f"⚠️  LOW CONFIDENCE — {out['confidence_reason']}\n")
     print(out["summary"])
     for idea in out["ideas"]:
         print(f"\n{idea['rank']}. [{idea['type']}] {idea['name']}")
