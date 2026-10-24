@@ -122,6 +122,14 @@ def _row_to_entity(entity_type: str, row: tuple) -> dict:
 # ------------------------------------------------------------------
 # Vector similarity search
 # ------------------------------------------------------------------
+# Fetch this many times top_k rows so that, after dropping repeated rows, top_k distinct ones remain.
+_DUP_FACTOR = 5
+
+
+def _dup_key(entity_type: str, name: str) -> tuple[str, str]:
+    return entity_type, " ".join((name or "").lower().split())
+
+
 def vector_search(
     conn: psycopg2.extensions.connection,
     query_text: str,
@@ -130,7 +138,8 @@ def vector_search(
     exclude_id: str | None = None,
 ) -> list[dict]:
     """
-    Embed `query_text` and run a cosine similarity search across all tables.
+    Embed `query_text` and run a cosine similarity search across all tables,
+    returning distinct entries (repeated rows of the same entry are collapsed).
 
     Args:
         conn:        Open psycopg2 connection.
@@ -175,16 +184,28 @@ def vector_search(
     """
 
     with conn.cursor() as cur:
-        cur.execute(sql, (vec, exclude_id, exclude_id, top_k))
+        # The reference entity may exist in several identical rows: leave out every copy, not just one id.
+        excluded: set[tuple[str, str]] = set()
+        if exclude_id:
+            cur.execute(f"WITH combined AS ({union_sql}) SELECT type, name FROM combined WHERE id::text = %s", (exclude_id,))
+            excluded = {_dup_key(t, n) for t, n in cur.fetchall()}
+        cur.execute(sql, (vec, exclude_id, exclude_id, top_k * _DUP_FACTOR))
         rows = cur.fetchall()
 
-    return [
-        {
+    # Identical rows are in the table more than once; keep the best-scoring copy of each.
+    results, seen = [], set(excluded)
+    for row in rows:
+        key = _dup_key(row[0], row[1])
+        if key in seen:
+            continue
+        seen.add(key)
+        results.append({
             "type":                row[0],
             "name":                row[1],
             "description":         row[2],
             "core_emotional_logic": row[3],
             "similarity":          float(row[4]),
-        }
-        for row in rows
-    ]
+        })
+        if len(results) == top_k:
+            break
+    return results
