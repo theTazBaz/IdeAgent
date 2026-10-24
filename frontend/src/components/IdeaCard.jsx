@@ -6,9 +6,13 @@ const TYPE_STYLE = {
   song: "text-blue-700 dark:text-blue-400",
 };
 
-export default function IdeaCard({ idea }) {
+export default function IdeaCard({ idea, loose = false }) {
   return (
-    <article className="mb-2.5 rounded-xl border border-stone-200 bg-white p-4 dark:border-stone-800 dark:bg-stone-900">
+    <article
+      className={`mb-2.5 rounded-xl border bg-white p-4 dark:bg-stone-900 ${
+        loose ? "border-dashed border-amber-300 dark:border-amber-800" : "border-stone-200 dark:border-stone-800"
+      }`}
+    >
       <div className="flex items-center gap-2.5">
         <span className="grid size-7 flex-none place-items-center rounded-full bg-indigo-50 text-sm font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
           {idea.rank}
@@ -27,7 +31,11 @@ export default function IdeaCard({ idea }) {
         </p>
       )}
 
-      <p className="mt-2 text-xs tabular-nums text-stone-500">match strength {(idea.similarity * 100).toFixed(0)}%</p>
+      {loose ? (
+        <p className="mt-2 text-xs font-medium text-amber-700 dark:text-amber-400">loosely related</p>
+      ) : (
+        <p className="mt-2 text-xs tabular-nums text-stone-500">match strength {(idea.similarity * 100).toFixed(0)}%</p>
+      )}
     </article>
   );
 }

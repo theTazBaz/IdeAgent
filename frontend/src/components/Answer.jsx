@@ -48,9 +48,24 @@ export default function Answer({ turn }) {
         <Tag label="Matching" value={intent.matching_concept} />
       </div>
 
-      {intent.reference_entity && !d.reference && (
-        <p className="mb-3 rounded-lg border border-dashed border-stone-300 bg-white px-3.5 py-2.5 text-sm text-stone-500 dark:border-stone-700 dark:bg-stone-900">
-          “{intent.reference_entity}” isn’t in the database, so your question was matched as written.
+      {d.confidence === "low" && d.confidence_reason && (
+        <div
+          role="note"
+          className="mb-3 flex gap-2.5 rounded-lg border border-amber-300 bg-amber-50 px-3.5 py-2.5 text-sm text-amber-900 dark:border-amber-700 dark:bg-amber-950 dark:text-amber-200"
+        >
+          <span aria-hidden>⚠️</span>
+          <p>
+            <b>Limited confidence.</b> {d.confidence_reason}
+          </p>
+        </div>
+      )}
+
+      {d.reference_source === "live" && d.confidence !== "low" && d.confidence_reason && (
+        <p
+          role="note"
+          className="mb-3 rounded-lg border border-sky-300 bg-sky-50 px-3.5 py-2.5 text-sm text-sky-900 dark:border-sky-800 dark:bg-sky-950 dark:text-sky-200"
+        >
+          <b>Looked up live.</b> {d.confidence_reason}
         </p>
       )}
 
@@ -61,8 +76,11 @@ export default function Answer({ turn }) {
       ) : (
         <>
           {d.summary && <p className="mb-3 text-lg">{d.summary}</p>}
+          {d.confidence === "low" && d.ideas.length === 0 && (
+            <p className="mb-3 text-stone-500">None of the entries we have fit this request.</p>
+          )}
           {d.ideas.map((idea) => (
-            <IdeaCard key={idea.rank} idea={idea} />
+            <IdeaCard key={idea.rank} idea={idea} loose={d.confidence === "low"} />
           ))}
           <details className="mt-2 text-sm text-stone-500">
             <summary className="cursor-pointer">How this was found</summary>
