@@ -40,6 +40,7 @@ if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 from tqdm import tqdm
+import psycopg2
 
 from pipeline import config, db
 from pipeline.enrich_movie import enrich_movie
@@ -77,7 +78,7 @@ _CHAR_PLACEHOLDER: dict[str, str] = {
 }
 
 
-def _register_movie(entry: dict, uuid_val: str) -> None:
+def _register_movie(entry: dict, uuid_val: str, actual_title: str = "") -> None:
     """Register all possible placeholder variations for a movie."""
     title = entry.get("title", "")
     if "placeholder" in entry:
@@ -87,6 +88,10 @@ def _register_movie(entry: dict, uuid_val: str) -> None:
     _id_registry[title] = uuid_val
     slug = re.sub(r"[^a-zA-Z0-9]", "", title).lower()
     _id_registry[f"_NEEDS_MOVIE_ID_{slug}"] = uuid_val
+    if actual_title and actual_title != title:
+        _id_registry[actual_title] = uuid_val
+        actual_slug = re.sub(r"[^a-zA-Z0-9]", "", actual_title).lower()
+        _id_registry[f"_NEEDS_MOVIE_ID_{actual_slug}"] = uuid_val
 
 
 def _register_character(entry: dict, uuid_val: str) -> None:
@@ -111,9 +116,9 @@ def _register_character(entry: dict, uuid_val: str) -> None:
         _id_registry[f"_NEEDS_ID_{last_slug}"] = uuid_val
 
 
-def _resolve(value: str) -> str:
+def _resolve(value: str, conn: psycopg2.extensions.connection | None = None) -> str:
     """
-    Resolve a _NEEDS_* placeholder to a real UUID from the registry.
+    Resolve a _NEEDS_* placeholder to a real UUID from the registry or DB fallback.
     Returns the value unchanged if it's already a real UUID (no underscore prefix).
     """
     if isinstance(value, str) and (value.startswith("_NEEDS_") or value in _id_registry):
@@ -124,6 +129,13 @@ def _resolve(value: str) -> str:
                 if k.lower() == value.lower():
                     resolved = v
                     break
+        if resolved is None and conn is not None:
+            # Fallback to DB lookup if placeholder matches movie or char
+            clean = value.replace("_NEEDS_MOVIE_ID_", "").replace("_NEEDS_ID_", "")
+            m_id = db.get_movie_by_title(conn, clean)
+            if m_id:
+                _id_registry[value] = m_id
+                return m_id
         if resolved is None:
             raise ValueError(
                 f"Unresolved placeholder {value!r}. "
@@ -144,8 +156,26 @@ def load_batch(path: Path) -> dict:
         return json.load(f)
 
 
-def run(batch_path: Path, dry_run: bool = False) -> None:
+def _ensure_conn(conn: psycopg2.extensions.connection) -> psycopg2.extensions.connection:
+    """Return an active DB connection, reconnecting if dropped by pooler."""
+    if conn is None or getattr(conn, "closed", 1):
+        return db.get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT 1")
+        return conn
+    except Exception:
+        try:
+            conn.close()
+        except Exception:
+            pass
+        return db.get_conn()
+
+
+def run(batch_path: Path, dry_run: bool = False, only: str | None = None) -> None:
     batch = load_batch(batch_path)
+
+    only_set = set(only.lower().split(",")) if only else None
 
     print("\n🔌  Connecting to database …")
     conn = db.get_conn()
@@ -169,136 +199,187 @@ def run(batch_path: Path, dry_run: bool = False) -> None:
     # ------------------------------------------------------------------
     # 1. Movies
     # ------------------------------------------------------------------
-    movies = batch.get("movies", [])
+    movies = batch.get("movies", []) if (only_set is None or "movies" in only_set or "film" in only_set) else []
     if movies:
         print(f"🎬  Movies ({len(movies)} entries)")
     for entry in tqdm(movies, desc="  Movies", unit="movie"):
-        entity_id = entry.get("id")
-        existing_id = entity_id if (entity_id and db.is_enriched(conn, "movies", entity_id)) else db.get_movie_by_title(conn, entry["title"])
-        if existing_id:
-            tqdm.write(f"  ⏭  Skip (already enriched): {entry['title']}")
-            skipped += 1
-            # Still register the ID so characters can reference it
-            _register_movie(entry, existing_id)
-            continue
-        tqdm.write(f"\n→ Enriching movie: {entry['title']}")
-        try:
-            record = enrich_movie(conn, title=entry["title"], movie_id=entity_id)
-            done += 1
-            # Register the new UUID for downstream use
-            _register_movie(entry, record["id"])
-            time.sleep(4.2)
-        except Exception as e:
-            conn.rollback()
-            tqdm.write(f"  ❌  FAILED: {entry['title']} — {e}")
+        for attempt in range(3):
+            try:
+                conn = _ensure_conn(conn)
+                entity_id = entry.get("id")
+                existing_id = entity_id if (entity_id and db.is_enriched(conn, "movies", entity_id)) else db.get_movie_by_title(conn, entry["title"])
+                if existing_id:
+                    tqdm.write(f"  ⏭  Skip (already enriched): {entry['title']}")
+                    skipped += 1
+                    # Still register the ID so characters can reference it
+                    _register_movie(entry, existing_id)
+                    break
+                tqdm.write(f"\n→ Enriching movie: {entry['title']}")
+                record = enrich_movie(conn, title=entry["title"], movie_id=entity_id)
+                done += 1
+                # Register the new UUID for downstream use
+                _register_movie(entry, record["id"], record.get("title", ""))
+                time.sleep(4.2)
+                break
+            except (psycopg2.OperationalError, psycopg2.InterfaceError) as conn_err:
+                tqdm.write(f"  🔄  DB connection drop: {conn_err} — reconnecting (attempt {attempt+1}/3)")
+                time.sleep(2.0)
+                conn = db.get_conn()
+            except Exception as e:
+                try:
+                    conn.rollback()
+                except Exception:
+                    pass
+                conn = _ensure_conn(conn)
+                tqdm.write(f"  ❌  FAILED: {entry['title']} — {e}")
+                break
 
     # ------------------------------------------------------------------
     # 2. Characters  (after movies — same conn, movie rows now exist)
     # ------------------------------------------------------------------
-    characters = batch.get("characters", [])
+    characters = batch.get("characters", []) if (only_set is None or "characters" in only_set or "film" in only_set) else []
     if characters:
         print(f"\n🧑  Characters ({len(characters)} entries)")
     for entry in tqdm(characters, desc="  Characters", unit="char"):
-        entity_id = entry.get("id")
-        try:
-            movie_id = _resolve(entry["movie_id"])
-        except ValueError as e:
-            tqdm.write(f"  ⏭  Skip (dependency not met): {entry['name']} — {e}")
-            skipped += 1
-            continue
-        existing_id = entity_id if (entity_id and db.is_enriched(conn, "characters", entity_id)) else db.get_character_by_name(conn, entry["name"], movie_id)
-        if existing_id:
-            tqdm.write(f"  ⏭  Skip (already enriched): {entry['name']}")
-            skipped += 1
-            # Still register for downstream relationships
-            _register_character(entry, existing_id)
-            continue
-        tqdm.write(f"\n→ Enriching character: {entry['name']} ({entry['movie_title']})")
-        try:
-            record = enrich_character(
-                conn,
-                name=entry["name"],
-                movie_id=movie_id,
-                movie_title=entry["movie_title"],
-                character_id=entity_id,
-                fandom_wiki=entry.get("fandom_wiki"),
-                fandom_slug=entry.get("fandom_slug"),
-            )
-            done += 1
-            # Register the new UUID for downstream relationships
-            _register_character(entry, record["id"])
-            time.sleep(4.2)
-        except Exception as e:
-            conn.rollback()
-            tqdm.write(f"  ❌  FAILED: {entry['name']} — {e}")
+        for attempt in range(3):
+            try:
+                conn = _ensure_conn(conn)
+                entity_id = entry.get("id")
+                try:
+                    movie_id = _resolve(entry["movie_id"], conn)
+                except ValueError as e:
+                    tqdm.write(f"  ⏭  Skip (dependency not met): {entry['name']} — {e}")
+                    skipped += 1
+                    break
+                existing_id = entity_id if (entity_id and db.is_enriched(conn, "characters", entity_id)) else db.get_character_by_name(conn, entry["name"], movie_id)
+                if existing_id:
+                    tqdm.write(f"  ⏭  Skip (already enriched): {entry['name']}")
+                    skipped += 1
+                    # Still register for downstream relationships
+                    _register_character(entry, existing_id)
+                    break
+                tqdm.write(f"\n→ Enriching character: {entry['name']} ({entry['movie_title']})")
+                record = enrich_character(
+                    conn,
+                    name=entry["name"],
+                    movie_id=movie_id,
+                    movie_title=entry["movie_title"],
+                    character_id=entity_id,
+                    fandom_wiki=entry.get("fandom_wiki"),
+                    fandom_slug=entry.get("fandom_slug"),
+                )
+                done += 1
+                # Register the new UUID for downstream relationships
+                _register_character(entry, record["id"])
+                time.sleep(4.2)
+                break
+            except (psycopg2.OperationalError, psycopg2.InterfaceError) as conn_err:
+                tqdm.write(f"  🔄  DB connection drop: {conn_err} — reconnecting (attempt {attempt+1}/3)")
+                time.sleep(2.0)
+                conn = db.get_conn()
+            except Exception as e:
+                try:
+                    conn.rollback()
+                except Exception:
+                    pass
+                conn = _ensure_conn(conn)
+                tqdm.write(f"  ❌  FAILED: {entry['name']} — {e}")
+                break
 
     # ------------------------------------------------------------------
     # 3. Relationships  (after characters)
     # ------------------------------------------------------------------
-    relationships = batch.get("relationships", [])
+    relationships = batch.get("relationships", []) if (only_set is None or "relationships" in only_set or "film" in only_set) else []
     if relationships:
         print(f"\n🔗  Relationships ({len(relationships)} entries)")
     for entry in tqdm(relationships, desc="  Relationships", unit="rel"):
-        entity_id = entry.get("id")
-        try:
-            char_a = _resolve(entry["character_id_a"])
-            char_b = _resolve(entry["character_id_b"])
-            movie_id = _resolve(entry["movie_id"])
-        except ValueError as e:
-            tqdm.write(f"  ⏭  Skip (dependencies not met): {entry['label']} — {e}")
-            skipped += 1
-            continue
-        existing_id = entity_id if (entity_id and db.is_enriched(conn, "relationships", entity_id)) else db.get_relationship_by_chars(conn, char_a, char_b)
-        if existing_id:
-            tqdm.write(f"  ⏭  Skip (already enriched): {entry['label']}")
-            skipped += 1
-            continue
-        tqdm.write(f"\n→ Enriching relationship: {entry['label']}")
-        try:
-            enrich_relationship(
-                conn,
-                character_id_a=char_a,
-                character_id_b=char_b,
-                movie_id=movie_id,
-                label=entry["label"],
-                relationship_id=entity_id,
-                search_query=entry.get("search_query"),
-            )
-            done += 1
-            time.sleep(4.2)
-        except Exception as e:
-            conn.rollback()
-            tqdm.write(f"  ❌  FAILED: {entry['label']} — {e}")
+        for attempt in range(3):
+            try:
+                conn = _ensure_conn(conn)
+                entity_id = entry.get("id")
+                try:
+                    char_a = _resolve(entry["character_id_a"], conn)
+                    char_b = _resolve(entry["character_id_b"], conn)
+                    movie_id = _resolve(entry["movie_id"], conn)
+                except ValueError as e:
+                    tqdm.write(f"  ⏭  Skip (dependencies not met): {entry['label']} — {e}")
+                    skipped += 1
+                    break
+                existing_id = entity_id if (entity_id and db.is_enriched(conn, "relationships", entity_id)) else db.get_relationship_by_chars(conn, char_a, char_b)
+                if existing_id:
+                    tqdm.write(f"  ⏭  Skip (already enriched): {entry['label']}")
+                    skipped += 1
+                    break
+                tqdm.write(f"\n→ Enriching relationship: {entry['label']}")
+                enrich_relationship(
+                    conn,
+                    character_id_a=char_a,
+                    character_id_b=char_b,
+                    movie_id=movie_id,
+                    label=entry["label"],
+                    relationship_id=entity_id,
+                    search_query=entry.get("search_query"),
+                )
+                done += 1
+                time.sleep(4.2)
+                break
+            except (psycopg2.OperationalError, psycopg2.InterfaceError) as conn_err:
+                tqdm.write(f"  🔄  DB connection drop: {conn_err} — reconnecting (attempt {attempt+1}/3)")
+                time.sleep(2.0)
+                conn = db.get_conn()
+            except Exception as e:
+                try:
+                    conn.rollback()
+                except Exception:
+                    pass
+                conn = _ensure_conn(conn)
+                tqdm.write(f"  ❌  FAILED: {entry['label']} — {e}")
+                break
 
     # ------------------------------------------------------------------
     # 4. Songs  (fully independent)
     # ------------------------------------------------------------------
-    songs = batch.get("songs", [])
+    songs = batch.get("songs", []) if (only_set is None or "songs" in only_set or "music" in only_set) else []
     if songs:
         print(f"\n🎵  Songs ({len(songs)} entries)")
     for entry in tqdm(songs, desc="  Songs", unit="song"):
-        entity_id = entry.get("id")
-        existing_id = entity_id if (entity_id and db.is_enriched(conn, "songs", entity_id)) else db.get_song_by_title_artist(conn, entry["title"], entry["artist"])
-        if existing_id:
-            tqdm.write(f"  ⏭  Skip (already enriched): {entry['title']} — {entry['artist']}")
-            skipped += 1
-            continue
-        tqdm.write(f"\n→ Enriching song: {entry['title']} — {entry['artist']}")
-        try:
-            enrich_song(
-                conn,
-                title=entry["title"],
-                artist=entry["artist"],
-                song_id=entity_id,
-            )
-            done += 1
-            # Respect rate limits for Groq
-            time.sleep(2.5)
-        except Exception as e:
-            conn.rollback()
-            tqdm.write(f"  ❌  FAILED: {entry['title']} — {e}")
+        for attempt in range(3):
+            try:
+                conn = _ensure_conn(conn)
+                entity_id = entry.get("id")
+                existing_id = entity_id if (entity_id and db.is_enriched(conn, "songs", entity_id)) else db.get_song_by_title_artist(conn, entry["title"], entry["artist"])
+                if existing_id:
+                    tqdm.write(f"  ⏭  Skip (already enriched): {entry['title']} — {entry['artist']}")
+                    skipped += 1
+                    break
+                tqdm.write(f"\n→ Enriching song: {entry['title']} — {entry['artist']}")
+                enrich_song(
+                    conn,
+                    title=entry["title"],
+                    artist=entry["artist"],
+                    song_id=entity_id,
+                )
+                done += 1
+                # Respect rate limits for Groq Qwen TPM
+                time.sleep(9.5)
+                break
+            except (psycopg2.OperationalError, psycopg2.InterfaceError) as conn_err:
+                tqdm.write(f"  🔄  DB connection drop: {conn_err} — reconnecting (attempt {attempt+1}/3)")
+                time.sleep(2.0)
+                conn = db.get_conn()
+            except Exception as e:
+                try:
+                    conn.rollback()
+                except Exception:
+                    pass
+                conn = _ensure_conn(conn)
+                tqdm.write(f"  ❌  FAILED: {entry['title']} — {e}")
+                break
 
-    conn.close()
+    try:
+        conn.close()
+    except Exception:
+        pass
 
 
     # ------------------------------------------------------------------
@@ -344,6 +425,12 @@ Examples:
         action="store_true",
         help="Test DB connection only — do not enrich anything",
     )
+    parser.add_argument(
+        "--only",
+        type=str,
+        default=None,
+        help="Comma-separated entities to enrich: 'movies,characters,relationships', 'film', or 'songs'",
+    )
     args = parser.parse_args()
 
     if not args.input.exists():
@@ -355,7 +442,7 @@ Examples:
     print(f"    Embed model: nomic-embed-text-v1.5 (local)")
     print(f"    LLM model  : {config.LLM_MODEL}\n")
 
-    run(batch_path=args.input, dry_run=args.dry_run)
+    run(batch_path=args.input, dry_run=args.dry_run, only=args.only)
 
 
 if __name__ == "__main__":

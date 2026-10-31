@@ -39,12 +39,23 @@ def _get_client() -> Groq:
 
 
 def _call_llm(client: Groq, prompt: str) -> str:
-    resp = client.chat.completions.create(
-        model=config.LLM_MODEL,
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.1,
-    )
-    return resp.choices[0].message.content
+    target_model = config.LLM_MODEL
+    fallback = getattr(config, "LLM_FALLBACK_MODEL", None)
+    for attempt in range(3):
+        try:
+            resp = client.chat.completions.create(
+                model=target_model,
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.1,
+            )
+            return resp.choices[0].message.content
+        except Exception as e:
+            err_str = str(e).lower()
+            if ("tokens per day" in err_str or "tpd" in err_str or "rate_limit" in err_str) and fallback and target_model != fallback:
+                print(f"    ⚠️  Failover from {target_model} to {fallback} …")
+                target_model = fallback
+                continue
+            raise
 
 
 def _extract_json(text: str) -> dict:

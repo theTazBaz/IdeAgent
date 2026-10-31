@@ -56,32 +56,64 @@ def is_enriched(conn: psycopg2.extensions.connection, table: str, entity_id: str
 
 
 def get_movie_by_title(conn: psycopg2.extensions.connection, title: str) -> Optional[str]:
-    """Return movie ID if movie exists and has embedding, else None."""
+    """Return movie ID if movie exists, checking exact match and subtitle variations."""
     with conn.cursor() as cur:
         cur.execute(
-            "SELECT id FROM movies WHERE LOWER(title) = LOWER(%s) AND text_embedding IS NOT NULL LIMIT 1",
+            "SELECT id FROM movies WHERE LOWER(title) = LOWER(%s) LIMIT 1",
             (title,),
+        )
+        row = cur.fetchone()
+        if row:
+            return str(row[0])
+        # Subtitle fallback (e.g. 'Birdman' vs 'Birdman or (The Unexpected Virtue of Ignorance)')
+        # Only matches with subtitle separators to avoid matching sequels like Blade Runner vs Blade Runner 2049
+        sub1 = title.lower() + ": %"
+        sub2 = title.lower() + " or %"
+        sub3 = title.lower() + " (%"
+        sub4 = title.lower() + " - %"
+        cur.execute(
+            """
+            SELECT id FROM movies 
+            WHERE LOWER(title) LIKE %s
+               OR LOWER(title) LIKE %s
+               OR LOWER(title) LIKE %s
+               OR LOWER(title) LIKE %s
+            ORDER BY LENGTH(title) ASC LIMIT 1
+            """,
+            (sub1, sub2, sub3, sub4),
         )
         row = cur.fetchone()
         return str(row[0]) if row else None
 
 
 def get_character_by_name(conn: psycopg2.extensions.connection, name: str, movie_id: str) -> Optional[str]:
-    """Return character ID if character exists and has embedding, else None."""
+    """Return character ID if character exists for movie, checking exact and substring matches."""
     with conn.cursor() as cur:
         cur.execute(
-            "SELECT id FROM characters WHERE LOWER(name) = LOWER(%s) AND movie_id = %s AND text_embedding IS NOT NULL LIMIT 1",
+            "SELECT id FROM characters WHERE LOWER(name) = LOWER(%s) AND movie_id = %s LIMIT 1",
             (name, movie_id),
+        )
+        row = cur.fetchone()
+        if row:
+            return str(row[0])
+        # Substring / slash-name fallback (e.g. 'K' vs 'K / Joe', 'Bruce Wayne' vs 'Bruce Wayne / Batman')
+        cur.execute(
+            """
+            SELECT id FROM characters 
+            WHERE movie_id = %s AND (POSITION(LOWER(%s) IN LOWER(name)) > 0 OR POSITION(LOWER(name) IN LOWER(%s)) > 0)
+            LIMIT 1
+            """,
+            (movie_id, name, name),
         )
         row = cur.fetchone()
         return str(row[0]) if row else None
 
 
 def get_relationship_by_chars(conn: psycopg2.extensions.connection, char_a: str, char_b: str) -> Optional[str]:
-    """Return relationship ID if relationship exists and has embedding, else None."""
+    """Return relationship ID if relationship exists between char_a and char_b in either order."""
     with conn.cursor() as cur:
         cur.execute(
-            "SELECT id FROM relationships WHERE ((character_id_a = %s AND character_id_b = %s) OR (character_id_a = %s AND character_id_b = %s)) AND text_embedding IS NOT NULL LIMIT 1",
+            "SELECT id FROM relationships WHERE ((character_id_a = %s AND character_id_b = %s) OR (character_id_a = %s AND character_id_b = %s)) LIMIT 1",
             (char_a, char_b, char_b, char_a),
         )
         row = cur.fetchone()
@@ -89,10 +121,10 @@ def get_relationship_by_chars(conn: psycopg2.extensions.connection, char_a: str,
 
 
 def get_song_by_title_artist(conn: psycopg2.extensions.connection, title: str, artist: str) -> Optional[str]:
-    """Return song ID if song exists and has embedding, else None."""
+    """Return song ID if song exists with matching title and artist."""
     with conn.cursor() as cur:
         cur.execute(
-            "SELECT id FROM songs WHERE LOWER(title) = LOWER(%s) AND LOWER(artist) = LOWER(%s) AND text_embedding IS NOT NULL LIMIT 1",
+            "SELECT id FROM songs WHERE LOWER(title) = LOWER(%s) AND LOWER(artist) = LOWER(%s) LIMIT 1",
             (title, artist),
         )
         row = cur.fetchone()
@@ -107,6 +139,10 @@ def upsert_movie(conn: psycopg2.extensions.connection, record: dict) -> None:
     Insert or update a movie row.
     record keys: id, title, raw_facts (dict), description, core_emotional_logic, text_embedding (list[float])
     """
+    existing_id = get_movie_by_title(conn, record["title"])
+    if existing_id:
+        record["id"] = existing_id
+
     with conn.cursor() as cur:
         cur.execute(
             """
@@ -115,6 +151,7 @@ def upsert_movie(conn: psycopg2.extensions.connection, record: dict) -> None:
             VALUES
                 (%(id)s, %(title)s, %(raw_facts)s, %(description)s, %(core_emotional_logic)s, %(text_embedding)s)
             ON CONFLICT (id) DO UPDATE SET
+                title                = EXCLUDED.title,
                 raw_facts            = EXCLUDED.raw_facts,
                 description          = EXCLUDED.description,
                 core_emotional_logic = EXCLUDED.core_emotional_logic,
@@ -137,6 +174,10 @@ def upsert_character(conn: psycopg2.extensions.connection, record: dict) -> None
     Insert or update a character row.
     record keys: id, movie_id, name, raw_facts, description, core_emotional_logic, text_embedding
     """
+    existing_id = get_character_by_name(conn, record["name"], record["movie_id"])
+    if existing_id:
+        record["id"] = existing_id
+
     with conn.cursor() as cur:
         cur.execute(
             """
@@ -145,6 +186,7 @@ def upsert_character(conn: psycopg2.extensions.connection, record: dict) -> None
             VALUES
                 (%(id)s, %(movie_id)s, %(name)s, %(raw_facts)s, %(description)s, %(core_emotional_logic)s, %(text_embedding)s)
             ON CONFLICT (id) DO UPDATE SET
+                name                 = EXCLUDED.name,
                 raw_facts            = EXCLUDED.raw_facts,
                 description          = EXCLUDED.description,
                 core_emotional_logic = EXCLUDED.core_emotional_logic,
@@ -168,6 +210,10 @@ def upsert_relationship(conn: psycopg2.extensions.connection, record: dict) -> N
     record keys: id, movie_id, character_id_a, character_id_b, label,
                  raw_facts, description, core_emotional_logic, text_embedding
     """
+    existing_id = get_relationship_by_chars(conn, record["character_id_a"], record["character_id_b"])
+    if existing_id:
+        record["id"] = existing_id
+
     with conn.cursor() as cur:
         cur.execute(
             """
@@ -198,6 +244,10 @@ def upsert_song(conn: psycopg2.extensions.connection, record: dict) -> None:
     Insert or update a song row.
     record keys: id, title, artist, raw_facts, description, core_emotional_logic, text_embedding
     """
+    existing_id = get_song_by_title_artist(conn, record["title"], record["artist"])
+    if existing_id:
+        record["id"] = existing_id
+
     with conn.cursor() as cur:
         cur.execute(
             """
@@ -206,6 +256,7 @@ def upsert_song(conn: psycopg2.extensions.connection, record: dict) -> None:
             VALUES
                 (%(id)s, %(title)s, %(artist)s, %(raw_facts)s, %(description)s, %(core_emotional_logic)s, %(text_embedding)s)
             ON CONFLICT (id) DO UPDATE SET
+                title                = EXCLUDED.title,
                 raw_facts            = EXCLUDED.raw_facts,
                 description          = EXCLUDED.description,
                 core_emotional_logic = EXCLUDED.core_emotional_logic,

@@ -39,7 +39,7 @@ def enrich_song(
     Returns:
         The full record dict that was upserted.
     """
-    song_id = song_id or str(uuid4())
+    song_id = song_id or db.get_song_by_title_artist(conn, title, artist) or str(uuid4())
 
     # ------------------------------------------------------------------
     # Step 1: Scrape

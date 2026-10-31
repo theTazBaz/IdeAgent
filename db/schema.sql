@@ -28,6 +28,7 @@ CREATE TABLE movies (
 -- Rule: description holds ONLY individual traits — never relational logic
 -- =============================================================================
 CREATE TABLE characters (
+    
     id                   UUID        PRIMARY KEY DEFAULT gen_random_uuid(),
     movie_id             UUID        NOT NULL REFERENCES movies(id) ON DELETE CASCADE,
     name                 TEXT        NOT NULL,

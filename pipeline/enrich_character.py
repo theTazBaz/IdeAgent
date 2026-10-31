@@ -45,7 +45,7 @@ def enrich_character(
     Returns:
         The full record dict that was upserted.
     """
-    character_id = character_id or str(uuid4())
+    character_id = character_id or db.get_character_by_name(conn, name, movie_id) or str(uuid4())
 
     # ------------------------------------------------------------------
     # Step 1: Scrape

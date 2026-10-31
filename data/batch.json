@@ -82,6 +82,318 @@
     {
       "title": "Black Swan",
       "placeholder": "_NEEDS_MOVIE_ID_blackswan"
+    },
+    {
+      "title": "Dune",
+      "placeholder": "_NEEDS_MOVIE_ID_dune"
+    },
+    {
+      "title": "The Truman Show",
+      "placeholder": "_NEEDS_MOVIE_ID_thetrumanshow"
+    },
+    {
+      "title": "Arrival",
+      "placeholder": "_NEEDS_MOVIE_ID_arrival"
+    },
+    {
+      "title": "Ex Machina",
+      "placeholder": "_NEEDS_MOVIE_ID_exmachina"
+    },
+    {
+      "title": "Jurassic Park",
+      "placeholder": "_NEEDS_MOVIE_ID_jurassicpark"
+    },
+    {
+      "title": "Shutter Island",
+      "placeholder": "_NEEDS_MOVIE_ID_shutterisland"
+    },
+    {
+      "title": "Se7en",
+      "placeholder": "_NEEDS_MOVIE_ID_se7en"
+    },
+    {
+      "title": "Gone Girl",
+      "placeholder": "_NEEDS_MOVIE_ID_gonegirl"
+    },
+    {
+      "title": "Memento",
+      "placeholder": "_NEEDS_MOVIE_ID_memento"
+    },
+    {
+      "title": "Nightcrawler",
+      "placeholder": "_NEEDS_MOVIE_ID_nightcrawler"
+    },
+    {
+      "title": "Taxi Driver",
+      "placeholder": "_NEEDS_MOVIE_ID_taxidriver"
+    },
+    {
+      "title": "American Psycho",
+      "placeholder": "_NEEDS_MOVIE_ID_americanpsycho"
+    },
+    {
+      "title": "The Shawshank Redemption",
+      "placeholder": "_NEEDS_MOVIE_ID_theshawshankredemption"
+    },
+    {
+      "title": "Forrest Gump",
+      "placeholder": "_NEEDS_MOVIE_ID_forrestgump"
+    },
+    {
+      "title": "Dead Poets Society",
+      "placeholder": "_NEEDS_MOVIE_ID_deadpoetssociety"
+    },
+    {
+      "title": "The Grand Budapest Hotel",
+      "placeholder": "_NEEDS_MOVIE_ID_thegrandbudapesthotel"
+    },
+    {
+      "title": "There Will Be Blood",
+      "placeholder": "_NEEDS_MOVIE_ID_therewillbeblood"
+    },
+    {
+      "title": "Birdman",
+      "placeholder": "_NEEDS_MOVIE_ID_birdman"
+    },
+    {
+      "title": "Goodfellas",
+      "placeholder": "_NEEDS_MOVIE_ID_goodfellas"
+    },
+    {
+      "title": "The Departed",
+      "placeholder": "_NEEDS_MOVIE_ID_thedeparted"
+    },
+    {
+      "title": "Scarface",
+      "placeholder": "_NEEDS_MOVIE_ID_scarface"
+    },
+    {
+      "title": "Heat",
+      "placeholder": "_NEEDS_MOVIE_ID_heat"
+    },
+    {
+      "title": "No Country for Old Men",
+      "placeholder": "_NEEDS_MOVIE_ID_nocountryforoldmen"
+    },
+    {
+      "title": "Spirited Away",
+      "placeholder": "_NEEDS_MOVIE_ID_spiritedaway"
+    },
+    {
+      "title": "The Prestige",
+      "placeholder": "_NEEDS_MOVIE_ID_theprestige"
+    },
+    {
+      "title": "Gladiator",
+      "placeholder": "_NEEDS_MOVIE_ID_gladiator"
+    },
+    {
+      "title": "Inglourious Basterds",
+      "placeholder": "_NEEDS_MOVIE_ID_inglouriousbasterds"
+    },
+    {
+      "title": "Leon: The Professional",
+      "placeholder": "_NEEDS_MOVIE_ID_leontheprofessional"
+    },
+    {
+      "title": "Spider-Man 2",
+      "placeholder": "_NEEDS_MOVIE_ID_spiderman2"
+    },
+    {
+      "title": "Blade Runner",
+      "placeholder": "_NEEDS_MOVIE_ID_bladerunner"
+    },
+    {
+      "title": "2001: A Space Odyssey",
+      "placeholder": "_NEEDS_MOVIE_ID_2001aspaceodyssey"
+    },
+    {
+      "title": "Apocalypse Now",
+      "placeholder": "_NEEDS_MOVIE_ID_apocalypsenow"
+    },
+    {
+      "title": "The Silence of the Lambs",
+      "placeholder": "_NEEDS_MOVIE_ID_thesilenceofthelambs"
+    },
+    {
+      "title": "Oldboy",
+      "placeholder": "_NEEDS_MOVIE_ID_oldboy"
+    },
+    {
+      "title": "12 Angry Men",
+      "placeholder": "_NEEDS_MOVIE_ID_12angrymen"
+    },
+    {
+      "title": "The Shining",
+      "placeholder": "_NEEDS_MOVIE_ID_theshining"
+    },
+    {
+      "title": "Drive",
+      "placeholder": "_NEEDS_MOVIE_ID_drive"
+    },
+    {
+      "title": "Casablanca",
+      "placeholder": "_NEEDS_MOVIE_ID_casablanca"
+    },
+    {
+      "title": "Memories of Murder",
+      "placeholder": "_NEEDS_MOVIE_ID_memoriesofmurder"
+    },
+    {
+      "title": "Children of Men",
+      "placeholder": "_NEEDS_MOVIE_ID_childrenofmen"
+    },
+    {
+      "title": "Mad Max: Fury Road",
+      "placeholder": "_NEEDS_MOVIE_ID_madmaxfuryroad"
+    },
+    {
+      "title": "Pan's Labyrinth",
+      "placeholder": "_NEEDS_MOVIE_ID_panslabyrinth"
+    },
+    {
+      "title": "Princess Mononoke",
+      "placeholder": "_NEEDS_MOVIE_ID_princessmononoke"
+    },
+    {
+      "title": "Catch Me If You Can",
+      "placeholder": "_NEEDS_MOVIE_ID_catchmeifyoucan"
+    },
+    {
+      "title": "Zodiac",
+      "placeholder": "_NEEDS_MOVIE_ID_zodiac"
+    },
+    {
+      "title": "The Wolf of Wall Street",
+      "placeholder": "_NEEDS_MOVIE_ID_thewolfofwallstreet"
+    },
+    {
+      "title": "Requiem for a Dream",
+      "placeholder": "_NEEDS_MOVIE_ID_requiemforadream"
+    },
+    {
+      "title": "Schindler's List",
+      "placeholder": "_NEEDS_MOVIE_ID_schindlerslist"
+    },
+    {
+      "title": "Trainspotting",
+      "placeholder": "_NEEDS_MOVIE_ID_trainspotting"
+    },
+    {
+      "title": "Harry Potter and the Philosopher's Stone",
+      "placeholder": "_NEEDS_MOVIE_ID_hp1"
+    },
+    {
+      "title": "Harry Potter and the Chamber of Secrets",
+      "placeholder": "_NEEDS_MOVIE_ID_hp2"
+    },
+    {
+      "title": "Harry Potter and the Prisoner of Azkaban",
+      "placeholder": "_NEEDS_MOVIE_ID_hp3"
+    },
+    {
+      "title": "Harry Potter and the Goblet of Fire",
+      "placeholder": "_NEEDS_MOVIE_ID_hp4"
+    },
+    {
+      "title": "Harry Potter and the Order of the Phoenix",
+      "placeholder": "_NEEDS_MOVIE_ID_hp5"
+    },
+    {
+      "title": "Harry Potter and the Half-Blood Prince",
+      "placeholder": "_NEEDS_MOVIE_ID_hp6"
+    },
+    {
+      "title": "Harry Potter and the Deathly Hallows: Part 1",
+      "placeholder": "_NEEDS_MOVIE_ID_hp7"
+    },
+    {
+      "title": "Harry Potter and the Deathly Hallows: Part 2",
+      "placeholder": "_NEEDS_MOVIE_ID_hp8"
+    },
+    {
+      "title": "Iron Man",
+      "placeholder": "_NEEDS_MOVIE_ID_ironman"
+    },
+    {
+      "title": "The Avengers",
+      "placeholder": "_NEEDS_MOVIE_ID_avengers"
+    },
+    {
+      "title": "Captain America: The Winter Soldier",
+      "placeholder": "_NEEDS_MOVIE_ID_wintersoldier"
+    },
+    {
+      "title": "Guardians of the Galaxy",
+      "placeholder": "_NEEDS_MOVIE_ID_gotg"
+    },
+    {
+      "title": "Captain America: Civil War",
+      "placeholder": "_NEEDS_MOVIE_ID_civilwar"
+    },
+    {
+      "title": "Thor: Ragnarok",
+      "placeholder": "_NEEDS_MOVIE_ID_ragnarok"
+    },
+    {
+      "title": "Black Panther",
+      "placeholder": "_NEEDS_MOVIE_ID_blackpanther"
+    },
+    {
+      "title": "Avengers: Infinity War",
+      "placeholder": "_NEEDS_MOVIE_ID_infinitywar"
+    },
+    {
+      "title": "Avengers: Endgame",
+      "placeholder": "_NEEDS_MOVIE_ID_endgame"
+    },
+    {
+      "title": "Spider-Man: No Way Home",
+      "placeholder": "_NEEDS_MOVIE_ID_nowayhome"
+    },
+    {
+      "title": "Logan",
+      "placeholder": "_NEEDS_MOVIE_ID_logan"
+    },
+    {
+      "title": "X-Men: Days of Future Past",
+      "placeholder": "_NEEDS_MOVIE_ID_dofp"
+    },
+    {
+      "title": "Batman Begins",
+      "placeholder": "_NEEDS_MOVIE_ID_batmanbegins"
+    },
+    {
+      "title": "The Dark Knight Rises",
+      "placeholder": "_NEEDS_MOVIE_ID_tldr"
+    },
+    {
+      "title": "The Batman",
+      "placeholder": "_NEEDS_MOVIE_ID_thebatman"
+    },
+    {
+      "title": "Joker",
+      "placeholder": "_NEEDS_MOVIE_ID_joker"
+    },
+    {
+      "title": "Man of Steel",
+      "placeholder": "_NEEDS_MOVIE_ID_manofsteel"
+    },
+    {
+      "title": "Batman v Superman: Dawn of Justice",
+      "placeholder": "_NEEDS_MOVIE_ID_bvs"
+    },
+    {
+      "title": "Wonder Woman",
+      "placeholder": "_NEEDS_MOVIE_ID_wonderwoman"
+    },
+    {
+      "title": "Watchmen",
+      "placeholder": "_NEEDS_MOVIE_ID_watchmen"
+    },
+    {
+      "title": "V for Vendetta",
+      "placeholder": "_NEEDS_MOVIE_ID_vforvendetta"
     }
   ],
   "characters": [
@@ -432,6 +744,1830 @@
       "movie_id": "_NEEDS_MOVIE_ID_blackswan",
       "movie_title": "Black Swan",
       "placeholder": "_NEEDS_ID_lily"
+    },
+    {
+      "name": "Paul Atreides",
+      "movie_title": "Dune",
+      "movie_id": "_NEEDS_MOVIE_ID_dune",
+      "placeholder": "_NEEDS_ID_paulatreides",
+      "fandom_wiki": "dune",
+      "fandom_slug": "Paul_Atreides"
+    },
+    {
+      "name": "Lady Jessica",
+      "movie_title": "Dune",
+      "movie_id": "_NEEDS_MOVIE_ID_dune",
+      "placeholder": "_NEEDS_ID_ladyjessica",
+      "fandom_wiki": "dune",
+      "fandom_slug": "Jessica_Atreides"
+    },
+    {
+      "name": "Chani",
+      "movie_title": "Dune",
+      "movie_id": "_NEEDS_MOVIE_ID_dune",
+      "placeholder": "_NEEDS_ID_chani",
+      "fandom_wiki": "dune",
+      "fandom_slug": "Chani"
+    },
+    {
+      "name": "Truman Burbank",
+      "movie_title": "The Truman Show",
+      "movie_id": "_NEEDS_MOVIE_ID_thetrumanshow",
+      "placeholder": "_NEEDS_ID_truman",
+      "fandom_wiki": "thetrumanshow",
+      "fandom_slug": "Truman_Burbank"
+    },
+    {
+      "name": "Christof",
+      "movie_title": "The Truman Show",
+      "movie_id": "_NEEDS_MOVIE_ID_thetrumanshow",
+      "placeholder": "_NEEDS_ID_christof",
+      "fandom_wiki": "thetrumanshow",
+      "fandom_slug": "Christof"
+    },
+    {
+      "name": "Sylvia",
+      "movie_title": "The Truman Show",
+      "movie_id": "_NEEDS_MOVIE_ID_thetrumanshow",
+      "placeholder": "_NEEDS_ID_sylvia",
+      "fandom_wiki": "thetrumanshow",
+      "fandom_slug": "Sylvia"
+    },
+    {
+      "name": "Louise Banks",
+      "movie_title": "Arrival",
+      "movie_id": "_NEEDS_MOVIE_ID_arrival",
+      "placeholder": "_NEEDS_ID_louisebanks",
+      "fandom_wiki": "arrival",
+      "fandom_slug": "Louise_Banks"
+    },
+    {
+      "name": "Ian Donnelly",
+      "movie_title": "Arrival",
+      "movie_id": "_NEEDS_MOVIE_ID_arrival",
+      "placeholder": "_NEEDS_ID_iandonnelly",
+      "fandom_wiki": "arrival",
+      "fandom_slug": "Ian_Donnelly"
+    },
+    {
+      "name": "Caleb Smith",
+      "movie_title": "Ex Machina",
+      "movie_id": "_NEEDS_MOVIE_ID_exmachina",
+      "placeholder": "_NEEDS_ID_calebsmith",
+      "fandom_wiki": "ex-machina",
+      "fandom_slug": "Caleb_Smith"
+    },
+    {
+      "name": "Nathan Bateman",
+      "movie_title": "Ex Machina",
+      "movie_id": "_NEEDS_MOVIE_ID_exmachina",
+      "placeholder": "_NEEDS_ID_nathanbateman",
+      "fandom_wiki": "ex-machina",
+      "fandom_slug": "Nathan_Bateman"
+    },
+    {
+      "name": "Ava",
+      "movie_title": "Ex Machina",
+      "movie_id": "_NEEDS_MOVIE_ID_exmachina",
+      "placeholder": "_NEEDS_ID_ava",
+      "fandom_wiki": "ex-machina",
+      "fandom_slug": "Ava"
+    },
+    {
+      "name": "Alan Grant",
+      "movie_title": "Jurassic Park",
+      "movie_id": "_NEEDS_MOVIE_ID_jurassicpark",
+      "placeholder": "_NEEDS_ID_alangrant",
+      "fandom_wiki": "jurassicpark",
+      "fandom_slug": "Alan_Grant"
+    },
+    {
+      "name": "Ian Malcolm",
+      "movie_title": "Jurassic Park",
+      "movie_id": "_NEEDS_MOVIE_ID_jurassicpark",
+      "placeholder": "_NEEDS_ID_ianmalcolm",
+      "fandom_wiki": "jurassicpark",
+      "fandom_slug": "Ian_Malcolm"
+    },
+    {
+      "name": "John Hammond",
+      "movie_title": "Jurassic Park",
+      "movie_id": "_NEEDS_MOVIE_ID_jurassicpark",
+      "placeholder": "_NEEDS_ID_johnhammond",
+      "fandom_wiki": "jurassicpark",
+      "fandom_slug": "John_Hammond"
+    },
+    {
+      "name": "Teddy Daniels",
+      "movie_title": "Shutter Island",
+      "movie_id": "_NEEDS_MOVIE_ID_shutterisland",
+      "placeholder": "_NEEDS_ID_teddydaniels",
+      "fandom_wiki": "shutterisland",
+      "fandom_slug": "Edward_Daniels"
+    },
+    {
+      "name": "Chuck Aule",
+      "movie_title": "Shutter Island",
+      "movie_id": "_NEEDS_MOVIE_ID_shutterisland",
+      "placeholder": "_NEEDS_ID_chuckaule",
+      "fandom_wiki": "shutterisland",
+      "fandom_slug": "Chuck_Aule"
+    },
+    {
+      "name": "Dr. John Cawley",
+      "movie_title": "Shutter Island",
+      "movie_id": "_NEEDS_MOVIE_ID_shutterisland",
+      "placeholder": "_NEEDS_ID_cawley",
+      "fandom_wiki": "shutterisland",
+      "fandom_slug": "John_Cawley"
+    },
+    {
+      "name": "David Mills",
+      "movie_title": "Se7en",
+      "movie_id": "_NEEDS_MOVIE_ID_se7en",
+      "placeholder": "_NEEDS_ID_davidmills",
+      "fandom_wiki": "se7en",
+      "fandom_slug": "David_Mills"
+    },
+    {
+      "name": "William Somerset",
+      "movie_title": "Se7en",
+      "movie_id": "_NEEDS_MOVIE_ID_se7en",
+      "placeholder": "_NEEDS_ID_williamsomerset",
+      "fandom_wiki": "se7en",
+      "fandom_slug": "William_Somerset"
+    },
+    {
+      "name": "John Doe",
+      "movie_title": "Se7en",
+      "movie_id": "_NEEDS_MOVIE_ID_se7en",
+      "placeholder": "_NEEDS_ID_johndoe",
+      "fandom_wiki": "se7en",
+      "fandom_slug": "John_Doe"
+    },
+    {
+      "name": "Nick Dunne",
+      "movie_title": "Gone Girl",
+      "movie_id": "_NEEDS_MOVIE_ID_gonegirl",
+      "placeholder": "_NEEDS_ID_nickdunne",
+      "fandom_wiki": "gonegirl",
+      "fandom_slug": "Nick_Dunne"
+    },
+    {
+      "name": "Amy Dunne",
+      "movie_title": "Gone Girl",
+      "movie_id": "_NEEDS_MOVIE_ID_gonegirl",
+      "placeholder": "_NEEDS_ID_amydunne",
+      "fandom_wiki": "gonegirl",
+      "fandom_slug": "Amy_Elliott_Dunne"
+    },
+    {
+      "name": "Leonard Shelby",
+      "movie_title": "Memento",
+      "movie_id": "_NEEDS_MOVIE_ID_memento",
+      "placeholder": "_NEEDS_ID_leonardshelby",
+      "fandom_wiki": "memento",
+      "fandom_slug": "Leonard_Shelby"
+    },
+    {
+      "name": "Teddy Gammell",
+      "movie_title": "Memento",
+      "movie_id": "_NEEDS_MOVIE_ID_memento",
+      "placeholder": "_NEEDS_ID_teddygammell",
+      "fandom_wiki": "memento",
+      "fandom_slug": "Teddy_Gammell"
+    },
+    {
+      "name": "Natalie",
+      "movie_title": "Memento",
+      "movie_id": "_NEEDS_MOVIE_ID_memento",
+      "placeholder": "_NEEDS_ID_natalie",
+      "fandom_wiki": "memento",
+      "fandom_slug": "Natalie"
+    },
+    {
+      "name": "Lou Bloom",
+      "movie_title": "Nightcrawler",
+      "movie_id": "_NEEDS_MOVIE_ID_nightcrawler",
+      "placeholder": "_NEEDS_ID_loubloom",
+      "fandom_wiki": "nightcrawler",
+      "fandom_slug": "Louis_Bloom"
+    },
+    {
+      "name": "Nina Romina",
+      "movie_title": "Nightcrawler",
+      "movie_id": "_NEEDS_MOVIE_ID_nightcrawler",
+      "placeholder": "_NEEDS_ID_ninaromina",
+      "fandom_wiki": "nightcrawler",
+      "fandom_slug": "Nina_Romina"
+    },
+    {
+      "name": "Rick",
+      "movie_title": "Nightcrawler",
+      "movie_id": "_NEEDS_MOVIE_ID_nightcrawler",
+      "placeholder": "_NEEDS_ID_rick",
+      "fandom_wiki": "nightcrawler",
+      "fandom_slug": "Rick"
+    },
+    {
+      "name": "Travis Bickle",
+      "movie_title": "Taxi Driver",
+      "movie_id": "_NEEDS_MOVIE_ID_taxidriver",
+      "placeholder": "_NEEDS_ID_travisbickle",
+      "fandom_wiki": "martinscorsese",
+      "fandom_slug": "Travis_Bickle"
+    },
+    {
+      "name": "Iris",
+      "movie_title": "Taxi Driver",
+      "movie_id": "_NEEDS_MOVIE_ID_taxidriver",
+      "placeholder": "_NEEDS_ID_iris",
+      "fandom_wiki": "martinscorsese",
+      "fandom_slug": "Iris_Steensma"
+    },
+    {
+      "name": "Betsy",
+      "movie_title": "Taxi Driver",
+      "movie_id": "_NEEDS_MOVIE_ID_taxidriver",
+      "placeholder": "_NEEDS_ID_betsy",
+      "fandom_wiki": "martinscorsese",
+      "fandom_slug": "Betsy"
+    },
+    {
+      "name": "Patrick Bateman",
+      "movie_title": "American Psycho",
+      "movie_id": "_NEEDS_MOVIE_ID_americanpsycho",
+      "placeholder": "_NEEDS_ID_patrickbateman",
+      "fandom_wiki": "americanpsycho",
+      "fandom_slug": "Patrick_Bateman"
+    },
+    {
+      "name": "Paul Allen",
+      "movie_title": "American Psycho",
+      "movie_id": "_NEEDS_MOVIE_ID_americanpsycho",
+      "placeholder": "_NEEDS_ID_paulallen",
+      "fandom_wiki": "americanpsycho",
+      "fandom_slug": "Paul_Allen"
+    },
+    {
+      "name": "Andy Dufresne",
+      "movie_title": "The Shawshank Redemption",
+      "movie_id": "_NEEDS_MOVIE_ID_theshawshankredemption",
+      "placeholder": "_NEEDS_ID_andydufresne",
+      "fandom_wiki": "stephenking",
+      "fandom_slug": "Andy_Dufresne"
+    },
+    {
+      "name": "Ellis Boyd 'Red' Redding",
+      "movie_title": "The Shawshank Redemption",
+      "movie_id": "_NEEDS_MOVIE_ID_theshawshankredemption",
+      "placeholder": "_NEEDS_ID_red",
+      "fandom_wiki": "stephenking",
+      "fandom_slug": "Ellis_Boyd_Redding"
+    },
+    {
+      "name": "Warden Samuel Norton",
+      "movie_title": "The Shawshank Redemption",
+      "movie_id": "_NEEDS_MOVIE_ID_theshawshankredemption",
+      "placeholder": "_NEEDS_ID_wardennorton",
+      "fandom_wiki": "stephenking",
+      "fandom_slug": "Samuel_Norton"
+    },
+    {
+      "name": "Forrest Gump",
+      "movie_title": "Forrest Gump",
+      "movie_id": "_NEEDS_MOVIE_ID_forrestgump",
+      "placeholder": "_NEEDS_ID_forrestgump",
+      "fandom_wiki": "forrestgump",
+      "fandom_slug": "Forrest_Gump"
+    },
+    {
+      "name": "Jenny Curran",
+      "movie_title": "Forrest Gump",
+      "movie_id": "_NEEDS_MOVIE_ID_forrestgump",
+      "placeholder": "_NEEDS_ID_jennycurran",
+      "fandom_wiki": "forrestgump",
+      "fandom_slug": "Jenny_Curran"
+    },
+    {
+      "name": "Lieutenant Dan Taylor",
+      "movie_title": "Forrest Gump",
+      "movie_id": "_NEEDS_MOVIE_ID_forrestgump",
+      "placeholder": "_NEEDS_ID_lieutenantdan",
+      "fandom_wiki": "forrestgump",
+      "fandom_slug": "Dan_Taylor"
+    },
+    {
+      "name": "John Keating",
+      "movie_title": "Dead Poets Society",
+      "movie_id": "_NEEDS_MOVIE_ID_deadpoetssociety",
+      "placeholder": "_NEEDS_ID_johnkeating",
+      "fandom_wiki": "deadpoetssociety",
+      "fandom_slug": "John_Keating"
+    },
+    {
+      "name": "Neil Perry",
+      "movie_title": "Dead Poets Society",
+      "movie_id": "_NEEDS_MOVIE_ID_deadpoetssociety",
+      "placeholder": "_NEEDS_ID_neilperry",
+      "fandom_wiki": "deadpoetssociety",
+      "fandom_slug": "Neil_Perry"
+    },
+    {
+      "name": "Todd Anderson",
+      "movie_title": "Dead Poets Society",
+      "movie_id": "_NEEDS_MOVIE_ID_deadpoetssociety",
+      "placeholder": "_NEEDS_ID_toddanderson",
+      "fandom_wiki": "deadpoetssociety",
+      "fandom_slug": "Todd_Anderson"
+    },
+    {
+      "name": "Monsieur Gustave H.",
+      "movie_title": "The Grand Budapest Hotel",
+      "movie_id": "_NEEDS_MOVIE_ID_thegrandbudapesthotel",
+      "placeholder": "_NEEDS_ID_gustave",
+      "fandom_wiki": "wesanderson",
+      "fandom_slug": "Monsieur_Gustave_H."
+    },
+    {
+      "name": "Zero Moustafa",
+      "movie_title": "The Grand Budapest Hotel",
+      "movie_id": "_NEEDS_MOVIE_ID_thegrandbudapesthotel",
+      "placeholder": "_NEEDS_ID_zeromoustafa",
+      "fandom_wiki": "wesanderson",
+      "fandom_slug": "Zero_Moustafa"
+    },
+    {
+      "name": "Daniel Plainview",
+      "movie_title": "There Will Be Blood",
+      "movie_id": "_NEEDS_MOVIE_ID_therewillbeblood",
+      "placeholder": "_NEEDS_ID_danielplainview",
+      "fandom_wiki": "paulthomasanderson",
+      "fandom_slug": "Daniel_Plainview"
+    },
+    {
+      "name": "Eli Sunday",
+      "movie_title": "There Will Be Blood",
+      "movie_id": "_NEEDS_MOVIE_ID_therewillbeblood",
+      "placeholder": "_NEEDS_ID_elisunday",
+      "fandom_wiki": "paulthomasanderson",
+      "fandom_slug": "Eli_Sunday"
+    },
+    {
+      "name": "Riggan Thomson",
+      "movie_title": "Birdman",
+      "movie_id": "_NEEDS_MOVIE_ID_birdman",
+      "placeholder": "_NEEDS_ID_rigganthomson",
+      "fandom_wiki": "birdman",
+      "fandom_slug": "Riggan_Thomson"
+    },
+    {
+      "name": "Mike Shiner",
+      "movie_title": "Birdman",
+      "movie_id": "_NEEDS_MOVIE_ID_birdman",
+      "placeholder": "_NEEDS_ID_mikeshiner",
+      "fandom_wiki": "birdman",
+      "fandom_slug": "Mike_Shiner"
+    },
+    {
+      "name": "Sam Thomson",
+      "movie_title": "Birdman",
+      "movie_id": "_NEEDS_MOVIE_ID_birdman",
+      "placeholder": "_NEEDS_ID_samthomson",
+      "fandom_wiki": "birdman",
+      "fandom_slug": "Sam_Thomson"
+    },
+    {
+      "name": "Henry Hill",
+      "movie_title": "Goodfellas",
+      "movie_id": "_NEEDS_MOVIE_ID_goodfellas",
+      "placeholder": "_NEEDS_ID_henryhill",
+      "fandom_wiki": "goodfellas",
+      "fandom_slug": "Henry_Hill"
+    },
+    {
+      "name": "Jimmy Conway",
+      "movie_title": "Goodfellas",
+      "movie_id": "_NEEDS_MOVIE_ID_goodfellas",
+      "placeholder": "_NEEDS_ID_jimmyconway",
+      "fandom_wiki": "goodfellas",
+      "fandom_slug": "James_Conway"
+    },
+    {
+      "name": "Tommy DeVito",
+      "movie_title": "Goodfellas",
+      "movie_id": "_NEEDS_MOVIE_ID_goodfellas",
+      "placeholder": "_NEEDS_ID_tommydevito",
+      "fandom_wiki": "goodfellas",
+      "fandom_slug": "Tommy_DeVito"
+    },
+    {
+      "name": "Billy Costigan",
+      "movie_title": "The Departed",
+      "movie_id": "_NEEDS_MOVIE_ID_thedeparted",
+      "placeholder": "_NEEDS_ID_billycostigan",
+      "fandom_wiki": "thedeparted",
+      "fandom_slug": "Billy_Costigan"
+    },
+    {
+      "name": "Colin Sullivan",
+      "movie_title": "The Departed",
+      "movie_id": "_NEEDS_MOVIE_ID_thedeparted",
+      "placeholder": "_NEEDS_ID_colinsullivan",
+      "fandom_wiki": "thedeparted",
+      "fandom_slug": "Colin_Sullivan"
+    },
+    {
+      "name": "Frank Costello",
+      "movie_title": "The Departed",
+      "movie_id": "_NEEDS_MOVIE_ID_thedeparted",
+      "placeholder": "_NEEDS_ID_frankcostello",
+      "fandom_wiki": "thedeparted",
+      "fandom_slug": "Frank_Costello"
+    },
+    {
+      "name": "Tony Montana",
+      "movie_title": "Scarface",
+      "movie_id": "_NEEDS_MOVIE_ID_scarface",
+      "placeholder": "_NEEDS_ID_tonymontana",
+      "fandom_wiki": "scarface",
+      "fandom_slug": "Tony_Montana"
+    },
+    {
+      "name": "Manny Ribera",
+      "movie_title": "Scarface",
+      "movie_id": "_NEEDS_MOVIE_ID_scarface",
+      "placeholder": "_NEEDS_ID_mannyribera",
+      "fandom_wiki": "scarface",
+      "fandom_slug": "Manny_Ribera"
+    },
+    {
+      "name": "Elvira Hancock",
+      "movie_title": "Scarface",
+      "movie_id": "_NEEDS_MOVIE_ID_scarface",
+      "placeholder": "_NEEDS_ID_elvirahancock",
+      "fandom_wiki": "scarface",
+      "fandom_slug": "Elvira_Hancock"
+    },
+    {
+      "name": "Neil McCauley",
+      "movie_title": "Heat",
+      "movie_id": "_NEEDS_MOVIE_ID_heat",
+      "placeholder": "_NEEDS_ID_neilmccauley",
+      "fandom_wiki": "heatfilm",
+      "fandom_slug": "Neil_McCauley"
+    },
+    {
+      "name": "Vincent Hanna",
+      "movie_title": "Heat",
+      "movie_id": "_NEEDS_MOVIE_ID_heat",
+      "placeholder": "_NEEDS_ID_vincenthanna",
+      "fandom_wiki": "heatfilm",
+      "fandom_slug": "Vincent_Hanna"
+    },
+    {
+      "name": "Llewelyn Moss",
+      "movie_title": "No Country for Old Men",
+      "movie_id": "_NEEDS_MOVIE_ID_nocountryforoldmen",
+      "placeholder": "_NEEDS_ID_llewelynmoss",
+      "fandom_wiki": "cormacmccarthy",
+      "fandom_slug": "Llewelyn_Moss"
+    },
+    {
+      "name": "Anton Chigurh",
+      "movie_title": "No Country for Old Men",
+      "movie_id": "_NEEDS_MOVIE_ID_nocountryforoldmen",
+      "placeholder": "_NEEDS_ID_antonchigurh",
+      "fandom_wiki": "cormacmccarthy",
+      "fandom_slug": "Anton_Chigurh"
+    },
+    {
+      "name": "Ed Tom Bell",
+      "movie_title": "No Country for Old Men",
+      "movie_id": "_NEEDS_MOVIE_ID_nocountryforoldmen",
+      "placeholder": "_NEEDS_ID_edtombell",
+      "fandom_wiki": "cormacmccarthy",
+      "fandom_slug": "Ed_Tom_Bell"
+    },
+    {
+      "name": "Chihiro Ogino",
+      "movie_title": "Spirited Away",
+      "movie_id": "_NEEDS_MOVIE_ID_spiritedaway",
+      "placeholder": "_NEEDS_ID_chihiro",
+      "fandom_wiki": "ghibli",
+      "fandom_slug": "Chihiro_Ogino"
+    },
+    {
+      "name": "Haku",
+      "movie_title": "Spirited Away",
+      "movie_id": "_NEEDS_MOVIE_ID_spiritedaway",
+      "placeholder": "_NEEDS_ID_haku",
+      "fandom_wiki": "ghibli",
+      "fandom_slug": "Haku"
+    },
+    {
+      "name": "No-Face",
+      "movie_title": "Spirited Away",
+      "movie_id": "_NEEDS_MOVIE_ID_spiritedaway",
+      "placeholder": "_NEEDS_ID_noface",
+      "fandom_wiki": "ghibli",
+      "fandom_slug": "No-Face"
+    },
+    {
+      "name": "Robert Angier",
+      "movie_title": "The Prestige",
+      "movie_id": "_NEEDS_MOVIE_ID_theprestige",
+      "placeholder": "_NEEDS_ID_robertangier",
+      "fandom_wiki": "theprestige",
+      "fandom_slug": "Robert_Angier"
+    },
+    {
+      "name": "Alfred Borden",
+      "movie_title": "The Prestige",
+      "movie_id": "_NEEDS_MOVIE_ID_theprestige",
+      "placeholder": "_NEEDS_ID_alfredborden",
+      "fandom_wiki": "theprestige",
+      "fandom_slug": "Alfred_Borden"
+    },
+    {
+      "name": "Maximus Decimus Meridius",
+      "movie_title": "Gladiator",
+      "movie_id": "_NEEDS_MOVIE_ID_gladiator",
+      "placeholder": "_NEEDS_ID_maximus",
+      "fandom_wiki": "gladiator",
+      "fandom_slug": "Maximus_Decimus_Meridius"
+    },
+    {
+      "name": "Commodus",
+      "movie_title": "Gladiator",
+      "movie_id": "_NEEDS_MOVIE_ID_gladiator",
+      "placeholder": "_NEEDS_ID_commodus",
+      "fandom_wiki": "gladiator",
+      "fandom_slug": "Commodus"
+    },
+    {
+      "name": "Lucilla",
+      "movie_title": "Gladiator",
+      "movie_id": "_NEEDS_MOVIE_ID_gladiator",
+      "placeholder": "_NEEDS_ID_lucilla",
+      "fandom_wiki": "gladiator",
+      "fandom_slug": "Lucilla"
+    },
+    {
+      "name": "Lt. Aldo Raine",
+      "movie_title": "Inglourious Basterds",
+      "movie_id": "_NEEDS_MOVIE_ID_inglouriousbasterds",
+      "placeholder": "_NEEDS_ID_aldoraine",
+      "fandom_wiki": "tarantino",
+      "fandom_slug": "Aldo_Raine"
+    },
+    {
+      "name": "Col. Hans Landa",
+      "movie_title": "Inglourious Basterds",
+      "movie_id": "_NEEDS_MOVIE_ID_inglouriousbasterds",
+      "placeholder": "_NEEDS_ID_hanslanda",
+      "fandom_wiki": "tarantino",
+      "fandom_slug": "Hans_Landa"
+    },
+    {
+      "name": "Shosanna Dreyfus",
+      "movie_title": "Inglourious Basterds",
+      "movie_id": "_NEEDS_MOVIE_ID_inglouriousbasterds",
+      "placeholder": "_NEEDS_ID_shosannadreyfus",
+      "fandom_wiki": "tarantino",
+      "fandom_slug": "Shosanna_Dreyfus"
+    },
+    {
+      "name": "Léon Montana",
+      "movie_title": "Leon: The Professional",
+      "movie_id": "_NEEDS_MOVIE_ID_leontheprofessional",
+      "placeholder": "_NEEDS_ID_leonmontana",
+      "fandom_wiki": "leon",
+      "fandom_slug": "L%C3%A9on_Montana"
+    },
+    {
+      "name": "Mathilda Lando",
+      "movie_title": "Leon: The Professional",
+      "movie_id": "_NEEDS_MOVIE_ID_leontheprofessional",
+      "placeholder": "_NEEDS_ID_mathildalando",
+      "fandom_wiki": "leon",
+      "fandom_slug": "Mathilda_Lando"
+    },
+    {
+      "name": "Norman Stansfield",
+      "movie_title": "Leon: The Professional",
+      "movie_id": "_NEEDS_MOVIE_ID_leontheprofessional",
+      "placeholder": "_NEEDS_ID_normanstansfield",
+      "fandom_wiki": "leon",
+      "fandom_slug": "Norman_Stansfield"
+    },
+    {
+      "name": "Peter Parker",
+      "movie_title": "Spider-Man 2",
+      "movie_id": "_NEEDS_MOVIE_ID_spiderman2",
+      "placeholder": "_NEEDS_ID_peterparker2",
+      "fandom_wiki": "spiderman",
+      "fandom_slug": "Peter_Parker_(Tobey_Maguire)"
+    },
+    {
+      "name": "Otto Octavius",
+      "movie_title": "Spider-Man 2",
+      "movie_id": "_NEEDS_MOVIE_ID_spiderman2",
+      "placeholder": "_NEEDS_ID_ottooctavius",
+      "fandom_wiki": "spiderman",
+      "fandom_slug": "Otto_Octavius_(Sam_Raimi_trilogy)"
+    },
+    {
+      "name": "Mary Jane Watson",
+      "movie_title": "Spider-Man 2",
+      "movie_id": "_NEEDS_MOVIE_ID_spiderman2",
+      "placeholder": "_NEEDS_ID_maryjanewatson",
+      "fandom_wiki": "spiderman",
+      "fandom_slug": "Mary_Jane_Watson_(Sam_Raimi_trilogy)"
+    },
+    {
+      "name": "Rick Deckard",
+      "movie_id": "_NEEDS_MOVIE_ID_bladerunner",
+      "movie_title": "Blade Runner",
+      "placeholder": "_NEEDS_ID_deckard1982"
+    },
+    {
+      "name": "Roy Batty",
+      "movie_id": "_NEEDS_MOVIE_ID_bladerunner",
+      "movie_title": "Blade Runner",
+      "placeholder": "_NEEDS_ID_roybatty"
+    },
+    {
+      "name": "Rachael",
+      "movie_id": "_NEEDS_MOVIE_ID_bladerunner",
+      "movie_title": "Blade Runner",
+      "placeholder": "_NEEDS_ID_rachael"
+    },
+    {
+      "name": "Dr. David Bowman",
+      "movie_id": "_NEEDS_MOVIE_ID_2001aspaceodyssey",
+      "movie_title": "2001: A Space Odyssey",
+      "placeholder": "_NEEDS_ID_davidbowman"
+    },
+    {
+      "name": "HAL 9000",
+      "movie_id": "_NEEDS_MOVIE_ID_2001aspaceodyssey",
+      "movie_title": "2001: A Space Odyssey",
+      "placeholder": "_NEEDS_ID_hal9000"
+    },
+    {
+      "name": "Captain Benjamin Willard",
+      "movie_id": "_NEEDS_MOVIE_ID_apocalypsenow",
+      "movie_title": "Apocalypse Now",
+      "placeholder": "_NEEDS_ID_benjaminwillard"
+    },
+    {
+      "name": "Colonel Walter E. Kurtz",
+      "movie_id": "_NEEDS_MOVIE_ID_apocalypsenow",
+      "movie_title": "Apocalypse Now",
+      "placeholder": "_NEEDS_ID_walterkurtz"
+    },
+    {
+      "name": "Lieutenant Colonel Bill Kilgore",
+      "movie_id": "_NEEDS_MOVIE_ID_apocalypsenow",
+      "movie_title": "Apocalypse Now",
+      "placeholder": "_NEEDS_ID_billkilgore"
+    },
+    {
+      "name": "Clarice Starling",
+      "movie_id": "_NEEDS_MOVIE_ID_thesilenceofthelambs",
+      "movie_title": "The Silence of the Lambs",
+      "placeholder": "_NEEDS_ID_claricestarling"
+    },
+    {
+      "name": "Dr. Hannibal Lecter",
+      "movie_id": "_NEEDS_MOVIE_ID_thesilenceofthelambs",
+      "movie_title": "The Silence of the Lambs",
+      "placeholder": "_NEEDS_ID_hanniballecter"
+    },
+    {
+      "name": "Jack Crawford",
+      "movie_id": "_NEEDS_MOVIE_ID_thesilenceofthelambs",
+      "movie_title": "The Silence of the Lambs",
+      "placeholder": "_NEEDS_ID_jackcrawford"
+    },
+    {
+      "name": "Oh Dae-su",
+      "movie_id": "_NEEDS_MOVIE_ID_oldboy",
+      "movie_title": "Oldboy",
+      "placeholder": "_NEEDS_ID_ohdaesu"
+    },
+    {
+      "name": "Lee Woo-jin",
+      "movie_id": "_NEEDS_MOVIE_ID_oldboy",
+      "movie_title": "Oldboy",
+      "placeholder": "_NEEDS_ID_leewoojin"
+    },
+    {
+      "name": "Mi-do",
+      "movie_id": "_NEEDS_MOVIE_ID_oldboy",
+      "movie_title": "Oldboy",
+      "placeholder": "_NEEDS_ID_mido"
+    },
+    {
+      "name": "Juror 8",
+      "movie_id": "_NEEDS_MOVIE_ID_12angrymen",
+      "movie_title": "12 Angry Men",
+      "placeholder": "_NEEDS_ID_juror8"
+    },
+    {
+      "name": "Juror 3",
+      "movie_id": "_NEEDS_MOVIE_ID_12angrymen",
+      "movie_title": "12 Angry Men",
+      "placeholder": "_NEEDS_ID_juror3"
+    },
+    {
+      "name": "Jack Torrance",
+      "movie_id": "_NEEDS_MOVIE_ID_theshining",
+      "movie_title": "The Shining",
+      "placeholder": "_NEEDS_ID_jacktorrance"
+    },
+    {
+      "name": "Wendy Torrance",
+      "movie_id": "_NEEDS_MOVIE_ID_theshining",
+      "movie_title": "The Shining",
+      "placeholder": "_NEEDS_ID_wendytorrance"
+    },
+    {
+      "name": "Danny Torrance",
+      "movie_id": "_NEEDS_MOVIE_ID_theshining",
+      "movie_title": "The Shining",
+      "placeholder": "_NEEDS_ID_dannytorrance"
+    },
+    {
+      "name": "Driver",
+      "movie_id": "_NEEDS_MOVIE_ID_drive",
+      "movie_title": "Drive",
+      "placeholder": "_NEEDS_ID_driver"
+    },
+    {
+      "name": "Irene",
+      "movie_id": "_NEEDS_MOVIE_ID_drive",
+      "movie_title": "Drive",
+      "placeholder": "_NEEDS_ID_irene"
+    },
+    {
+      "name": "Bernie Rose",
+      "movie_id": "_NEEDS_MOVIE_ID_drive",
+      "movie_title": "Drive",
+      "placeholder": "_NEEDS_ID_bernierose"
+    },
+    {
+      "name": "Rick Blaine",
+      "movie_id": "_NEEDS_MOVIE_ID_casablanca",
+      "movie_title": "Casablanca",
+      "placeholder": "_NEEDS_ID_rickblaine"
+    },
+    {
+      "name": "Ilsa Lund",
+      "movie_id": "_NEEDS_MOVIE_ID_casablanca",
+      "movie_title": "Casablanca",
+      "placeholder": "_NEEDS_ID_ilsalund"
+    },
+    {
+      "name": "Victor Laszlo",
+      "movie_id": "_NEEDS_MOVIE_ID_casablanca",
+      "movie_title": "Casablanca",
+      "placeholder": "_NEEDS_ID_victorlaszlo"
+    },
+    {
+      "name": "Park Doo-man",
+      "movie_id": "_NEEDS_MOVIE_ID_memoriesofmurder",
+      "movie_title": "Memories of Murder",
+      "placeholder": "_NEEDS_ID_parkdooman"
+    },
+    {
+      "name": "Seo Tae-yoon",
+      "movie_id": "_NEEDS_MOVIE_ID_memoriesofmurder",
+      "movie_title": "Memories of Murder",
+      "placeholder": "_NEEDS_ID_seotaeyoon"
+    },
+    {
+      "name": "Theo Faron",
+      "movie_id": "_NEEDS_MOVIE_ID_childrenofmen",
+      "movie_title": "Children of Men",
+      "placeholder": "_NEEDS_ID_theofaron"
+    },
+    {
+      "name": "Kee",
+      "movie_id": "_NEEDS_MOVIE_ID_childrenofmen",
+      "movie_title": "Children of Men",
+      "placeholder": "_NEEDS_ID_kee"
+    },
+    {
+      "name": "Julian Taylor",
+      "movie_id": "_NEEDS_MOVIE_ID_childrenofmen",
+      "movie_title": "Children of Men",
+      "placeholder": "_NEEDS_ID_juliantaylor"
+    },
+    {
+      "name": "Max Rockatansky",
+      "movie_id": "_NEEDS_MOVIE_ID_madmaxfuryroad",
+      "movie_title": "Mad Max: Fury Road",
+      "placeholder": "_NEEDS_ID_maxrockatansky"
+    },
+    {
+      "name": "Imperator Furiosa",
+      "movie_id": "_NEEDS_MOVIE_ID_madmaxfuryroad",
+      "movie_title": "Mad Max: Fury Road",
+      "placeholder": "_NEEDS_ID_imperatorfuriosa"
+    },
+    {
+      "name": "Immortan Joe",
+      "movie_id": "_NEEDS_MOVIE_ID_madmaxfuryroad",
+      "movie_title": "Mad Max: Fury Road",
+      "placeholder": "_NEEDS_ID_immortanjoe"
+    },
+    {
+      "name": "Ofelia",
+      "movie_id": "_NEEDS_MOVIE_ID_panslabyrinth",
+      "movie_title": "Pan's Labyrinth",
+      "placeholder": "_NEEDS_ID_ofelia"
+    },
+    {
+      "name": "Captain Vidal",
+      "movie_id": "_NEEDS_MOVIE_ID_panslabyrinth",
+      "movie_title": "Pan's Labyrinth",
+      "placeholder": "_NEEDS_ID_captainvidal"
+    },
+    {
+      "name": "Mercedes",
+      "movie_id": "_NEEDS_MOVIE_ID_panslabyrinth",
+      "movie_title": "Pan's Labyrinth",
+      "placeholder": "_NEEDS_ID_mercedes"
+    },
+    {
+      "name": "Prince Ashitaka",
+      "movie_id": "_NEEDS_MOVIE_ID_princessmononoke",
+      "movie_title": "Princess Mononoke",
+      "placeholder": "_NEEDS_ID_princeashitaka"
+    },
+    {
+      "name": "San",
+      "movie_id": "_NEEDS_MOVIE_ID_princessmononoke",
+      "movie_title": "Princess Mononoke",
+      "placeholder": "_NEEDS_ID_sanmononoke"
+    },
+    {
+      "name": "Lady Eboshi",
+      "movie_id": "_NEEDS_MOVIE_ID_princessmononoke",
+      "movie_title": "Princess Mononoke",
+      "placeholder": "_NEEDS_ID_ladyeboshi"
+    },
+    {
+      "name": "Frank Abagnale Jr.",
+      "movie_id": "_NEEDS_MOVIE_ID_catchmeifyoucan",
+      "movie_title": "Catch Me If You Can",
+      "placeholder": "_NEEDS_ID_frankabagnale"
+    },
+    {
+      "name": "Carl Hanratty",
+      "movie_id": "_NEEDS_MOVIE_ID_catchmeifyoucan",
+      "movie_title": "Catch Me If You Can",
+      "placeholder": "_NEEDS_ID_carlhanratty"
+    },
+    {
+      "name": "Robert Graysmith",
+      "movie_id": "_NEEDS_MOVIE_ID_zodiac",
+      "movie_title": "Zodiac",
+      "placeholder": "_NEEDS_ID_robertgraysmith"
+    },
+    {
+      "name": "Inspector Dave Toschi",
+      "movie_id": "_NEEDS_MOVIE_ID_zodiac",
+      "movie_title": "Zodiac",
+      "placeholder": "_NEEDS_ID_davetoschi"
+    },
+    {
+      "name": "Paul Avery",
+      "movie_id": "_NEEDS_MOVIE_ID_zodiac",
+      "movie_title": "Zodiac",
+      "placeholder": "_NEEDS_ID_paulavery"
+    },
+    {
+      "name": "Jordan Belfort",
+      "movie_id": "_NEEDS_MOVIE_ID_thewolfofwallstreet",
+      "movie_title": "The Wolf of Wall Street",
+      "placeholder": "_NEEDS_ID_jordanbelfort"
+    },
+    {
+      "name": "Donnie Azoff",
+      "movie_id": "_NEEDS_MOVIE_ID_thewolfofwallstreet",
+      "movie_title": "The Wolf of Wall Street",
+      "placeholder": "_NEEDS_ID_donnieazoff"
+    },
+    {
+      "name": "Patrick Denham",
+      "movie_id": "_NEEDS_MOVIE_ID_thewolfofwallstreet",
+      "movie_title": "The Wolf of Wall Street",
+      "placeholder": "_NEEDS_ID_patrickdenham"
+    },
+    {
+      "name": "Harry Goldfarb",
+      "movie_id": "_NEEDS_MOVIE_ID_requiemforadream",
+      "movie_title": "Requiem for a Dream",
+      "placeholder": "_NEEDS_ID_harrygoldfarb"
+    },
+    {
+      "name": "Marion Silver",
+      "movie_id": "_NEEDS_MOVIE_ID_requiemforadream",
+      "movie_title": "Requiem for a Dream",
+      "placeholder": "_NEEDS_ID_marionsilver"
+    },
+    {
+      "name": "Sara Goldfarb",
+      "movie_id": "_NEEDS_MOVIE_ID_requiemforadream",
+      "movie_title": "Requiem for a Dream",
+      "placeholder": "_NEEDS_ID_saragoldfarb"
+    },
+    {
+      "name": "Oskar Schindler",
+      "movie_id": "_NEEDS_MOVIE_ID_schindlerslist",
+      "movie_title": "Schindler's List",
+      "placeholder": "_NEEDS_ID_oskarschindler"
+    },
+    {
+      "name": "Amon Göth",
+      "movie_id": "_NEEDS_MOVIE_ID_schindlerslist",
+      "movie_title": "Schindler's List",
+      "placeholder": "_NEEDS_ID_amongoth"
+    },
+    {
+      "name": "Itzhak Stern",
+      "movie_id": "_NEEDS_MOVIE_ID_schindlerslist",
+      "movie_title": "Schindler's List",
+      "placeholder": "_NEEDS_ID_itzhakstern"
+    },
+    {
+      "name": "Mark Renton",
+      "movie_id": "_NEEDS_MOVIE_ID_trainspotting",
+      "movie_title": "Trainspotting",
+      "placeholder": "_NEEDS_ID_markrenton"
+    },
+    {
+      "name": "Francis Begbie",
+      "movie_id": "_NEEDS_MOVIE_ID_trainspotting",
+      "movie_title": "Trainspotting",
+      "placeholder": "_NEEDS_ID_francisbegbie"
+    },
+    {
+      "name": "Sick Boy",
+      "movie_id": "_NEEDS_MOVIE_ID_trainspotting",
+      "movie_title": "Trainspotting",
+      "placeholder": "_NEEDS_ID_sickboy"
+    },
+    {
+      "name": "Harry Potter",
+      "movie_title": "Harry Potter and the Philosopher's Stone",
+      "movie_id": "_NEEDS_MOVIE_ID_hp1",
+      "placeholder": "_NEEDS_ID_hp1_harry",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Harry_Potter"
+    },
+    {
+      "name": "Ron Weasley",
+      "movie_title": "Harry Potter and the Philosopher's Stone",
+      "movie_id": "_NEEDS_MOVIE_ID_hp1",
+      "placeholder": "_NEEDS_ID_hp1_ron",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Ron_Weasley"
+    },
+    {
+      "name": "Hermione Granger",
+      "movie_title": "Harry Potter and the Philosopher's Stone",
+      "movie_id": "_NEEDS_MOVIE_ID_hp1",
+      "placeholder": "_NEEDS_ID_hp1_hermione",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Hermione_Granger"
+    },
+    {
+      "name": "Albus Dumbledore",
+      "movie_title": "Harry Potter and the Philosopher's Stone",
+      "movie_id": "_NEEDS_MOVIE_ID_hp1",
+      "placeholder": "_NEEDS_ID_hp1_dumbledore",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Albus_Dumbledore"
+    },
+    {
+      "name": "Harry Potter",
+      "movie_title": "Harry Potter and the Chamber of Secrets",
+      "movie_id": "_NEEDS_MOVIE_ID_hp2",
+      "placeholder": "_NEEDS_ID_hp2_harry",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Harry_Potter"
+    },
+    {
+      "name": "Tom Riddle",
+      "movie_title": "Harry Potter and the Chamber of Secrets",
+      "movie_id": "_NEEDS_MOVIE_ID_hp2",
+      "placeholder": "_NEEDS_ID_hp2_tomriddle",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Tom_Riddle"
+    },
+    {
+      "name": "Dobby",
+      "movie_title": "Harry Potter and the Chamber of Secrets",
+      "movie_id": "_NEEDS_MOVIE_ID_hp2",
+      "placeholder": "_NEEDS_ID_hp2_dobby",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Dobby"
+    },
+    {
+      "name": "Harry Potter",
+      "movie_title": "Harry Potter and the Prisoner of Azkaban",
+      "movie_id": "_NEEDS_MOVIE_ID_hp3",
+      "placeholder": "_NEEDS_ID_hp3_harry",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Harry_Potter"
+    },
+    {
+      "name": "Sirius Black",
+      "movie_title": "Harry Potter and the Prisoner of Azkaban",
+      "movie_id": "_NEEDS_MOVIE_ID_hp3",
+      "placeholder": "_NEEDS_ID_hp3_sirius",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Sirius_Black"
+    },
+    {
+      "name": "Remus Lupin",
+      "movie_title": "Harry Potter and the Prisoner of Azkaban",
+      "movie_id": "_NEEDS_MOVIE_ID_hp3",
+      "placeholder": "_NEEDS_ID_hp3_lupin",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Remus_Lupin"
+    },
+    {
+      "name": "Severus Snape",
+      "movie_title": "Harry Potter and the Prisoner of Azkaban",
+      "movie_id": "_NEEDS_MOVIE_ID_hp3",
+      "placeholder": "_NEEDS_ID_hp3_snape",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Severus_Snape"
+    },
+    {
+      "name": "Harry Potter",
+      "movie_title": "Harry Potter and the Goblet of Fire",
+      "movie_id": "_NEEDS_MOVIE_ID_hp4",
+      "placeholder": "_NEEDS_ID_hp4_harry",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Harry_Potter"
+    },
+    {
+      "name": "Lord Voldemort",
+      "movie_title": "Harry Potter and the Goblet of Fire",
+      "movie_id": "_NEEDS_MOVIE_ID_hp4",
+      "placeholder": "_NEEDS_ID_hp4_voldemort",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Tom_Riddle"
+    },
+    {
+      "name": "Cedric Diggory",
+      "movie_title": "Harry Potter and the Goblet of Fire",
+      "movie_id": "_NEEDS_MOVIE_ID_hp4",
+      "placeholder": "_NEEDS_ID_hp4_cedric",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Cedric_Diggory"
+    },
+    {
+      "name": "Harry Potter",
+      "movie_title": "Harry Potter and the Order of the Phoenix",
+      "movie_id": "_NEEDS_MOVIE_ID_hp5",
+      "placeholder": "_NEEDS_ID_hp5_harry",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Harry_Potter"
+    },
+    {
+      "name": "Dolores Umbridge",
+      "movie_title": "Harry Potter and the Order of the Phoenix",
+      "movie_id": "_NEEDS_MOVIE_ID_hp5",
+      "placeholder": "_NEEDS_ID_hp5_umbridge",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Dolores_Umbridge"
+    },
+    {
+      "name": "Luna Lovegood",
+      "movie_title": "Harry Potter and the Order of the Phoenix",
+      "movie_id": "_NEEDS_MOVIE_ID_hp5",
+      "placeholder": "_NEEDS_ID_hp5_luna",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Luna_Lovegood"
+    },
+    {
+      "name": "Bellatrix Lestrange",
+      "movie_title": "Harry Potter and the Order of the Phoenix",
+      "movie_id": "_NEEDS_MOVIE_ID_hp5",
+      "placeholder": "_NEEDS_ID_hp5_bellatrix",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Bellatrix_Lestrange"
+    },
+    {
+      "name": "Harry Potter",
+      "movie_title": "Harry Potter and the Half-Blood Prince",
+      "movie_id": "_NEEDS_MOVIE_ID_hp6",
+      "placeholder": "_NEEDS_ID_hp6_harry",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Harry_Potter"
+    },
+    {
+      "name": "Severus Snape",
+      "movie_title": "Harry Potter and the Half-Blood Prince",
+      "movie_id": "_NEEDS_MOVIE_ID_hp6",
+      "placeholder": "_NEEDS_ID_hp6_snape",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Severus_Snape"
+    },
+    {
+      "name": "Draco Malfoy",
+      "movie_title": "Harry Potter and the Half-Blood Prince",
+      "movie_id": "_NEEDS_MOVIE_ID_hp6",
+      "placeholder": "_NEEDS_ID_hp6_draco",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Draco_Malfoy"
+    },
+    {
+      "name": "Albus Dumbledore",
+      "movie_title": "Harry Potter and the Half-Blood Prince",
+      "movie_id": "_NEEDS_MOVIE_ID_hp6",
+      "placeholder": "_NEEDS_ID_hp6_dumbledore",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Albus_Dumbledore"
+    },
+    {
+      "name": "Harry Potter",
+      "movie_title": "Harry Potter and the Deathly Hallows: Part 1",
+      "movie_id": "_NEEDS_MOVIE_ID_hp7",
+      "placeholder": "_NEEDS_ID_hp7_harry",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Harry_Potter"
+    },
+    {
+      "name": "Ron Weasley",
+      "movie_title": "Harry Potter and the Deathly Hallows: Part 1",
+      "movie_id": "_NEEDS_MOVIE_ID_hp7",
+      "placeholder": "_NEEDS_ID_hp7_ron",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Ron_Weasley"
+    },
+    {
+      "name": "Hermione Granger",
+      "movie_title": "Harry Potter and the Deathly Hallows: Part 1",
+      "movie_id": "_NEEDS_MOVIE_ID_hp7",
+      "placeholder": "_NEEDS_ID_hp7_hermione",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Hermione_Granger"
+    },
+    {
+      "name": "Harry Potter",
+      "movie_title": "Harry Potter and the Deathly Hallows: Part 2",
+      "movie_id": "_NEEDS_MOVIE_ID_hp8",
+      "placeholder": "_NEEDS_ID_hp8_harry",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Harry_Potter"
+    },
+    {
+      "name": "Lord Voldemort",
+      "movie_title": "Harry Potter and the Deathly Hallows: Part 2",
+      "movie_id": "_NEEDS_MOVIE_ID_hp8",
+      "placeholder": "_NEEDS_ID_hp8_voldemort",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Tom_Riddle"
+    },
+    {
+      "name": "Severus Snape",
+      "movie_title": "Harry Potter and the Deathly Hallows: Part 2",
+      "movie_id": "_NEEDS_MOVIE_ID_hp8",
+      "placeholder": "_NEEDS_ID_hp8_snape",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Severus_Snape"
+    },
+    {
+      "name": "Neville Longbottom",
+      "movie_title": "Harry Potter and the Deathly Hallows: Part 2",
+      "movie_id": "_NEEDS_MOVIE_ID_hp8",
+      "placeholder": "_NEEDS_ID_hp8_neville",
+      "fandom_wiki": "harrypotter",
+      "fandom_slug": "Neville_Longbottom"
+    },
+    {
+      "name": "Tony Stark / Iron Man",
+      "movie_title": "Iron Man",
+      "movie_id": "_NEEDS_MOVIE_ID_ironman",
+      "placeholder": "_NEEDS_ID_im_tony",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Tony_Stark"
+    },
+    {
+      "name": "Pepper Potts",
+      "movie_title": "Iron Man",
+      "movie_id": "_NEEDS_MOVIE_ID_ironman",
+      "placeholder": "_NEEDS_ID_im_pepper",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Pepper_Potts"
+    },
+    {
+      "name": "Obadiah Stane",
+      "movie_title": "Iron Man",
+      "movie_id": "_NEEDS_MOVIE_ID_ironman",
+      "placeholder": "_NEEDS_ID_im_obadiah",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Obadiah_Stane"
+    },
+    {
+      "name": "Steve Rogers / Captain America",
+      "movie_title": "The Avengers",
+      "movie_id": "_NEEDS_MOVIE_ID_avengers",
+      "placeholder": "_NEEDS_ID_av_steve",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Steve_Rogers"
+    },
+    {
+      "name": "Thor",
+      "movie_title": "The Avengers",
+      "movie_id": "_NEEDS_MOVIE_ID_avengers",
+      "placeholder": "_NEEDS_ID_av_thor",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Thor"
+    },
+    {
+      "name": "Loki",
+      "movie_title": "The Avengers",
+      "movie_id": "_NEEDS_MOVIE_ID_avengers",
+      "placeholder": "_NEEDS_ID_av_loki",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Loki"
+    },
+    {
+      "name": "Natasha Romanoff / Black Widow",
+      "movie_title": "The Avengers",
+      "movie_id": "_NEEDS_MOVIE_ID_avengers",
+      "placeholder": "_NEEDS_ID_av_natasha",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Natasha_Romanoff"
+    },
+    {
+      "name": "Steve Rogers / Captain America",
+      "movie_title": "Captain America: The Winter Soldier",
+      "movie_id": "_NEEDS_MOVIE_ID_wintersoldier",
+      "placeholder": "_NEEDS_ID_ws_steve",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Steve_Rogers"
+    },
+    {
+      "name": "Bucky Barnes / The Winter Soldier",
+      "movie_title": "Captain America: The Winter Soldier",
+      "movie_id": "_NEEDS_MOVIE_ID_wintersoldier",
+      "placeholder": "_NEEDS_ID_ws_bucky",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Bucky_Barnes"
+    },
+    {
+      "name": "Sam Wilson / Falcon",
+      "movie_title": "Captain America: The Winter Soldier",
+      "movie_id": "_NEEDS_MOVIE_ID_wintersoldier",
+      "placeholder": "_NEEDS_ID_ws_sam",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Sam_Wilson"
+    },
+    {
+      "name": "Alexander Pierce",
+      "movie_title": "Captain America: The Winter Soldier",
+      "movie_id": "_NEEDS_MOVIE_ID_wintersoldier",
+      "placeholder": "_NEEDS_ID_ws_pierce",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Alexander_Pierce"
+    },
+    {
+      "name": "Peter Quill / Star-Lord",
+      "movie_title": "Guardians of the Galaxy",
+      "movie_id": "_NEEDS_MOVIE_ID_gotg",
+      "placeholder": "_NEEDS_ID_gotg_quill",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Peter_Quill"
+    },
+    {
+      "name": "Gamora",
+      "movie_title": "Guardians of the Galaxy",
+      "movie_id": "_NEEDS_MOVIE_ID_gotg",
+      "placeholder": "_NEEDS_ID_gotg_gamora",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Gamora"
+    },
+    {
+      "name": "Rocket Raccoon",
+      "movie_title": "Guardians of the Galaxy",
+      "movie_id": "_NEEDS_MOVIE_ID_gotg",
+      "placeholder": "_NEEDS_ID_gotg_rocket",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Rocket"
+    },
+    {
+      "name": "Ronan the Accuser",
+      "movie_title": "Guardians of the Galaxy",
+      "movie_id": "_NEEDS_MOVIE_ID_gotg",
+      "placeholder": "_NEEDS_ID_gotg_ronan",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Ronan"
+    },
+    {
+      "name": "Steve Rogers / Captain America",
+      "movie_title": "Captain America: Civil War",
+      "movie_id": "_NEEDS_MOVIE_ID_civilwar",
+      "placeholder": "_NEEDS_ID_cw_steve",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Steve_Rogers"
+    },
+    {
+      "name": "Tony Stark / Iron Man",
+      "movie_title": "Captain America: Civil War",
+      "movie_id": "_NEEDS_MOVIE_ID_civilwar",
+      "placeholder": "_NEEDS_ID_cw_tony",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Tony_Stark"
+    },
+    {
+      "name": "Helmut Zemo",
+      "movie_title": "Captain America: Civil War",
+      "movie_id": "_NEEDS_MOVIE_ID_civilwar",
+      "placeholder": "_NEEDS_ID_cw_zemo",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Helmut_Zemo"
+    },
+    {
+      "name": "T'Challa / Black Panther",
+      "movie_title": "Captain America: Civil War",
+      "movie_id": "_NEEDS_MOVIE_ID_civilwar",
+      "placeholder": "_NEEDS_ID_cw_tchalla",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "T%27Challa"
+    },
+    {
+      "name": "Thor",
+      "movie_title": "Thor: Ragnarok",
+      "movie_id": "_NEEDS_MOVIE_ID_ragnarok",
+      "placeholder": "_NEEDS_ID_rag_thor",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Thor"
+    },
+    {
+      "name": "Loki",
+      "movie_title": "Thor: Ragnarok",
+      "movie_id": "_NEEDS_MOVIE_ID_ragnarok",
+      "placeholder": "_NEEDS_ID_rag_loki",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Loki"
+    },
+    {
+      "name": "Hela",
+      "movie_title": "Thor: Ragnarok",
+      "movie_id": "_NEEDS_MOVIE_ID_ragnarok",
+      "placeholder": "_NEEDS_ID_rag_hela",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Hela"
+    },
+    {
+      "name": "Valkyrie",
+      "movie_title": "Thor: Ragnarok",
+      "movie_id": "_NEEDS_MOVIE_ID_ragnarok",
+      "placeholder": "_NEEDS_ID_rag_valkyrie",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Valkyrie"
+    },
+    {
+      "name": "T'Challa / Black Panther",
+      "movie_title": "Black Panther",
+      "movie_id": "_NEEDS_MOVIE_ID_blackpanther",
+      "placeholder": "_NEEDS_ID_bp_tchalla",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "T%27Challa"
+    },
+    {
+      "name": "Erik Killmonger",
+      "movie_title": "Black Panther",
+      "movie_id": "_NEEDS_MOVIE_ID_blackpanther",
+      "placeholder": "_NEEDS_ID_bp_killmonger",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Erik_Killmonger"
+    },
+    {
+      "name": "Nakia",
+      "movie_title": "Black Panther",
+      "movie_id": "_NEEDS_MOVIE_ID_blackpanther",
+      "placeholder": "_NEEDS_ID_bp_nakia",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Nakia"
+    },
+    {
+      "name": "Okoye",
+      "movie_title": "Black Panther",
+      "movie_id": "_NEEDS_MOVIE_ID_blackpanther",
+      "placeholder": "_NEEDS_ID_bp_okoye",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Okoye"
+    },
+    {
+      "name": "Thanos",
+      "movie_title": "Avengers: Infinity War",
+      "movie_id": "_NEEDS_MOVIE_ID_infinitywar",
+      "placeholder": "_NEEDS_ID_iw_thanos",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Thanos"
+    },
+    {
+      "name": "Stephen Strange / Doctor Strange",
+      "movie_title": "Avengers: Infinity War",
+      "movie_id": "_NEEDS_MOVIE_ID_infinitywar",
+      "placeholder": "_NEEDS_ID_iw_strange",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Stephen_Strange"
+    },
+    {
+      "name": "Gamora",
+      "movie_title": "Avengers: Infinity War",
+      "movie_id": "_NEEDS_MOVIE_ID_infinitywar",
+      "placeholder": "_NEEDS_ID_iw_gamora",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Gamora"
+    },
+    {
+      "name": "Tony Stark / Iron Man",
+      "movie_title": "Avengers: Infinity War",
+      "movie_id": "_NEEDS_MOVIE_ID_infinitywar",
+      "placeholder": "_NEEDS_ID_iw_tony",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Tony_Stark"
+    },
+    {
+      "name": "Tony Stark / Iron Man",
+      "movie_title": "Avengers: Endgame",
+      "movie_id": "_NEEDS_MOVIE_ID_endgame",
+      "placeholder": "_NEEDS_ID_eg_tony",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Tony_Stark"
+    },
+    {
+      "name": "Steve Rogers / Captain America",
+      "movie_title": "Avengers: Endgame",
+      "movie_id": "_NEEDS_MOVIE_ID_endgame",
+      "placeholder": "_NEEDS_ID_eg_steve",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Steve_Rogers"
+    },
+    {
+      "name": "Nebula",
+      "movie_title": "Avengers: Endgame",
+      "movie_id": "_NEEDS_MOVIE_ID_endgame",
+      "placeholder": "_NEEDS_ID_eg_nebula",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Nebula"
+    },
+    {
+      "name": "Thanos",
+      "movie_title": "Avengers: Endgame",
+      "movie_id": "_NEEDS_MOVIE_ID_endgame",
+      "placeholder": "_NEEDS_ID_eg_thanos",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Thanos"
+    },
+    {
+      "name": "Peter Parker / Spider-Man",
+      "movie_title": "Spider-Man: No Way Home",
+      "movie_id": "_NEEDS_MOVIE_ID_nowayhome",
+      "placeholder": "_NEEDS_ID_nwh_peter",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Peter_Parker"
+    },
+    {
+      "name": "Norman Osborn / Green Goblin",
+      "movie_title": "Spider-Man: No Way Home",
+      "movie_id": "_NEEDS_MOVIE_ID_nowayhome",
+      "placeholder": "_NEEDS_ID_nwh_goblin",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Norman_Osborn"
+    },
+    {
+      "name": "Stephen Strange / Doctor Strange",
+      "movie_title": "Spider-Man: No Way Home",
+      "movie_id": "_NEEDS_MOVIE_ID_nowayhome",
+      "placeholder": "_NEEDS_ID_nwh_strange",
+      "fandom_wiki": "marvelcinematicuniverse",
+      "fandom_slug": "Stephen_Strange"
+    },
+    {
+      "name": "Logan / Wolverine",
+      "movie_title": "Logan",
+      "movie_id": "_NEEDS_MOVIE_ID_logan",
+      "placeholder": "_NEEDS_ID_logan_logan",
+      "fandom_wiki": "xmenmovies",
+      "fandom_slug": "Wolverine"
+    },
+    {
+      "name": "Charles Xavier / Professor X",
+      "movie_title": "Logan",
+      "movie_id": "_NEEDS_MOVIE_ID_logan",
+      "placeholder": "_NEEDS_ID_logan_charles",
+      "fandom_wiki": "xmenmovies",
+      "fandom_slug": "Professor_X"
+    },
+    {
+      "name": "Laura / X-23",
+      "movie_title": "Logan",
+      "movie_id": "_NEEDS_MOVIE_ID_logan",
+      "placeholder": "_NEEDS_ID_logan_laura",
+      "fandom_wiki": "xmenmovies",
+      "fandom_slug": "X-23"
+    },
+    {
+      "name": "Charles Xavier",
+      "movie_title": "X-Men: Days of Future Past",
+      "movie_id": "_NEEDS_MOVIE_ID_dofp",
+      "placeholder": "_NEEDS_ID_dofp_charles",
+      "fandom_wiki": "xmenmovies",
+      "fandom_slug": "Professor_X"
+    },
+    {
+      "name": "Erik Lehnsherr / Magneto",
+      "movie_title": "X-Men: Days of Future Past",
+      "movie_id": "_NEEDS_MOVIE_ID_dofp",
+      "placeholder": "_NEEDS_ID_dofp_magneto",
+      "fandom_wiki": "xmenmovies",
+      "fandom_slug": "Magneto"
+    },
+    {
+      "name": "Raven / Mystique",
+      "movie_title": "X-Men: Days of Future Past",
+      "movie_id": "_NEEDS_MOVIE_ID_dofp",
+      "placeholder": "_NEEDS_ID_dofp_mystique",
+      "fandom_wiki": "xmenmovies",
+      "fandom_slug": "Mystique"
+    },
+    {
+      "name": "Bruce Wayne / Batman",
+      "movie_title": "Batman Begins",
+      "movie_id": "_NEEDS_MOVIE_ID_batmanbegins",
+      "placeholder": "_NEEDS_ID_bb_bruce",
+      "fandom_wiki": "batman",
+      "fandom_slug": "Bruce_Wayne"
+    },
+    {
+      "name": "Henri Ducard / Ra's al Ghul",
+      "movie_title": "Batman Begins",
+      "movie_id": "_NEEDS_MOVIE_ID_batmanbegins",
+      "placeholder": "_NEEDS_ID_bb_ras",
+      "fandom_wiki": "batman",
+      "fandom_slug": "Ra%27s_al_Ghul"
+    },
+    {
+      "name": "Rachel Dawes",
+      "movie_title": "Batman Begins",
+      "movie_id": "_NEEDS_MOVIE_ID_batmanbegins",
+      "placeholder": "_NEEDS_ID_bb_rachel",
+      "fandom_wiki": "batman",
+      "fandom_slug": "Rachel_Dawes"
+    },
+    {
+      "name": "Dr. Jonathan Crane / Scarecrow",
+      "movie_title": "Batman Begins",
+      "movie_id": "_NEEDS_MOVIE_ID_batmanbegins",
+      "placeholder": "_NEEDS_ID_bb_scarecrow",
+      "fandom_wiki": "batman",
+      "fandom_slug": "Jonathan_Crane"
+    },
+    {
+      "name": "Bruce Wayne / Batman",
+      "movie_title": "The Dark Knight Rises",
+      "movie_id": "_NEEDS_MOVIE_ID_tldr",
+      "placeholder": "_NEEDS_ID_tldr_bruce",
+      "fandom_wiki": "batman",
+      "fandom_slug": "Bruce_Wayne"
+    },
+    {
+      "name": "Bane",
+      "movie_title": "The Dark Knight Rises",
+      "movie_id": "_NEEDS_MOVIE_ID_tldr",
+      "placeholder": "_NEEDS_ID_tldr_bane",
+      "fandom_wiki": "batman",
+      "fandom_slug": "Bane"
+    },
+    {
+      "name": "Selina Kyle / Catwoman",
+      "movie_title": "The Dark Knight Rises",
+      "movie_id": "_NEEDS_MOVIE_ID_tldr",
+      "placeholder": "_NEEDS_ID_tldr_selina",
+      "fandom_wiki": "batman",
+      "fandom_slug": "Selina_Kyle"
+    },
+    {
+      "name": "John Blake",
+      "movie_title": "The Dark Knight Rises",
+      "movie_id": "_NEEDS_MOVIE_ID_tldr",
+      "placeholder": "_NEEDS_ID_tldr_blake",
+      "fandom_wiki": "batman",
+      "fandom_slug": "John_Blake"
+    },
+    {
+      "name": "Bruce Wayne / The Batman",
+      "movie_title": "The Batman",
+      "movie_id": "_NEEDS_MOVIE_ID_thebatman",
+      "placeholder": "_NEEDS_ID_tb_bruce",
+      "fandom_wiki": "batman",
+      "fandom_slug": "Bruce_Wayne"
+    },
+    {
+      "name": "Edward Nashton / The Riddler",
+      "movie_title": "The Batman",
+      "movie_id": "_NEEDS_MOVIE_ID_thebatman",
+      "placeholder": "_NEEDS_ID_tb_riddler",
+      "fandom_wiki": "batman",
+      "fandom_slug": "Riddler"
+    },
+    {
+      "name": "Selina Kyle / Catwoman",
+      "movie_title": "The Batman",
+      "movie_id": "_NEEDS_MOVIE_ID_thebatman",
+      "placeholder": "_NEEDS_ID_tb_selina",
+      "fandom_wiki": "batman",
+      "fandom_slug": "Selina_Kyle"
+    },
+    {
+      "name": "Lt. James Gordon",
+      "movie_title": "The Batman",
+      "movie_id": "_NEEDS_MOVIE_ID_thebatman",
+      "placeholder": "_NEEDS_ID_tb_gordon",
+      "fandom_wiki": "batman",
+      "fandom_slug": "James_Gordon"
+    },
+    {
+      "name": "Arthur Fleck / Joker",
+      "movie_title": "Joker",
+      "movie_id": "_NEEDS_MOVIE_ID_joker",
+      "placeholder": "_NEEDS_ID_jk_arthur",
+      "fandom_wiki": "batman",
+      "fandom_slug": "Joker"
+    },
+    {
+      "name": "Murray Franklin",
+      "movie_title": "Joker",
+      "movie_id": "_NEEDS_MOVIE_ID_joker",
+      "placeholder": "_NEEDS_ID_jk_murray",
+      "fandom_wiki": "batman",
+      "fandom_slug": "Murray_Franklin"
+    },
+    {
+      "name": "Penny Fleck",
+      "movie_title": "Joker",
+      "movie_id": "_NEEDS_MOVIE_ID_joker",
+      "placeholder": "_NEEDS_ID_jk_penny",
+      "fandom_wiki": "batman",
+      "fandom_slug": "Penny_Fleck"
+    },
+    {
+      "name": "Clark Kent / Superman",
+      "movie_title": "Man of Steel",
+      "movie_id": "_NEEDS_MOVIE_ID_manofsteel",
+      "placeholder": "_NEEDS_ID_mos_clark",
+      "fandom_wiki": "dcextendeduniverse",
+      "fandom_slug": "Superman"
+    },
+    {
+      "name": "General Zod",
+      "movie_title": "Man of Steel",
+      "movie_id": "_NEEDS_MOVIE_ID_manofsteel",
+      "placeholder": "_NEEDS_ID_mos_zod",
+      "fandom_wiki": "dcextendeduniverse",
+      "fandom_slug": "Dru-Zod"
+    },
+    {
+      "name": "Lois Lane",
+      "movie_title": "Man of Steel",
+      "movie_id": "_NEEDS_MOVIE_ID_manofsteel",
+      "placeholder": "_NEEDS_ID_mos_lois",
+      "fandom_wiki": "dcextendeduniverse",
+      "fandom_slug": "Lois_Lane"
+    },
+    {
+      "name": "Jor-El",
+      "movie_title": "Man of Steel",
+      "movie_id": "_NEEDS_MOVIE_ID_manofsteel",
+      "placeholder": "_NEEDS_ID_mos_jorel",
+      "fandom_wiki": "dcextendeduniverse",
+      "fandom_slug": "Jor-El"
+    },
+    {
+      "name": "Bruce Wayne / Batman",
+      "movie_title": "Batman v Superman: Dawn of Justice",
+      "movie_id": "_NEEDS_MOVIE_ID_bvs",
+      "placeholder": "_NEEDS_ID_bvs_bruce",
+      "fandom_wiki": "dcextendeduniverse",
+      "fandom_slug": "Batman"
+    },
+    {
+      "name": "Clark Kent / Superman",
+      "movie_title": "Batman v Superman: Dawn of Justice",
+      "movie_id": "_NEEDS_MOVIE_ID_bvs",
+      "placeholder": "_NEEDS_ID_bvs_clark",
+      "fandom_wiki": "dcextendeduniverse",
+      "fandom_slug": "Superman"
+    },
+    {
+      "name": "Lex Luthor",
+      "movie_title": "Batman v Superman: Dawn of Justice",
+      "movie_id": "_NEEDS_MOVIE_ID_bvs",
+      "placeholder": "_NEEDS_ID_bvs_lex",
+      "fandom_wiki": "dcextendeduniverse",
+      "fandom_slug": "Lex_Luthor"
+    },
+    {
+      "name": "Diana Prince / Wonder Woman",
+      "movie_title": "Batman v Superman: Dawn of Justice",
+      "movie_id": "_NEEDS_MOVIE_ID_bvs",
+      "placeholder": "_NEEDS_ID_bvs_diana",
+      "fandom_wiki": "dcextendeduniverse",
+      "fandom_slug": "Wonder_Woman"
+    },
+    {
+      "name": "Diana Prince / Wonder Woman",
+      "movie_title": "Wonder Woman",
+      "movie_id": "_NEEDS_MOVIE_ID_wonderwoman",
+      "placeholder": "_NEEDS_ID_ww_diana",
+      "fandom_wiki": "dcextendeduniverse",
+      "fandom_slug": "Wonder_Woman"
+    },
+    {
+      "name": "Steve Trevor",
+      "movie_title": "Wonder Woman",
+      "movie_id": "_NEEDS_MOVIE_ID_wonderwoman",
+      "placeholder": "_NEEDS_ID_ww_steve",
+      "fandom_wiki": "dcextendeduniverse",
+      "fandom_slug": "Steve_Trevor"
+    },
+    {
+      "name": "Ares / Sir Patrick Morgan",
+      "movie_title": "Wonder Woman",
+      "movie_id": "_NEEDS_MOVIE_ID_wonderwoman",
+      "placeholder": "_NEEDS_ID_ww_ares",
+      "fandom_wiki": "dcextendeduniverse",
+      "fandom_slug": "Ares"
+    },
+    {
+      "name": "Rorschach / Walter Kovacs",
+      "movie_title": "Watchmen",
+      "movie_id": "_NEEDS_MOVIE_ID_watchmen",
+      "placeholder": "_NEEDS_ID_wm_rorschach",
+      "fandom_wiki": "watchmen",
+      "fandom_slug": "Walter_Kovacs"
+    },
+    {
+      "name": "Dr. Manhattan / Jon Osterman",
+      "movie_title": "Watchmen",
+      "movie_id": "_NEEDS_MOVIE_ID_watchmen",
+      "placeholder": "_NEEDS_ID_wm_manhattan",
+      "fandom_wiki": "watchmen",
+      "fandom_slug": "Jonathan_Osterman"
+    },
+    {
+      "name": "Adrian Veidt / Ozymandias",
+      "movie_title": "Watchmen",
+      "movie_id": "_NEEDS_MOVIE_ID_watchmen",
+      "placeholder": "_NEEDS_ID_wm_veidt",
+      "fandom_wiki": "watchmen",
+      "fandom_slug": "Adrian_Veidt"
+    },
+    {
+      "name": "Dan Dreiberg / Nite Owl II",
+      "movie_title": "Watchmen",
+      "movie_id": "_NEEDS_MOVIE_ID_watchmen",
+      "placeholder": "_NEEDS_ID_wm_dan",
+      "fandom_wiki": "watchmen",
+      "fandom_slug": "Dan_Dreiberg"
+    },
+    {
+      "name": "V",
+      "movie_title": "V for Vendetta",
+      "movie_id": "_NEEDS_MOVIE_ID_vforvendetta",
+      "placeholder": "_NEEDS_ID_v_v",
+      "fandom_wiki": "vforvendetta",
+      "fandom_slug": "V"
+    },
+    {
+      "name": "Evey Hammond",
+      "movie_title": "V for Vendetta",
+      "movie_id": "_NEEDS_MOVIE_ID_vforvendetta",
+      "placeholder": "_NEEDS_ID_v_evey",
+      "fandom_wiki": "vforvendetta",
+      "fandom_slug": "Evey_Hammond"
+    },
+    {
+      "name": "Chief Inspector Eric Finch",
+      "movie_title": "V for Vendetta",
+      "movie_id": "_NEEDS_MOVIE_ID_vforvendetta",
+      "placeholder": "_NEEDS_ID_v_finch",
+      "fandom_wiki": "vforvendetta",
+      "fandom_slug": "Eric_Finch"
     }
   ],
   "relationships": [
@@ -605,6 +2741,1098 @@
       "character_id_a": "_NEEDS_ID_nina",
       "character_id_b": "_NEEDS_ID_lily",
       "search_query": "Black Swan Nina Sayers Lily rivalry obsession white swan black swan duality"
+    },
+    {
+      "label": "Paul & Jessica",
+      "movie_id": "_NEEDS_MOVIE_ID_dune",
+      "character_id_a": "_NEEDS_ID_paulatreides",
+      "character_id_b": "_NEEDS_ID_ladyjessica",
+      "search_query": "Dune Paul Atreides Lady Jessica mother son prophecy Bene Gesserit dynamic"
+    },
+    {
+      "label": "Paul & Chani",
+      "movie_id": "_NEEDS_MOVIE_ID_dune",
+      "character_id_a": "_NEEDS_ID_paulatreides",
+      "character_id_b": "_NEEDS_ID_chani",
+      "search_query": "Dune Paul Atreides Chani desert romance Fremen faith dynamic"
+    },
+    {
+      "label": "Truman & Christof",
+      "movie_id": "_NEEDS_MOVIE_ID_thetrumanshow",
+      "character_id_a": "_NEEDS_ID_truman",
+      "character_id_b": "_NEEDS_ID_christof",
+      "search_query": "The Truman Show Truman Burbank Christof creator god artificial reality dynamic"
+    },
+    {
+      "label": "Truman & Sylvia",
+      "movie_id": "_NEEDS_MOVIE_ID_thetrumanshow",
+      "character_id_a": "_NEEDS_ID_truman",
+      "character_id_b": "_NEEDS_ID_sylvia",
+      "search_query": "The Truman Show Truman Burbank Sylvia true love escape reality dynamic"
+    },
+    {
+      "label": "Louise & Ian",
+      "movie_id": "_NEEDS_MOVIE_ID_arrival",
+      "character_id_a": "_NEEDS_ID_louisebanks",
+      "character_id_b": "_NEEDS_ID_iandonnelly",
+      "search_query": "Arrival Louise Banks Ian Donnelly love grief nonlinear time dynamic"
+    },
+    {
+      "label": "Caleb & Ava",
+      "movie_id": "_NEEDS_MOVIE_ID_exmachina",
+      "character_id_a": "_NEEDS_ID_calebsmith",
+      "character_id_b": "_NEEDS_ID_ava",
+      "search_query": "Ex Machina Caleb Ava Turing test artificial intelligence manipulation dynamic"
+    },
+    {
+      "label": "Caleb & Nathan",
+      "movie_id": "_NEEDS_MOVIE_ID_exmachina",
+      "character_id_a": "_NEEDS_ID_calebsmith",
+      "character_id_b": "_NEEDS_ID_nathanbateman",
+      "search_query": "Ex Machina Caleb Smith Nathan Bateman creator isolation hubris dynamic"
+    },
+    {
+      "label": "Alan & Ian",
+      "movie_id": "_NEEDS_MOVIE_ID_jurassicpark",
+      "character_id_a": "_NEEDS_ID_alangrant",
+      "character_id_b": "_NEEDS_ID_ianmalcolm",
+      "search_query": "Jurassic Park Alan Grant Ian Malcolm chaos theory science dynamic"
+    },
+    {
+      "label": "Alan & Hammond",
+      "movie_id": "_NEEDS_MOVIE_ID_jurassicpark",
+      "character_id_a": "_NEEDS_ID_alangrant",
+      "character_id_b": "_NEEDS_ID_johnhammond",
+      "search_query": "Jurassic Park Alan Grant John Hammond prehistoric park hubris ethics dynamic"
+    },
+    {
+      "label": "Teddy & Chuck",
+      "movie_id": "_NEEDS_MOVIE_ID_shutterisland",
+      "character_id_a": "_NEEDS_ID_teddydaniels",
+      "character_id_b": "_NEEDS_ID_chuckaule",
+      "search_query": "Shutter Island Teddy Daniels Chuck Aule partner investigation delusion dynamic"
+    },
+    {
+      "label": "Teddy & Cawley",
+      "movie_id": "_NEEDS_MOVIE_ID_shutterisland",
+      "character_id_a": "_NEEDS_ID_teddydaniels",
+      "character_id_b": "_NEEDS_ID_cawley",
+      "search_query": "Shutter Island Teddy Daniels Dr Cawley asylum psychiatrist reality dynamic"
+    },
+    {
+      "label": "Mills & Somerset",
+      "movie_id": "_NEEDS_MOVIE_ID_se7en",
+      "character_id_a": "_NEEDS_ID_davidmills",
+      "character_id_b": "_NEEDS_ID_williamsomerset",
+      "search_query": "Se7en David Mills William Somerset detective rookie veteran dynamic"
+    },
+    {
+      "label": "Mills & John Doe",
+      "movie_id": "_NEEDS_MOVIE_ID_se7en",
+      "character_id_a": "_NEEDS_ID_davidmills",
+      "character_id_b": "_NEEDS_ID_johndoe",
+      "search_query": "Se7en David Mills John Doe seven deadly sins wrath climax dynamic"
+    },
+    {
+      "label": "Nick & Amy",
+      "movie_id": "_NEEDS_MOVIE_ID_gonegirl",
+      "character_id_a": "_NEEDS_ID_nickdunne",
+      "character_id_b": "_NEEDS_ID_amydunne",
+      "search_query": "Gone Girl Nick Dunne Amy Dunne toxic marriage revenge facade dynamic"
+    },
+    {
+      "label": "Leonard & Teddy",
+      "movie_id": "_NEEDS_MOVIE_ID_memento",
+      "character_id_a": "_NEEDS_ID_leonardshelby",
+      "character_id_b": "_NEEDS_ID_teddygammell",
+      "search_query": "Memento Leonard Shelby Teddy memory manipulation deception dynamic"
+    },
+    {
+      "label": "Leonard & Natalie",
+      "movie_id": "_NEEDS_MOVIE_ID_memento",
+      "character_id_a": "_NEEDS_ID_leonardshelby",
+      "character_id_b": "_NEEDS_ID_natalie",
+      "search_query": "Memento Leonard Shelby Natalie grief betrayal dynamic"
+    },
+    {
+      "label": "Lou & Rick",
+      "movie_id": "_NEEDS_MOVIE_ID_nightcrawler",
+      "character_id_a": "_NEEDS_ID_loubloom",
+      "character_id_b": "_NEEDS_ID_rick",
+      "search_query": "Nightcrawler Lou Bloom Rick exploitation sociopathy freelance journalism dynamic"
+    },
+    {
+      "label": "Lou & Nina",
+      "movie_id": "_NEEDS_MOVIE_ID_nightcrawler",
+      "character_id_a": "_NEEDS_ID_loubloom",
+      "character_id_b": "_NEEDS_ID_ninaromina",
+      "search_query": "Nightcrawler Lou Bloom Nina Romina news ratings sensationalism transaction dynamic"
+    },
+    {
+      "label": "Travis & Iris",
+      "movie_id": "_NEEDS_MOVIE_ID_taxidriver",
+      "character_id_a": "_NEEDS_ID_travisbickle",
+      "character_id_b": "_NEEDS_ID_iris",
+      "search_query": "Taxi Driver Travis Bickle Iris savior complex alienation urban decay dynamic"
+    },
+    {
+      "label": "Travis & Betsy",
+      "movie_id": "_NEEDS_MOVIE_ID_taxidriver",
+      "character_id_a": "_NEEDS_ID_travisbickle",
+      "character_id_b": "_NEEDS_ID_betsy",
+      "search_query": "Taxi Driver Travis Bickle Betsy rejection isolation dynamic"
+    },
+    {
+      "label": "Patrick & Paul Allen",
+      "movie_id": "_NEEDS_MOVIE_ID_americanpsycho",
+      "character_id_a": "_NEEDS_ID_patrickbateman",
+      "character_id_b": "_NEEDS_ID_paulallen",
+      "search_query": "American Psycho Patrick Bateman Paul Allen vanity envy murder dynamic"
+    },
+    {
+      "label": "Andy & Red",
+      "movie_id": "_NEEDS_MOVIE_ID_theshawshankredemption",
+      "character_id_a": "_NEEDS_ID_andydufresne",
+      "character_id_b": "_NEEDS_ID_red",
+      "search_query": "The Shawshank Redemption Andy Dufresne Red friendship hope freedom prison dynamic"
+    },
+    {
+      "label": "Andy & Norton",
+      "movie_id": "_NEEDS_MOVIE_ID_theshawshankredemption",
+      "character_id_a": "_NEEDS_ID_andydufresne",
+      "character_id_b": "_NEEDS_ID_wardennorton",
+      "search_query": "The Shawshank Redemption Andy Dufresne Warden Norton corruption defiance dynamic"
+    },
+    {
+      "label": "Forrest & Jenny",
+      "movie_id": "_NEEDS_MOVIE_ID_forrestgump",
+      "character_id_a": "_NEEDS_ID_forrestgump",
+      "character_id_b": "_NEEDS_ID_jennycurran",
+      "search_query": "Forrest Gump Forrest Jenny lifelong love trauma devotion dynamic"
+    },
+    {
+      "label": "Forrest & Lieutenant Dan",
+      "movie_id": "_NEEDS_MOVIE_ID_forrestgump",
+      "character_id_a": "_NEEDS_ID_forrestgump",
+      "character_id_b": "_NEEDS_ID_lieutenantdan",
+      "search_query": "Forrest Gump Forrest Dan brotherhood purpose peace dynamic"
+    },
+    {
+      "label": "Keating & Neil",
+      "movie_id": "_NEEDS_MOVIE_ID_deadpoetssociety",
+      "character_id_a": "_NEEDS_ID_johnkeating",
+      "character_id_b": "_NEEDS_ID_neilperry",
+      "search_query": "Dead Poets Society John Keating Neil Perry carpe diem inspiration tragedy dynamic"
+    },
+    {
+      "label": "Neil & Todd",
+      "movie_id": "_NEEDS_MOVIE_ID_deadpoetssociety",
+      "character_id_a": "_NEEDS_ID_neilperry",
+      "character_id_b": "_NEEDS_ID_toddanderson",
+      "search_query": "Dead Poets Society Neil Perry Todd Anderson friendship courage dynamic"
+    },
+    {
+      "label": "Gustave & Zero",
+      "movie_id": "_NEEDS_MOVIE_ID_thegrandbudapesthotel",
+      "character_id_a": "_NEEDS_ID_gustave",
+      "character_id_b": "_NEEDS_ID_zeromoustafa",
+      "search_query": "The Grand Budapest Hotel Monsieur Gustave Zero Moustafa loyalty mentorship elegance dynamic"
+    },
+    {
+      "label": "Daniel & Eli",
+      "movie_id": "_NEEDS_MOVIE_ID_therewillbeblood",
+      "character_id_a": "_NEEDS_ID_danielplainview",
+      "character_id_b": "_NEEDS_ID_elisunday",
+      "search_query": "There Will Be Blood Daniel Plainview Eli Sunday capitalism religion rivalry hatred dynamic"
+    },
+    {
+      "label": "Riggan & Mike",
+      "movie_id": "_NEEDS_MOVIE_ID_birdman",
+      "character_id_a": "_NEEDS_ID_rigganthomson",
+      "character_id_b": "_NEEDS_ID_mikeshiner",
+      "search_query": "Birdman Riggan Thomson Mike Shiner ego artistic integrity Broadway rivalry dynamic"
+    },
+    {
+      "label": "Riggan & Sam",
+      "movie_id": "_NEEDS_MOVIE_ID_birdman",
+      "character_id_a": "_NEEDS_ID_rigganthomson",
+      "character_id_b": "_NEEDS_ID_samthomson",
+      "search_query": "Birdman Riggan Thomson Sam Thomson father daughter relevance neglect dynamic"
+    },
+    {
+      "label": "Henry & Jimmy",
+      "movie_id": "_NEEDS_MOVIE_ID_goodfellas",
+      "character_id_a": "_NEEDS_ID_henryhill",
+      "character_id_b": "_NEEDS_ID_jimmyconway",
+      "search_query": "Goodfellas Henry Hill Jimmy Conway mentorship paranoia mafia dynamic"
+    },
+    {
+      "label": "Henry & Tommy",
+      "movie_id": "_NEEDS_MOVIE_ID_goodfellas",
+      "character_id_a": "_NEEDS_ID_henryhill",
+      "character_id_b": "_NEEDS_ID_tommydevito",
+      "search_query": "Goodfellas Henry Hill Tommy DeVito volatile loyalty crime dynamic"
+    },
+    {
+      "label": "Billy & Costello",
+      "movie_id": "_NEEDS_MOVIE_ID_thedeparted",
+      "character_id_a": "_NEEDS_ID_billycostigan",
+      "character_id_b": "_NEEDS_ID_frankcostello",
+      "search_query": "The Departed Billy Costigan Frank Costello undercover fear paternal betrayal dynamic"
+    },
+    {
+      "label": "Billy & Colin",
+      "movie_id": "_NEEDS_MOVIE_ID_thedeparted",
+      "character_id_a": "_NEEDS_ID_billycostigan",
+      "character_id_b": "_NEEDS_ID_colinsullivan",
+      "search_query": "The Departed Billy Costigan Colin Sullivan cat and mouse double life identity dynamic"
+    },
+    {
+      "label": "Tony & Manny",
+      "movie_id": "_NEEDS_MOVIE_ID_scarface",
+      "character_id_a": "_NEEDS_ID_tonymontana",
+      "character_id_b": "_NEEDS_ID_mannyribera",
+      "search_query": "Scarface Tony Montana Manny Ribera ambition brotherhood betrayal tragedy dynamic"
+    },
+    {
+      "label": "Tony & Elvira",
+      "movie_id": "_NEEDS_MOVIE_ID_scarface",
+      "character_id_a": "_NEEDS_ID_tonymontana",
+      "character_id_b": "_NEEDS_ID_elvirahancock",
+      "search_query": "Scarface Tony Montana Elvira Hancock trophy wife detachment disillusionment dynamic"
+    },
+    {
+      "label": "Neil & Vincent",
+      "movie_id": "_NEEDS_MOVIE_ID_heat",
+      "character_id_a": "_NEEDS_ID_neilmccauley",
+      "character_id_b": "_NEEDS_ID_vincenthanna",
+      "search_query": "Heat Neil McCauley Vincent Hanna professional respect diner conversation cat and mouse dynamic"
+    },
+    {
+      "label": "Llewelyn & Chigurh",
+      "movie_id": "_NEEDS_MOVIE_ID_nocountryforoldmen",
+      "character_id_a": "_NEEDS_ID_llewelynmoss",
+      "character_id_b": "_NEEDS_ID_antonchigurh",
+      "search_query": "No Country for Old Men Llewelyn Moss Anton Chigurh relentless pursuit fate dynamic"
+    },
+    {
+      "label": "Chigurh & Bell",
+      "movie_id": "_NEEDS_MOVIE_ID_nocountryforoldmen",
+      "character_id_a": "_NEEDS_ID_antonchigurh",
+      "character_id_b": "_NEEDS_ID_edtombell",
+      "search_query": "No Country for Old Men Anton Chigurh Ed Tom Bell inevitable evil passing of time dynamic"
+    },
+    {
+      "label": "Chihiro & Haku",
+      "movie_id": "_NEEDS_MOVIE_ID_spiritedaway",
+      "character_id_a": "_NEEDS_ID_chihiro",
+      "character_id_b": "_NEEDS_ID_haku",
+      "search_query": "Spirited Away Chihiro Haku river spirit identity rescue bond dynamic"
+    },
+    {
+      "label": "Chihiro & No-Face",
+      "movie_id": "_NEEDS_MOVIE_ID_spiritedaway",
+      "character_id_a": "_NEEDS_ID_chihiro",
+      "character_id_b": "_NEEDS_ID_noface",
+      "search_query": "Spirited Away Chihiro No-Face loneliness acceptance spiritual cleansing dynamic"
+    },
+    {
+      "label": "Angier & Borden",
+      "movie_id": "_NEEDS_MOVIE_ID_theprestige",
+      "character_id_a": "_NEEDS_ID_robertangier",
+      "character_id_b": "_NEEDS_ID_alfredborden",
+      "search_query": "The Prestige Robert Angier Alfred Borden magician obsession sacrifice rivalry dynamic"
+    },
+    {
+      "label": "Maximus & Commodus",
+      "movie_id": "_NEEDS_MOVIE_ID_gladiator",
+      "character_id_a": "_NEEDS_ID_maximus",
+      "character_id_b": "_NEEDS_ID_commodus",
+      "search_query": "Gladiator Maximus Commodus vengeance honor imperial corruption dynamic"
+    },
+    {
+      "label": "Maximus & Lucilla",
+      "movie_id": "_NEEDS_MOVIE_ID_gladiator",
+      "character_id_a": "_NEEDS_ID_maximus",
+      "character_id_b": "_NEEDS_ID_lucilla",
+      "search_query": "Gladiator Maximus Lucilla past love shared grief Rome dynamic"
+    },
+    {
+      "label": "Aldo & Landa",
+      "movie_id": "_NEEDS_MOVIE_ID_inglouriousbasterds",
+      "character_id_a": "_NEEDS_ID_aldoraine",
+      "character_id_b": "_NEEDS_ID_hanslanda",
+      "search_query": "Inglourious Basterds Aldo Raine Hans Landa climax scalp negotiation dynamic"
+    },
+    {
+      "label": "Shosanna & Landa",
+      "movie_id": "_NEEDS_MOVIE_ID_inglouriousbasterds",
+      "character_id_a": "_NEEDS_ID_shosannadreyfus",
+      "character_id_b": "_NEEDS_ID_hanslanda",
+      "search_query": "Inglourious Basterds Shosanna Dreyfus Hans Landa dairy farm cinema revenge terror dynamic"
+    },
+    {
+      "label": "Léon & Mathilda",
+      "movie_id": "_NEEDS_MOVIE_ID_leontheprofessional",
+      "character_id_a": "_NEEDS_ID_leonmontana",
+      "character_id_b": "_NEEDS_ID_mathildalando",
+      "search_query": "Leon The Professional Leon Mathilda hitman orphan innocence protection dynamic"
+    },
+    {
+      "label": "Léon & Stansfield",
+      "movie_id": "_NEEDS_MOVIE_ID_leontheprofessional",
+      "character_id_a": "_NEEDS_ID_leonmontana",
+      "character_id_b": "_NEEDS_ID_normanstansfield",
+      "search_query": "Leon The Professional Leon Norman Stansfield corrupt DEA vendetta dynamic"
+    },
+    {
+      "label": "Peter & Doc Ock",
+      "movie_id": "_NEEDS_MOVIE_ID_spiderman2",
+      "character_id_a": "_NEEDS_ID_peterparker2",
+      "character_id_b": "_NEEDS_ID_ottooctavius",
+      "search_query": "Spider-Man 2 Peter Parker Otto Octavius mentorship scientific hubris redemption dynamic"
+    },
+    {
+      "label": "Peter & Mary Jane",
+      "movie_id": "_NEEDS_MOVIE_ID_spiderman2",
+      "character_id_a": "_NEEDS_ID_peterparker2",
+      "character_id_b": "_NEEDS_ID_maryjanewatson",
+      "search_query": "Spider-Man 2 Peter Parker Mary Jane Watson sacrifice secret identity choice dynamic"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_deckard1982",
+      "character_id_b": "_NEEDS_ID_roybatty",
+      "movie_id": "_NEEDS_MOVIE_ID_bladerunner",
+      "label": "Deckard & Roy Batty",
+      "search_query": "Blade Runner Rick Deckard Roy Batty confrontation tears in rain"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_deckard1982",
+      "character_id_b": "_NEEDS_ID_rachael",
+      "movie_id": "_NEEDS_MOVIE_ID_bladerunner",
+      "label": "Deckard & Rachael",
+      "search_query": "Blade Runner Rick Deckard Rachael love empathy replicant"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_davidbowman",
+      "character_id_b": "_NEEDS_ID_hal9000",
+      "movie_id": "_NEEDS_MOVIE_ID_2001aspaceodyssey",
+      "label": "Bowman & HAL 9000",
+      "search_query": "2001 A Space Odyssey David Bowman HAL 9000 confrontation disconnect"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_benjaminwillard",
+      "character_id_b": "_NEEDS_ID_walterkurtz",
+      "movie_id": "_NEEDS_MOVIE_ID_apocalypsenow",
+      "label": "Willard & Kurtz",
+      "search_query": "Apocalypse Now Willard Kurtz confrontation philosophical madness"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_benjaminwillard",
+      "character_id_b": "_NEEDS_ID_billkilgore",
+      "movie_id": "_NEEDS_MOVIE_ID_apocalypsenow",
+      "label": "Willard & Kilgore",
+      "search_query": "Apocalypse Now Willard Kilgore contrast war absurdity"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_claricestarling",
+      "character_id_b": "_NEEDS_ID_hanniballecter",
+      "movie_id": "_NEEDS_MOVIE_ID_thesilenceofthelambs",
+      "label": "Clarice & Lecter",
+      "search_query": "The Silence of the Lambs Clarice Starling Hannibal Lecter quid pro quo dynamic"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_claricestarling",
+      "character_id_b": "_NEEDS_ID_jackcrawford",
+      "movie_id": "_NEEDS_MOVIE_ID_thesilenceofthelambs",
+      "label": "Clarice & Crawford",
+      "search_query": "The Silence of the Lambs Clarice Starling Jack Crawford mentor relationship"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_ohdaesu",
+      "character_id_b": "_NEEDS_ID_leewoojin",
+      "movie_id": "_NEEDS_MOVIE_ID_oldboy",
+      "label": "Dae-su & Woo-jin",
+      "search_query": "Oldboy Oh Dae-su Lee Woo-jin revenge rivalry twist"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_ohdaesu",
+      "character_id_b": "_NEEDS_ID_mido",
+      "movie_id": "_NEEDS_MOVIE_ID_oldboy",
+      "label": "Dae-su & Mi-do",
+      "search_query": "Oldboy Oh Dae-su Mi-do relationship tragic bond"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_juror8",
+      "character_id_b": "_NEEDS_ID_juror3",
+      "movie_id": "_NEEDS_MOVIE_ID_12angrymen",
+      "label": "Juror 8 & Juror 3",
+      "search_query": "12 Angry Men Juror 8 Juror 3 debate reasonable doubt conflict"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_jacktorrance",
+      "character_id_b": "_NEEDS_ID_wendytorrance",
+      "movie_id": "_NEEDS_MOVIE_ID_theshining",
+      "label": "Jack & Wendy",
+      "search_query": "The Shining Jack Torrance Wendy Torrance marriage breakdown terror"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_jacktorrance",
+      "character_id_b": "_NEEDS_ID_dannytorrance",
+      "movie_id": "_NEEDS_MOVIE_ID_theshining",
+      "label": "Jack & Danny",
+      "search_query": "The Shining Jack Torrance Danny Torrance psychological threat father son"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_driver",
+      "character_id_b": "_NEEDS_ID_irene",
+      "movie_id": "_NEEDS_MOVIE_ID_drive",
+      "label": "Driver & Irene",
+      "search_query": "Drive film Driver Irene romance protector elevator"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_driver",
+      "character_id_b": "_NEEDS_ID_bernierose",
+      "movie_id": "_NEEDS_MOVIE_ID_drive",
+      "label": "Driver & Bernie Rose",
+      "search_query": "Drive film Driver Bernie Rose mob conflict confrontation"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_rickblaine",
+      "character_id_b": "_NEEDS_ID_ilsalund",
+      "movie_id": "_NEEDS_MOVIE_ID_casablanca",
+      "label": "Rick & Ilsa",
+      "search_query": "Casablanca Rick Blaine Ilsa Lund love story Paris sacrifice"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_rickblaine",
+      "character_id_b": "_NEEDS_ID_victorlaszlo",
+      "movie_id": "_NEEDS_MOVIE_ID_casablanca",
+      "label": "Rick & Victor",
+      "search_query": "Casablanca Rick Blaine Victor Laszlo antifascist alliance respect"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_parkdooman",
+      "character_id_b": "_NEEDS_ID_seotaeyoon",
+      "movie_id": "_NEEDS_MOVIE_ID_memoriesofmurder",
+      "label": "Doo-man & Tae-yoon",
+      "search_query": "Memories of Murder Park Doo-man Seo Tae-yoon detective partnership contrast"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_theofaron",
+      "character_id_b": "_NEEDS_ID_kee",
+      "movie_id": "_NEEDS_MOVIE_ID_childrenofmen",
+      "label": "Theo & Kee",
+      "search_query": "Children of Men Theo Faron Kee refugee miraculous pregnancy protection"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_theofaron",
+      "character_id_b": "_NEEDS_ID_juliantaylor",
+      "movie_id": "_NEEDS_MOVIE_ID_childrenofmen",
+      "label": "Theo & Julian",
+      "search_query": "Children of Men Theo Faron Julian Taylor past relationship Fishes"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_maxrockatansky",
+      "character_id_b": "_NEEDS_ID_imperatorfuriosa",
+      "movie_id": "_NEEDS_MOVIE_ID_madmaxfuryroad",
+      "label": "Max & Furiosa",
+      "search_query": "Mad Max Fury Road Max Rockatansky Imperator Furiosa alliance redemption"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_imperatorfuriosa",
+      "character_id_b": "_NEEDS_ID_immortanjoe",
+      "movie_id": "_NEEDS_MOVIE_ID_madmaxfuryroad",
+      "label": "Furiosa & Immortan Joe",
+      "search_query": "Mad Max Fury Road Imperator Furiosa Immortan Joe rebellion tyranny"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_ofelia",
+      "character_id_b": "_NEEDS_ID_captainvidal",
+      "movie_id": "_NEEDS_MOVIE_ID_panslabyrinth",
+      "label": "Ofelia & Vidal",
+      "search_query": "Pan's Labyrinth Ofelia Captain Vidal terror stepdaughter fascist"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_mercedes",
+      "character_id_b": "_NEEDS_ID_captainvidal",
+      "movie_id": "_NEEDS_MOVIE_ID_panslabyrinth",
+      "label": "Mercedes & Vidal",
+      "search_query": "Pan's Labyrinth Mercedes Captain Vidal housekeeper knife resistance"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_princeashitaka",
+      "character_id_b": "_NEEDS_ID_sanmononoke",
+      "movie_id": "_NEEDS_MOVIE_ID_princessmononoke",
+      "label": "Ashitaka & San",
+      "search_query": "Princess Mononoke Ashitaka San love bridge nature humans"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_sanmononoke",
+      "character_id_b": "_NEEDS_ID_ladyeboshi",
+      "movie_id": "_NEEDS_MOVIE_ID_princessmononoke",
+      "label": "San & Eboshi",
+      "search_query": "Princess Mononoke San Lady Eboshi forest spirit Iron Town conflict"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_frankabagnale",
+      "character_id_b": "_NEEDS_ID_carlhanratty",
+      "movie_id": "_NEEDS_MOVIE_ID_catchmeifyoucan",
+      "label": "Frank & Hanratty",
+      "search_query": "Catch Me If You Can Frank Abagnale Carl Hanratty cat and mouse Christmas phone call"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_robertgraysmith",
+      "character_id_b": "_NEEDS_ID_davetoschi",
+      "movie_id": "_NEEDS_MOVIE_ID_zodiac",
+      "label": "Graysmith & Toschi",
+      "search_query": "Zodiac Robert Graysmith Dave Toschi investigation obsession"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_robertgraysmith",
+      "character_id_b": "_NEEDS_ID_paulavery",
+      "movie_id": "_NEEDS_MOVIE_ID_zodiac",
+      "label": "Graysmith & Avery",
+      "search_query": "Zodiac Robert Graysmith Paul Avery San Francisco Chronicle ciphers"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_jordanbelfort",
+      "character_id_b": "_NEEDS_ID_donnieazoff",
+      "movie_id": "_NEEDS_MOVIE_ID_thewolfofwallstreet",
+      "label": "Jordan & Donnie",
+      "search_query": "The Wolf of Wall Street Jordan Belfort Donnie Azoff Stratton Oakmont partnership"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_jordanbelfort",
+      "character_id_b": "_NEEDS_ID_patrickdenham",
+      "movie_id": "_NEEDS_MOVIE_ID_thewolfofwallstreet",
+      "label": "Jordan & Denham",
+      "search_query": "The Wolf of Wall Street Jordan Belfort Patrick Denham FBI yacht scene"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_harrygoldfarb",
+      "character_id_b": "_NEEDS_ID_marionsilver",
+      "movie_id": "_NEEDS_MOVIE_ID_requiemforadream",
+      "label": "Harry & Marion",
+      "search_query": "Requiem for a Dream Harry Marion love addiction tragic collapse"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_harrygoldfarb",
+      "character_id_b": "_NEEDS_ID_saragoldfarb",
+      "movie_id": "_NEEDS_MOVIE_ID_requiemforadream",
+      "label": "Harry & Sara",
+      "search_query": "Requiem for a Dream Harry Sara mother son red dress tragedy"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_oskarschindler",
+      "character_id_b": "_NEEDS_ID_amongoth",
+      "movie_id": "_NEEDS_MOVIE_ID_schindlerslist",
+      "label": "Schindler & Göth",
+      "search_query": "Schindler's List Oskar Schindler Amon Goth relationship power pardon"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_oskarschindler",
+      "character_id_b": "_NEEDS_ID_itzhakstern",
+      "movie_id": "_NEEDS_MOVIE_ID_schindlerslist",
+      "label": "Schindler & Stern",
+      "search_query": "Schindler's List Oskar Schindler Itzhak Stern friendship list who saves one life"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_markrenton",
+      "character_id_b": "_NEEDS_ID_francisbegbie",
+      "movie_id": "_NEEDS_MOVIE_ID_trainspotting",
+      "label": "Renton & Begbie",
+      "search_query": "Trainspotting Mark Renton Francis Begbie psychotic friend violence betrayal"
+    },
+    {
+      "character_id_a": "_NEEDS_ID_markrenton",
+      "character_id_b": "_NEEDS_ID_sickboy",
+      "movie_id": "_NEEDS_MOVIE_ID_trainspotting",
+      "label": "Renton & Sick Boy",
+      "search_query": "Trainspotting Mark Renton Sick Boy friendship Sean Connery cynicism"
+    },
+    {
+      "label": "Harry & Ron",
+      "movie_id": "_NEEDS_MOVIE_ID_hp1",
+      "character_id_a": "_NEEDS_ID_hp1_harry",
+      "character_id_b": "_NEEDS_ID_hp1_ron",
+      "wiki_query": "Harry Potter Ron Weasley friendship Hogwarts train bond"
+    },
+    {
+      "label": "Harry & Hermione",
+      "movie_id": "_NEEDS_MOVIE_ID_hp1",
+      "character_id_a": "_NEEDS_ID_hp1_harry",
+      "character_id_b": "_NEEDS_ID_hp1_hermione",
+      "wiki_query": "Harry Potter Hermione Granger friendship troll intellectual alliance"
+    },
+    {
+      "label": "Harry & Dumbledore",
+      "movie_id": "_NEEDS_MOVIE_ID_hp1",
+      "character_id_a": "_NEEDS_ID_hp1_harry",
+      "character_id_b": "_NEEDS_ID_hp1_dumbledore",
+      "wiki_query": "Harry Potter Albus Dumbledore mentorship mirror of erised guidance"
+    },
+    {
+      "label": "Harry & Tom Riddle",
+      "movie_id": "_NEEDS_MOVIE_ID_hp2",
+      "character_id_a": "_NEEDS_ID_hp2_harry",
+      "character_id_b": "_NEEDS_ID_hp2_tomriddle",
+      "wiki_query": "Harry Potter Tom Riddle chamber of secrets memory confrontation basilisk"
+    },
+    {
+      "label": "Harry & Dobby",
+      "movie_id": "_NEEDS_MOVIE_ID_hp2",
+      "character_id_a": "_NEEDS_ID_hp2_harry",
+      "character_id_b": "_NEEDS_ID_hp2_dobby",
+      "wiki_query": "Harry Potter Dobby house elf protection freedom sock"
+    },
+    {
+      "label": "Harry & Sirius Black",
+      "movie_id": "_NEEDS_MOVIE_ID_hp3",
+      "character_id_a": "_NEEDS_ID_hp3_harry",
+      "character_id_b": "_NEEDS_ID_hp3_sirius",
+      "wiki_query": "Harry Potter Sirius Black godfather truth shrieking shack innocence"
+    },
+    {
+      "label": "Sirius & Lupin",
+      "movie_id": "_NEEDS_MOVIE_ID_hp3",
+      "character_id_a": "_NEEDS_ID_hp3_sirius",
+      "character_id_b": "_NEEDS_ID_hp3_lupin",
+      "wiki_query": "Sirius Black Remus Lupin marauders brotherhood reunion friendship"
+    },
+    {
+      "label": "Harry & Snape",
+      "movie_id": "_NEEDS_MOVIE_ID_hp3",
+      "character_id_a": "_NEEDS_ID_hp3_harry",
+      "character_id_b": "_NEEDS_ID_hp3_snape",
+      "wiki_query": "Harry Potter Severus Snape animosity james potter resentment protection"
+    },
+    {
+      "label": "Harry & Voldemort",
+      "movie_id": "_NEEDS_MOVIE_ID_hp4",
+      "character_id_a": "_NEEDS_ID_hp4_harry",
+      "character_id_b": "_NEEDS_ID_hp4_voldemort",
+      "wiki_query": "Harry Potter Lord Voldemort graveyard duel priori incantatem resurrection"
+    },
+    {
+      "label": "Harry & Cedric",
+      "movie_id": "_NEEDS_MOVIE_ID_hp4",
+      "character_id_a": "_NEEDS_ID_hp4_harry",
+      "character_id_b": "_NEEDS_ID_hp4_cedric",
+      "wiki_query": "Harry Potter Cedric Diggory triwizard tournament rivalry mutual respect honor"
+    },
+    {
+      "label": "Harry & Dolores Umbridge",
+      "movie_id": "_NEEDS_MOVIE_ID_hp5",
+      "character_id_a": "_NEEDS_ID_hp5_harry",
+      "character_id_b": "_NEEDS_ID_hp5_umbridge",
+      "wiki_query": "Harry Potter Dolores Umbridge detention blood quill tyranny rebellion"
+    },
+    {
+      "label": "Harry & Luna Lovegood",
+      "movie_id": "_NEEDS_MOVIE_ID_hp5",
+      "character_id_a": "_NEEDS_ID_hp5_harry",
+      "character_id_b": "_NEEDS_ID_hp5_luna",
+      "wiki_query": "Harry Potter Luna Lovegood thestrals empathy understanding kindred spirits"
+    },
+    {
+      "label": "Harry & Draco Malfoy",
+      "movie_id": "_NEEDS_MOVIE_ID_hp6",
+      "character_id_a": "_NEEDS_ID_hp6_harry",
+      "character_id_b": "_NEEDS_ID_hp6_draco",
+      "wiki_query": "Harry Potter Draco Malfoy rivalry bathroom duel sectumsempra dark mark pressure"
+    },
+    {
+      "label": "Dumbledore & Snape",
+      "movie_id": "_NEEDS_MOVIE_ID_hp6",
+      "character_id_a": "_NEEDS_ID_hp6_dumbledore",
+      "character_id_b": "_NEEDS_ID_hp6_snape",
+      "wiki_query": "Albus Dumbledore Severus Snape unbreakable vow astronomy tower sacrifice trust"
+    },
+    {
+      "label": "Harry & Ron",
+      "movie_id": "_NEEDS_MOVIE_ID_hp7",
+      "character_id_a": "_NEEDS_ID_hp7_harry",
+      "character_id_b": "_NEEDS_ID_hp7_ron",
+      "wiki_query": "Harry Potter Ron Weasley horcrux locket conflict departure redemption sword of gryffindor"
+    },
+    {
+      "label": "Ron & Hermione",
+      "movie_id": "_NEEDS_MOVIE_ID_hp7",
+      "character_id_a": "_NEEDS_ID_hp7_ron",
+      "character_id_b": "_NEEDS_ID_hp7_hermione",
+      "wiki_query": "Ron Weasley Hermione Granger romance heartbreak tent dance loyalty"
+    },
+    {
+      "label": "Harry & Voldemort",
+      "movie_id": "_NEEDS_MOVIE_ID_hp8",
+      "character_id_a": "_NEEDS_ID_hp8_harry",
+      "character_id_b": "_NEEDS_ID_hp8_voldemort",
+      "wiki_query": "Harry Potter Lord Voldemort final battle battle of hogwarts elder wand destiny"
+    },
+    {
+      "label": "Harry & Snape",
+      "movie_id": "_NEEDS_MOVIE_ID_hp8",
+      "character_id_a": "_NEEDS_ID_hp8_harry",
+      "character_id_b": "_NEEDS_ID_hp8_snape",
+      "wiki_query": "Harry Potter Severus Snape the princes tale tears memories truth lily potter"
+    },
+    {
+      "label": "Neville & Voldemort",
+      "movie_id": "_NEEDS_MOVIE_ID_hp8",
+      "character_id_a": "_NEEDS_ID_hp8_neville",
+      "character_id_b": "_NEEDS_ID_hp8_voldemort",
+      "wiki_query": "Neville Longbottom Lord Voldemort defiance sword of gryffindor nagini courage"
+    },
+    {
+      "label": "Tony & Pepper",
+      "movie_id": "_NEEDS_MOVIE_ID_ironman",
+      "character_id_a": "_NEEDS_ID_im_tony",
+      "character_id_b": "_NEEDS_ID_im_pepper",
+      "wiki_query": "Tony Stark Pepper Potts romance loyalty stark industries heart arc reactor"
+    },
+    {
+      "label": "Tony & Obadiah",
+      "movie_id": "_NEEDS_MOVIE_ID_ironman",
+      "character_id_a": "_NEEDS_ID_im_tony",
+      "character_id_b": "_NEEDS_ID_im_obadiah",
+      "wiki_query": "Tony Stark Obadiah Stane betrayal mentor iron monger corporate rivalry"
+    },
+    {
+      "label": "Thor & Loki",
+      "movie_id": "_NEEDS_MOVIE_ID_avengers",
+      "character_id_a": "_NEEDS_ID_av_thor",
+      "character_id_b": "_NEEDS_ID_av_loki",
+      "wiki_query": "Thor Loki brothers conflict asgard new york invasion brotherhood betrayal"
+    },
+    {
+      "label": "Steve & Natasha",
+      "movie_id": "_NEEDS_MOVIE_ID_avengers",
+      "character_id_a": "_NEEDS_ID_av_steve",
+      "character_id_b": "_NEEDS_ID_av_natasha",
+      "wiki_query": "Captain America Black Widow Steve Rogers Natasha Romanoff mutual trust soldier spy"
+    },
+    {
+      "label": "Steve & Bucky",
+      "movie_id": "_NEEDS_MOVIE_ID_wintersoldier",
+      "character_id_a": "_NEEDS_ID_ws_steve",
+      "character_id_b": "_NEEDS_ID_ws_bucky",
+      "wiki_query": "Steve Rogers Bucky Barnes winter soldier till the end of the line friendship memory"
+    },
+    {
+      "label": "Steve & Sam",
+      "movie_id": "_NEEDS_MOVIE_ID_wintersoldier",
+      "character_id_a": "_NEEDS_ID_ws_steve",
+      "character_id_b": "_NEEDS_ID_ws_sam",
+      "wiki_query": "Steve Rogers Sam Wilson falcon friendship veteran partnership loyalty"
+    },
+    {
+      "label": "Steve & Alexander Pierce",
+      "movie_id": "_NEEDS_MOVIE_ID_wintersoldier",
+      "character_id_a": "_NEEDS_ID_ws_steve",
+      "character_id_b": "_NEEDS_ID_ws_pierce",
+      "wiki_query": "Steve Rogers Alexander Pierce hydra shield betrayal order vs freedom"
+    },
+    {
+      "label": "Peter Quill & Gamora",
+      "movie_id": "_NEEDS_MOVIE_ID_gotg",
+      "character_id_a": "_NEEDS_ID_gotg_quill",
+      "character_id_b": "_NEEDS_ID_gotg_gamora",
+      "wiki_query": "Peter Quill Gamora romance outlaw assassin walkman unspoken attraction"
+    },
+    {
+      "label": "Peter Quill & Rocket",
+      "movie_id": "_NEEDS_MOVIE_ID_gotg",
+      "character_id_a": "_NEEDS_ID_gotg_quill",
+      "character_id_b": "_NEEDS_ID_gotg_rocket",
+      "wiki_query": "Peter Quill Rocket Raccoon bantering leadership camaraderie misfit alliance"
+    },
+    {
+      "label": "Steve Rogers & Tony Stark",
+      "movie_id": "_NEEDS_MOVIE_ID_civilwar",
+      "character_id_a": "_NEEDS_ID_cw_steve",
+      "character_id_b": "_NEEDS_ID_cw_tony",
+      "wiki_query": "Captain America Iron Man civil war sokovia accords bucky betrayal clash"
+    },
+    {
+      "label": "T'Challa & Helmut Zemo",
+      "movie_id": "_NEEDS_MOVIE_ID_civilwar",
+      "character_id_a": "_NEEDS_ID_cw_tchalla",
+      "character_id_b": "_NEEDS_ID_cw_zemo",
+      "wiki_query": "TChalla Helmut Zemo vengeance justice letting go of revenge siberia"
+    },
+    {
+      "label": "Thor & Loki",
+      "movie_id": "_NEEDS_MOVIE_ID_ragnarok",
+      "character_id_a": "_NEEDS_ID_rag_thor",
+      "character_id_b": "_NEEDS_ID_rag_loki",
+      "wiki_query": "Thor Loki ragnarok comedy brotherhood trickster reconciliation your savior is here"
+    },
+    {
+      "label": "Thor & Hela",
+      "movie_id": "_NEEDS_MOVIE_ID_ragnarok",
+      "character_id_a": "_NEEDS_ID_rag_thor",
+      "character_id_b": "_NEEDS_ID_rag_hela",
+      "wiki_query": "Thor Hela goddess of death asgard rightful heir god of thunder lightning clash"
+    },
+    {
+      "label": "Thor & Valkyrie",
+      "movie_id": "_NEEDS_MOVIE_ID_ragnarok",
+      "character_id_a": "_NEEDS_ID_rag_thor",
+      "character_id_b": "_NEEDS_ID_rag_valkyrie",
+      "wiki_query": "Thor Valkyrie sakaar warrior redemption asgardian heritage honor"
+    },
+    {
+      "label": "T'Challa & Killmonger",
+      "movie_id": "_NEEDS_MOVIE_ID_blackpanther",
+      "character_id_a": "_NEEDS_ID_bp_tchalla",
+      "character_id_b": "_NEEDS_ID_bp_killmonger",
+      "wiki_query": "TChalla Erik Killmonger wakanda throne cousins ideology oppression burial at sea"
+    },
+    {
+      "label": "T'Challa & Nakia",
+      "movie_id": "_NEEDS_MOVIE_ID_blackpanther",
+      "character_id_a": "_NEEDS_ID_bp_tchalla",
+      "character_id_b": "_NEEDS_ID_bp_nakia",
+      "wiki_query": "TChalla Nakia romance wakanda outreach values global vision love"
+    },
+    {
+      "label": "Thanos & Gamora",
+      "movie_id": "_NEEDS_MOVIE_ID_infinitywar",
+      "character_id_a": "_NEEDS_ID_iw_thanos",
+      "character_id_b": "_NEEDS_ID_iw_gamora",
+      "wiki_query": "Thanos Gamora father daughter soul stone vormir sacrifice twisted love"
+    },
+    {
+      "label": "Thanos & Tony Stark",
+      "movie_id": "_NEEDS_MOVIE_ID_infinitywar",
+      "character_id_a": "_NEEDS_ID_iw_thanos",
+      "character_id_b": "_NEEDS_ID_iw_tony",
+      "wiki_query": "Thanos Tony Stark titan battle cursed with knowledge respect all that for a drop of blood"
+    },
+    {
+      "label": "Tony Stark & Stephen Strange",
+      "movie_id": "_NEEDS_MOVIE_ID_infinitywar",
+      "character_id_a": "_NEEDS_ID_iw_tony",
+      "character_id_b": "_NEEDS_ID_iw_strange",
+      "wiki_query": "Tony Stark Doctor Strange clashing egos science magic end game sacrifice"
+    },
+    {
+      "label": "Tony Stark & Steve Rogers",
+      "movie_id": "_NEEDS_MOVIE_ID_endgame",
+      "character_id_a": "_NEEDS_ID_eg_tony",
+      "character_id_b": "_NEEDS_ID_eg_steve",
+      "wiki_query": "Tony Stark Steve Rogers reconciliation trust shield whatever it takes endgame"
+    },
+    {
+      "label": "Nebula & Thanos",
+      "movie_id": "_NEEDS_MOVIE_ID_endgame",
+      "character_id_a": "_NEEDS_ID_eg_nebula",
+      "character_id_b": "_NEEDS_ID_eg_thanos",
+      "wiki_query": "Nebula Thanos abuse redemption cybernetic past self confrontation"
+    },
+    {
+      "label": "Peter Parker & Norman Osborn",
+      "movie_id": "_NEEDS_MOVIE_ID_nowayhome",
+      "character_id_a": "_NEEDS_ID_nwh_peter",
+      "character_id_b": "_NEEDS_ID_nwh_goblin",
+      "wiki_query": "Peter Parker Norman Osborn green goblin aunt may death moral choice cure vs revenge"
+    },
+    {
+      "label": "Peter Parker & Doctor Strange",
+      "movie_id": "_NEEDS_MOVIE_ID_nowayhome",
+      "character_id_a": "_NEEDS_ID_nwh_peter",
+      "character_id_b": "_NEEDS_ID_nwh_strange",
+      "wiki_query": "Peter Parker Doctor Strange spell multiverse consequences forget me sacrifice"
+    },
+    {
+      "label": "Logan & Charles Xavier",
+      "movie_id": "_NEEDS_MOVIE_ID_logan",
+      "character_id_a": "_NEEDS_ID_logan_logan",
+      "character_id_b": "_NEEDS_ID_logan_charles",
+      "wiki_query": "Logan Charles Xavier aging dementia father son caregiver tragedy water tank"
+    },
+    {
+      "label": "Logan & Laura",
+      "movie_id": "_NEEDS_MOVIE_ID_logan",
+      "character_id_a": "_NEEDS_ID_logan_logan",
+      "character_id_b": "_NEEDS_ID_logan_laura",
+      "wiki_query": "Logan Laura X23 reluctant father daughter mutant sanctuary sacrifice"
+    },
+    {
+      "label": "Charles Xavier & Magneto",
+      "movie_id": "_NEEDS_MOVIE_ID_dofp",
+      "character_id_a": "_NEEDS_ID_dofp_charles",
+      "character_id_b": "_NEEDS_ID_dofp_magneto",
+      "wiki_query": "Charles Xavier Erik Lehnsherr magneto days of future past plane argument hope vs cynical survival"
+    },
+    {
+      "label": "Charles Xavier & Mystique",
+      "movie_id": "_NEEDS_MOVIE_ID_dofp",
+      "character_id_a": "_NEEDS_ID_dofp_charles",
+      "character_id_b": "_NEEDS_ID_dofp_mystique",
+      "wiki_query": "Charles Xavier Raven Mystique trask assassination choice free will humanity"
+    },
+    {
+      "label": "Bruce Wayne & Ra's al Ghul",
+      "movie_id": "_NEEDS_MOVIE_ID_batmanbegins",
+      "character_id_a": "_NEEDS_ID_bb_bruce",
+      "character_id_b": "_NEEDS_ID_bb_ras",
+      "wiki_query": "Bruce Wayne Henri Ducard Ras al Ghul league of shadows theatricality justice execution train"
+    },
+    {
+      "label": "Bruce Wayne & Rachel Dawes",
+      "movie_id": "_NEEDS_MOVIE_ID_batmanbegins",
+      "character_id_a": "_NEEDS_ID_bb_bruce",
+      "character_id_b": "_NEEDS_ID_bb_rachel",
+      "wiki_query": "Bruce Wayne Rachel Dawes childhood romance morality what defines us is what we do"
+    },
+    {
+      "label": "Batman & Bane",
+      "movie_id": "_NEEDS_MOVIE_ID_tldr",
+      "character_id_a": "_NEEDS_ID_tldr_bruce",
+      "character_id_b": "_NEEDS_ID_tldr_bane",
+      "wiki_query": "Batman Bane sewer fight breaking the bat darkness league of shadows revolution"
+    },
+    {
+      "label": "Batman & Catwoman",
+      "movie_id": "_NEEDS_MOVIE_ID_tldr",
+      "character_id_a": "_NEEDS_ID_tldr_bruce",
+      "character_id_b": "_NEEDS_ID_tldr_selina",
+      "wiki_query": "Batman Selina Kyle catwoman clean slate betrayal redemption partnership"
+    },
+    {
+      "label": "Bruce Wayne & John Blake",
+      "movie_id": "_NEEDS_MOVIE_ID_tldr",
+      "character_id_a": "_NEEDS_ID_tldr_bruce",
+      "character_id_b": "_NEEDS_ID_tldr_blake",
+      "wiki_query": "Bruce Wayne John Blake robin mantle successor masked hero faith"
+    },
+    {
+      "label": "Batman & The Riddler",
+      "movie_id": "_NEEDS_MOVIE_ID_thebatman",
+      "character_id_a": "_NEEDS_ID_tb_bruce",
+      "character_id_b": "_NEEDS_ID_tb_riddler",
+      "wiki_query": "The Batman Edward Nashton riddler arkham interrogation vengeance mirror vigilante"
+    },
+    {
+      "label": "Batman & Catwoman",
+      "movie_id": "_NEEDS_MOVIE_ID_thebatman",
+      "character_id_a": "_NEEDS_ID_tb_bruce",
+      "character_id_b": "_NEEDS_ID_tb_selina",
+      "wiki_query": "Batman Selina Kyle catwoman noir romance sunrise motorcycle parting paths"
+    },
+    {
+      "label": "Batman & James Gordon",
+      "movie_id": "_NEEDS_MOVIE_ID_thebatman",
+      "character_id_a": "_NEEDS_ID_tb_bruce",
+      "character_id_b": "_NEEDS_ID_tb_gordon",
+      "wiki_query": "The Batman James Gordon detective partnership crime scene trust corruption"
+    },
+    {
+      "label": "Arthur Fleck & Murray Franklin",
+      "movie_id": "_NEEDS_MOVIE_ID_joker",
+      "character_id_a": "_NEEDS_ID_jk_arthur",
+      "character_id_b": "_NEEDS_ID_jk_murray",
+      "wiki_query": "Arthur Fleck Murray Franklin talk show interview live broadcast television kill you get what you deserve"
+    },
+    {
+      "label": "Arthur Fleck & Penny Fleck",
+      "movie_id": "_NEEDS_MOVIE_ID_joker",
+      "character_id_a": "_NEEDS_ID_jk_arthur",
+      "character_id_b": "_NEEDS_ID_jk_penny",
+      "wiki_query": "Arthur Fleck Penny Fleck mother son adoption abuse revelation hospital pillow"
+    },
+    {
+      "label": "Clark Kent & General Zod",
+      "movie_id": "_NEEDS_MOVIE_ID_manofsteel",
+      "character_id_a": "_NEEDS_ID_mos_clark",
+      "character_id_b": "_NEEDS_ID_mos_zod",
+      "wiki_query": "Clark Kent Superman General Zod krypton earth destruction final choice neck snap tragedy"
+    },
+    {
+      "label": "Clark Kent & Lois Lane",
+      "movie_id": "_NEEDS_MOVIE_ID_manofsteel",
+      "character_id_a": "_NEEDS_ID_mos_clark",
+      "character_id_b": "_NEEDS_ID_mos_lois",
+      "wiki_query": "Clark Kent Lois Lane first contact arctic trust Pulitzer romance secret"
+    },
+    {
+      "label": "Clark Kent & Jor-El",
+      "movie_id": "_NEEDS_MOVIE_ID_manofsteel",
+      "character_id_a": "_NEEDS_ID_mos_clark",
+      "character_id_b": "_NEEDS_ID_mos_jorel",
+      "wiki_query": "Clark Kent Jor-El hologram father son kryptonian legacy give the people of earth an ideal to strive towards"
+    },
+    {
+      "label": "Batman & Superman",
+      "movie_id": "_NEEDS_MOVIE_ID_bvs",
+      "character_id_a": "_NEEDS_ID_bvs_bruce",
+      "character_id_b": "_NEEDS_ID_bvs_clark",
+      "wiki_query": "Batman Superman dawn of justice gladiatorial match power god vs man martha redemption"
+    },
+    {
+      "label": "Lex Luthor & Superman",
+      "movie_id": "_NEEDS_MOVIE_ID_bvs",
+      "character_id_a": "_NEEDS_ID_bvs_lex",
+      "character_id_b": "_NEEDS_ID_bvs_clark",
+      "wiki_query": "Lex Luthor Superman rooftop manipulation god cannot be all powerful and all good"
+    },
+    {
+      "label": "Batman & Wonder Woman",
+      "movie_id": "_NEEDS_MOVIE_ID_bvs",
+      "character_id_a": "_NEEDS_ID_bvs_bruce",
+      "character_id_b": "_NEEDS_ID_bvs_diana",
+      "wiki_query": "Bruce Wayne Diana Prince museum sword shield alliance recruitment"
+    },
+    {
+      "label": "Diana Prince & Steve Trevor",
+      "movie_id": "_NEEDS_MOVIE_ID_wonderwoman",
+      "character_id_a": "_NEEDS_ID_ww_diana",
+      "character_id_b": "_NEEDS_ID_ww_steve",
+      "wiki_query": "Diana Prince Steve Trevor no mans land airplane sacrifice love I can save today you can save the world"
+    },
+    {
+      "label": "Diana Prince & Ares",
+      "movie_id": "_NEEDS_MOVIE_ID_wonderwoman",
+      "character_id_a": "_NEEDS_ID_ww_diana",
+      "character_id_b": "_NEEDS_ID_ww_ares",
+      "wiki_query": "Diana Prince Ares god of war mankind innate evil belief in love climax"
+    },
+    {
+      "label": "Rorschach & Nite Owl",
+      "movie_id": "_NEEDS_MOVIE_ID_watchmen",
+      "character_id_a": "_NEEDS_ID_wm_rorschach",
+      "character_id_b": "_NEEDS_ID_wm_dan",
+      "wiki_query": "Rorschach Dan Dreiberg nite owl vigilante brotherhood investigation prison break"
+    },
+    {
+      "label": "Dr. Manhattan & Ozymandias",
+      "movie_id": "_NEEDS_MOVIE_ID_watchmen",
+      "character_id_a": "_NEEDS_ID_wm_manhattan",
+      "character_id_b": "_NEEDS_ID_wm_veidt",
+      "wiki_query": "Dr Manhattan Adrian Veidt ozymandias karnak tachyon utopia pragmatic peace"
+    },
+    {
+      "label": "Rorschach & Ozymandias",
+      "movie_id": "_NEEDS_MOVIE_ID_watchmen",
+      "character_id_a": "_NEEDS_ID_wm_rorschach",
+      "character_id_b": "_NEEDS_ID_wm_veidt",
+      "wiki_query": "Rorschach Adrian Veidt never compromise even in the face of armageddon death in snow"
+    },
+    {
+      "label": "V & Evey Hammond",
+      "movie_id": "_NEEDS_MOVIE_ID_vforvendetta",
+      "character_id_a": "_NEEDS_ID_v_v",
+      "character_id_b": "_NEEDS_ID_v_evey",
+      "wiki_query": "V Evey Hammond imprisonment liberation rain rooftop transformation freedom idea"
+    },
+    {
+      "label": "V & Inspector Finch",
+      "movie_id": "_NEEDS_MOVIE_ID_vforvendetta",
+      "character_id_a": "_NEEDS_ID_v_v",
+      "character_id_b": "_NEEDS_ID_v_finch",
+      "wiki_query": "V Chief Inspector Finch larkhill investigation truth conscience underground station confrontation"
     }
   ],
   "songs": [

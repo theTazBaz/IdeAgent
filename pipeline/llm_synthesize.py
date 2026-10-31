@@ -129,18 +129,29 @@ def synthesize(entity_type: str, raw_facts: dict) -> dict:
     prompt = _PROMPTS[entity_type].format(facts_json=json.dumps(raw_facts, indent=2))
 
     response = None
+    target_model = config.LLM_MODEL
     for attempt in range(5):
         try:
             response = client.chat.completions.create(
-                model=config.LLM_MODEL,
+                model=target_model,
                 messages=[{"role": "user", "content": prompt}],
                 temperature=0.2,
             )
             break
         except Exception as e:
-            if "rate_limit" in str(e).lower() or "429" in str(e):
-                wait_time = 12 * (attempt + 1)
-                print(f"    ⏳ Rate limit encountered. Waiting {wait_time}s (attempt {attempt+1}/5) …")
+            err_str = str(e).lower()
+            if "tokens per day" in err_str or "tpd" in err_str:
+                if target_model != "openai/gpt-oss-20b" and target_model != "openai/gpt-oss-120b":
+                    print(f"    ⚠️  Daily limit hit for {target_model}. Failing over to openai/gpt-oss-20b …")
+                    target_model = "openai/gpt-oss-20b"
+                    continue
+                elif target_model == "openai/gpt-oss-20b":
+                    print(f"    ⚠️  Daily limit hit for {target_model}. Failing over to openai/gpt-oss-120b …")
+                    target_model = "openai/gpt-oss-120b"
+                    continue
+            if "rate_limit" in err_str or "429" in err_str:
+                wait_time = 10 * (attempt + 1)
+                print(f"    ⏳ Rate limit on {target_model}. Waiting {wait_time}s (attempt {attempt+1}/5) …")
                 time.sleep(wait_time)
             else:
                 raise
@@ -150,32 +161,71 @@ def synthesize(entity_type: str, raw_facts: dict) -> dict:
 
     response_text = response.choices[0].message.content
     
-    # Robustly extract the LAST complete JSON object from the response.
-    # Qwen emits a long chain-of-thought before the final JSON block, so we
-    # scan backwards from the last '}' to find its matching '{'.
-    cleaned_text = None
-    last_close = response_text.rfind("}")
-    if last_close != -1:
-        depth = 0
-        for i in range(last_close, -1, -1):
-            if response_text[i] == "}":
-                depth += 1
-            elif response_text[i] == "{":
-                depth -= 1
-                if depth == 0:
-                    cleaned_text = response_text[i : last_close + 1]
-                    break
+    # Robustly extract JSON object from the response.
+    # LLMs may output chain-of-thought, markdown code blocks, or trailing text.
+    import re
+    cleaned_dict = None
 
-    if not cleaned_text:
-        cleaned_text = response_text.strip()
+    # Strategy 1: markdown code block ```json ... ```
+    match = re.search(r"```(?:json)?\s*(\{[\s\S]*?\})\s*```", response_text)
+    if match:
+        try:
+            cand = json.loads(match.group(1), strict=False)
+            if isinstance(cand, dict) and "description" in cand and "core_emotional_logic" in cand:
+                cleaned_dict = cand
+        except Exception:
+            pass
 
-    try:
-        result = json.loads(cleaned_text)
-    except json.JSONDecodeError as e:
-        raise ValueError(
-            f"LLM returned non-JSON response for {entity_type}:\n{response_text}"
-        ) from e
+    # Strategy 2: scan backwards from the last '}' to find matching '{'
+    if cleaned_dict is None:
+        last_close = response_text.rfind("}")
+        if last_close != -1:
+            depth = 0
+            for i in range(last_close, -1, -1):
+                if response_text[i] == "}":
+                    depth += 1
+                elif response_text[i] == "{":
+                    depth -= 1
+                    if depth == 0:
+                        candidate_str = response_text[i : last_close + 1]
+                        try:
+                            cand = json.loads(candidate_str, strict=False)
+                            if isinstance(cand, dict) and "description" in cand and "core_emotional_logic" in cand:
+                                cleaned_dict = cand
+                                break
+                        except Exception:
+                            pass
 
+    # Strategy 3: search for widest substring between { and } that contains target keys
+    if cleaned_dict is None:
+        first_open = response_text.find("{")
+        last_close = response_text.rfind("}")
+        if first_open != -1 and last_close != -1 and last_close > first_open:
+            candidate_str = response_text[first_open : last_close + 1]
+            try:
+                cand = json.loads(candidate_str, strict=False)
+                if isinstance(cand, dict) and "description" in cand:
+                    cleaned_dict = cand
+            except Exception:
+                # Try cleaning trailing commas
+                try:
+                    c_clean = re.sub(r",\s*([\}\]])", r"\1", candidate_str)
+                    cand = json.loads(c_clean, strict=False)
+                    if isinstance(cand, dict) and "description" in cand:
+                        cleaned_dict = cand
+                except Exception:
+                    pass
+
+    # Strategy 4: raw text fallback
+    if cleaned_dict is None:
+        try:
+            cleaned_dict = json.loads(response_text.strip(), strict=False)
+        except Exception as e:
+            raise ValueError(
+                f"LLM returned non-JSON response for {entity_type}:\n{response_text}"
+            ) from e
+
+    result = cleaned_dict
     if "description" not in result or "core_emotional_logic" not in result:
         raise ValueError(
             f"LLM response missing required fields for {entity_type}:\n{result}"

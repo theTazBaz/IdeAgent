@@ -34,7 +34,7 @@ def enrich_movie(
     Returns:
         The full record dict that was upserted (useful for chaining / logging).
     """
-    movie_id = movie_id or str(uuid4())
+    movie_id = movie_id or db.get_movie_by_title(conn, title) or str(uuid4())
 
     # ------------------------------------------------------------------
     # Step 1: Scrape

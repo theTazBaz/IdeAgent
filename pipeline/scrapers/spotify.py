@@ -70,35 +70,53 @@ def get_track(title: str, artist: str) -> dict:
     Returns a dict with keys:
       title, artist, album, release_date, popularity, duration_ms
     """
-    with httpx.Client(timeout=15.0) as client:
-        # Step 1: search
-        r = client.get(
-            f"{SPOTIFY_BASE}/search",
-            headers=_auth_headers(),
-            params={
-                "q": f'track:"{title}" artist:"{artist}"',
-                "type": "track",
-                "limit": 1,
-            },
-        )
-        r.raise_for_status()
-        items = r.json().get("tracks", {}).get("items", [])
-        if not items:
-            # Fallback: broader search
-            r = client.get(
-                f"{SPOTIFY_BASE}/search",
-                headers=_auth_headers(),
-                params={"q": f"{title} {artist}", "type": "track", "limit": 1},
-            )
-            r.raise_for_status()
-            items = r.json().get("tracks", {}).get("items", [])
-        if not items:
-            raise ValueError(f"No Spotify results for: {title!r} by {artist!r}")
+    track = None
+    for attempt in range(4):
+        try:
+            with httpx.Client(timeout=15.0) as client:
+                # Step 1: search
+                r = client.get(
+                    f"{SPOTIFY_BASE}/search",
+                    headers=_auth_headers(),
+                    params={
+                        "q": f'track:"{title}" artist:"{artist}"',
+                        "type": "track",
+                        "limit": 1,
+                    },
+                )
+                if r.status_code == 429:
+                    wait_s = int(r.headers.get("Retry-After", 5))
+                    time.sleep(wait_s)
+                    continue
+                r.raise_for_status()
+                items = r.json().get("tracks", {}).get("items", [])
+                if not items:
+                    # Fallback: broader search
+                    r = client.get(
+                        f"{SPOTIFY_BASE}/search",
+                        headers=_auth_headers(),
+                        params={"q": f"{title} {artist}", "type": "track", "limit": 1},
+                    )
+                    if r.status_code == 429:
+                        wait_s = int(r.headers.get("Retry-After", 5))
+                        time.sleep(wait_s)
+                        continue
+                    r.raise_for_status()
+                    items = r.json().get("tracks", {}).get("items", [])
+                if not items:
+                    raise ValueError(f"No Spotify results for: {title!r} by {artist!r}")
 
-        track = items[0]
-        track_id = track["id"]
+                track = items[0]
+                break
+        except httpx.HTTPStatusError as e:
+            if e.response.status_code == 429:
+                wait_s = int(e.response.headers.get("Retry-After", 5))
+                time.sleep(wait_s)
+                continue
+            raise
 
-        track_id = track["id"]
+    if not track:
+        raise ValueError(f"Spotify request failed after retries for: {title!r} by {artist!r}")
 
     return {
         "title": track["name"],

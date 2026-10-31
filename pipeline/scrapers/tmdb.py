@@ -32,17 +32,26 @@ def _api_key() -> str:
 def _get(client: httpx.Client, url: str, extra_params: dict | None = None) -> httpx.Response:
     """GET with api_key injected and retry on connection/transport errors."""
     params = {"api_key": _api_key(), **(extra_params or {})}
+    headers = {"User-Agent": "IdeAgent/1.0 (Education Research Project)"}
     last_exc: Exception | None = None
-    for attempt in range(_MAX_RETRIES):
+    for attempt in range(5):
         try:
-            r = client.get(url, params=params)
+            r = client.get(url, params=params, headers=headers)
             r.raise_for_status()
             return r
-        except (httpx.RequestError, httpx.HTTPStatusError) as e:
+        except Exception as e:
             last_exc = e
-            if attempt < _MAX_RETRIES - 1:
-                time.sleep(_RETRY_DELAY * (attempt + 1))
-    raise last_exc  # type: ignore[misc]
+            if attempt < 4:
+                time.sleep(1.5 * (attempt + 1))
+    
+    # Fallback to a clean one-off connection if pooled socket was reset by remote
+    try:
+        time.sleep(2.0)
+        r = httpx.get(url, params=params, headers=headers, timeout=25.0)
+        r.raise_for_status()
+        return r
+    except Exception:
+        raise last_exc  # type: ignore[misc]
 
 
 # ------------------------------------------------------------------
@@ -62,7 +71,14 @@ def get_movie(title: str) -> dict:
         results = r.json().get("results", [])
         if not results:
             raise ValueError(f"No TMDB results for movie: {title!r}")
-        movie_id = results[0]["id"]
+        
+        # Prioritize exact title match over sequels or newer movies with similar words
+        exact = next((res for res in results if res.get("title", "").strip().lower() == title.strip().lower()), None)
+        if not exact:
+            import re
+            norm_q = re.sub(r"[^a-zA-Z0-9]", "", title).lower()
+            exact = next((res for res in results if re.sub(r"[^a-zA-Z0-9]", "", res.get("title", "")).lower() == norm_q), None)
+        movie_id = exact["id"] if exact else results[0]["id"]
 
         # Step 2: details
         r = _get(client, f"{TMDB_BASE}/movie/{movie_id}")

@@ -63,7 +63,7 @@ def get_wikipedia_summary(query: str) -> str:
                     return ""
 
                 return r.json().get("extract", "")
-        except (httpx.RequestError, httpx.HTTPStatusError):
+        except Exception:
             if attempt < 2:
                 time.sleep(1.5 * (attempt + 1))
             else:

@@ -48,7 +48,7 @@ def enrich_relationship(
     Returns:
         The full record dict that was upserted.
     """
-    relationship_id = relationship_id or str(uuid4())
+    relationship_id = relationship_id or db.get_relationship_by_chars(conn, character_id_a, character_id_b) or str(uuid4())
 
     # ------------------------------------------------------------------
     # Step 1: Scrape

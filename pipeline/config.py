@@ -28,7 +28,8 @@ GEMINI_API_KEY: Optional[str] = os.environ.get("GEMINI_API_KEY")
 # ------------------------------------------------------------------
 EMBED_MODEL: str = "nomic-ai/nomic-embed-text-v1.5"   # runs locally, no API key
 EMBED_DIM: int = 768                                    # must match schema vector(768)
-LLM_MODEL: str = "openai/gpt-oss-20b"                 # Groq model for fast JSON synthesis
+LLM_MODEL: str = "qwen/qwen3.8-27b"
+LLM_FALLBACK_MODEL: str = "openai/gpt-oss-20b"
 
 # ------------------------------------------------------------------
 # Helpers
